@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="html_tags.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div>
-      <h1>HTML TAGS</h1>
+      <h1>Heading</h1>
     </div>
     <hr />
     <div>
-      <p>
+      <p style="font-family: Verdana, sans-serif">
         HTML headings are titles or subtitles that you want to display on a
-        webpage.
+        webpage. <br />
+        HTML headings are defined with the &lt;h1&gt; to &lt;h6&gt; tags. <br />
+        &lt;h1&gt; defines the most important heading. <br />
+        &lt;h6&gt; defines the least important heading.
       </p>
+    </div>
+    <div id="roundbox">
+      <pre><code class="language-html">
+        &lt;h1&gt;Heading 1&lt;/h1&gt;
+        &lt;h2&gt;Heading 2&lt;/h2&gt;
+        &lt;h3&gt;Heading 3&lt;/h3&gt;
+        &lt;h4&gt;Heading 4&lt;/h4&gt;
+        &lt;h5&gt;Heading 5&lt;/h5&gt;
+        &lt;h6&gt;Heading 6&lt;/h6&gt;
+            </code></pre>
     </div>
     <hr />
     <div class="heading" id="roundbox">
@@ -28,9 +46,12 @@
         <button onclick="changetoh5()">h5 tag</button>
         <button onclick="changetoh6()">h6 tag</button>
       </div>
-      <div class="outputbox" id="output">This is new Text</div>
+      <div class="outputbox" id="output">This is Heading</div>
     </div>
     <hr />
     <script src="../func.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
   </body>
 </html>
