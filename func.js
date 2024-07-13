@@ -22,3 +22,10 @@ function changetoh6() {
   document.getElementById("output").innerHTML = "<h6>This is Heading 6</h6>";
   document.getElementById("headingDiv").innerHTML = "h6 Tag";
 }
+function displayptag() {
+  document.getElementById("onlyoutput").style.display = "block";
+  document.getElementById("onlyoutput").innerHTML = `
+    <p>Here is a first paragraph of text.</p>
+    <p>Here is a second paragraph of text.</p>
+    <p>Here is a third paragraph of text.</p>`;
+}

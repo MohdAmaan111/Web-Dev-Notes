@@ -16,8 +16,8 @@
       <h1>Heading</h1>
     </div>
     <hr />
-    <div>
-      <p style="font-family: Verdana, sans-serif">
+    <div class="paragraphBox">
+      <p>
         HTML headings are titles or subtitles that you want to display on a
         webpage. <br />
         HTML headings are defined with the &lt;h1&gt; to &lt;h6&gt; tags. <br />
@@ -25,7 +25,7 @@
         &lt;h6&gt; defines the least important heading.
       </p>
     </div>
-    <div id="roundbox">
+    <div class="scriptBox" id="roundbox">
       <pre><code class="language-html">
         &lt;h1&gt;Heading 1&lt;/h1&gt;
         &lt;h2&gt;Heading 2&lt;/h2&gt;
@@ -49,6 +49,31 @@
       <div class="outputbox" id="output">This is Heading</div>
     </div>
     <hr />
+    <div>
+      <h1>Paragraph</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        A paragraph always starts on a new line, and is usually a block of text.
+        <br />
+        The HTML &lt;p&gt; element defines a paragraph.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+          &lt;p&gt;Here is a first paragraph of text.&lt;/p&gt;
+          &lt;p&gt;Here is a second paragraph of text.&lt;/p&gt;
+          &lt;p&gt;Here is a third paragraph of text.&lt;/p&gt;
+            </code></pre>
+    </div>
+    <hr />
+    <div class="paragraph" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayptag()">View</button>
+      <div id="onlyoutput">This is Heading</div>
+    </div>
+
     <script src="../func.js"></script>
     <!-- Prism.js JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
