@@ -23,9 +23,37 @@ function changetoh6() {
   document.getElementById("headingDiv").innerHTML = "h6 Tag";
 }
 function displayptag() {
-  document.getElementById("onlyoutput").style.display = "block";
-  document.getElementById("onlyoutput").innerHTML = `
+  document.getElementById("poutput").style.display = "block";
+  document.getElementById("poutput").innerHTML = `
     <p>Here is a first paragraph of text.</p>
     <p>Here is a second paragraph of text.</p>
     <p>Here is a third paragraph of text.</p>`;
+}
+function displayhrtag() {
+  document.getElementById("hroutput").style.display = "block";
+  document.getElementById("hroutput").innerHTML = `
+    <h1>This is heading 1</h1>
+    <p>This is some text.</p>
+    <hr>
+    <h2>This is heading 2</h2>
+    <p>This is some other text.</p>
+    <hr>`;
+}
+function displaybrtag() {
+  document.getElementById("broutput").style.display = "block";
+  document.getElementById("broutput").innerHTML = `
+    <p>This is<br>a paragraph<br>with line breaks.</p>`;
+}
+function displaypretag() {
+  document.getElementById("preoutput").style.display = "block";
+  document.getElementById("preoutput").innerHTML = `
+    <pre>
+    My Bonnie lies over the ocean.
+
+    My Bonnie lies over the sea.
+
+    My Bonnie lies over the ocean.
+
+    Oh, bring back my Bonnie to me.
+    </pre>`;
 }

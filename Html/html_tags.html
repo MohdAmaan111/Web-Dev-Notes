@@ -13,7 +13,7 @@
   </head>
   <body>
     <div>
-      <h1>Heading</h1>
+      <h1>Heading Tag</h1>
     </div>
     <hr />
     <div class="paragraphBox">
@@ -50,7 +50,7 @@
     </div>
     <hr />
     <div>
-      <h1>Paragraph</h1>
+      <h1>Paragraph Tag</h1>
     </div>
     <hr />
     <div class="paragraphBox">
@@ -71,10 +71,93 @@
     <div class="paragraph" id="roundbox">
       <h3 id="headingDiv">Output</h3>
       <button class="viewoutput" onclick="displayptag()">View</button>
-      <div id="onlyoutput">This is Heading</div>
+      <div class="onlyoutput" id="poutput">svcxbcv</div>
+    </div>
+    <hr />
+    <div>
+      <h1>Horizontal Rules Tag</h1>
+    </div>
+    <hr />
+    <div class="horizontalrulesBox">
+      <p>
+        The HTML &lt;hr&gt; element is displayed as a horizontal rule.
+        <br />
+        The &lt;hr&gt; element is used to separate content in an HTML page.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;h1&gt;This is heading 1&lt;/h1&gt;
+        &lt;p&gt;This is some text.&lt;/p&gt;
+        &lt;hr&gt;
+        &lt;h2&gt;This is heading 2&lt;/h2&gt;
+        &lt;p&gt;This is some other text.&lt;/p&gt;
+        &lt;hr&gt;
+            </code></pre>
+    </div>
+    <hr />
+    <div class="paragraph" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayhrtag()">View</button>
+      <div class="onlyoutput" id="hroutput"></div>
+    </div>
+    <hr />
+    <div>
+      <h1>Line Breaks Tag</h1>
+    </div>
+    <hr />
+    <div class="linebreaksBox">
+      <p>
+        The HTML &lt;br&gt; element defines a line break.
+        <br />
+        Use &lt;br&gt; if you want a new line without starting a new paragraph.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;p&gt;This is&lt;br&gt;a paragraph&lt;br&gt;with line breaks.&lt;/p&gt;
+            </code></pre>
+    </div>
+    <hr />
+    <div class="paragraph" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaybrtag()">View</button>
+      <div class="onlyoutput" id="broutput"></div>
+    </div>
+    <hr />
+    <div>
+      <h1>Preformatted Tag</h1>
+    </div>
+    <hr />
+    <div class="linebreaksBox">
+      <p>
+        The HTML &lt;pre&gt; element defines preformatted text.
+        <br />
+        The text inside a &lt;pre&gt; element is displayed in a fixed-width
+        font, and it preserves both spaces and line breaks.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;pre&gt;
+          My Bonnie lies over the ocean.
+        
+          My Bonnie lies over the sea.
+        
+          My Bonnie lies over the ocean.
+        
+          Oh, bring back my Bonnie to me.
+          &lt;/pre&gt;
+            </code></pre>
+    </div>
+    <hr />
+    <div class="paragraph" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaypretag()">View</button>
+      <div class="onlyoutput" id="preoutput"></div>
     </div>
 
-    <script src="../func.js"></script>
+    <script src="html_tags.js"></script>
     <!-- Prism.js JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
