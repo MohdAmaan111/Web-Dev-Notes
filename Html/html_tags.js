@@ -44,6 +44,14 @@ function displaybrtag() {
   document.getElementById("broutput").innerHTML = `
     <p>This is<br>a paragraph<br>with line breaks.</p>`;
 }
+function displaycentertag() {
+  document.getElementById("centeroutput").style.display = "block";
+  document.getElementById("centeroutput").innerHTML = `
+    <p>This text is not in the center.</p>
+    <center>
+    <p>This text is in the center.</p>
+    </center>`;
+}
 function displaypretag() {
   document.getElementById("preoutput").style.display = "block";
   document.getElementById("preoutput").innerHTML = `

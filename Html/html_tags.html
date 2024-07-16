@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HTML Tags</title>
     <link rel="stylesheet" href="html_tags.css" />
     <!-- Prism.js CSS -->
     <link
@@ -71,7 +71,7 @@
     <div class="paragraph" id="roundbox">
       <h3 id="headingDiv">Output</h3>
       <button class="viewoutput" onclick="displayptag()">View</button>
-      <div class="onlyoutput" id="poutput">svcxbcv</div>
+      <div class="onlyoutput" id="poutput"></div>
     </div>
     <hr />
     <div>
@@ -96,7 +96,7 @@
             </code></pre>
     </div>
     <hr />
-    <div class="paragraph" id="roundbox">
+    <div class="hr" id="roundbox">
       <h3 id="headingDiv">Output</h3>
       <button class="viewoutput" onclick="displayhrtag()">View</button>
       <div class="onlyoutput" id="hroutput"></div>
@@ -119,10 +119,35 @@
             </code></pre>
     </div>
     <hr />
-    <div class="paragraph" id="roundbox">
+    <div class="br" id="roundbox">
       <h3 id="headingDiv">Output</h3>
       <button class="viewoutput" onclick="displaybrtag()">View</button>
       <div class="onlyoutput" id="broutput"></div>
+    </div>
+    <hr />
+    <div>
+      <h1>Center Tag</h1>
+    </div>
+    <hr />
+    <div class="linebreaksBox">
+      <p>
+        You can use &lt;center&gt; tag to put any content in the center of the
+        page or any table cell.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;p&gt;This text is not in the center.</p>
+        &lt;center&gt;
+        &lt;p&gt;This text is in the center.</p>
+        &lt;/center&gt;
+      </code></pre>
+    </div>
+    <hr />
+    <div class="center" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaycentertag()">View</button>
+      <div class="onlyoutput" id="centeroutput"></div>
     </div>
     <hr />
     <div>
@@ -151,7 +176,7 @@
             </code></pre>
     </div>
     <hr />
-    <div class="paragraph" id="roundbox">
+    <div class="pre" id="roundbox">
       <h3 id="headingDiv">Output</h3>
       <button class="viewoutput" onclick="displaypretag()">View</button>
       <div class="onlyoutput" id="preoutput"></div>

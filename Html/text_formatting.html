@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Formatting</title>
+    <link rel="stylesheet" href="text_formatting.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>Text Formatting</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        HTML contains several elements for defining text with a special meaning.
+      </p>
+    </div>
+    <hr />
+    <div>
+      <h1>Bold Text</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        Anything that appears within &lt;b&gt;...&lt;/b&gt; element, is
+        displayed in bold text.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;p&gt;The following word uses a &lt;b&gt;bold&lt;/b&gt; typeface.&lt;/p&gt;
+      </code></pre>
+    </div>
+    <hr />
+    <div class="paragraph" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaybtag()">View</button>
+      <div class="onlyoutput" id="boutput"></div>
+    </div>
+    <hr />
+    <div>
+      <h1>Italic Text</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        Anything that appears within &lt;i&gt;...&lt;/i&gt; element is displayed
+        in Italic Text
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;p&gt;The following word uses a &lt;i&gt;italicized&lt;/i&gt; typeface.&lt;/p&gt;
+        </code></pre>
+    </div>
+    <hr />
+    <div class="paragraph" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayitag()">View</button>
+      <div class="onlyoutput" id="ioutput"></div>
+    </div>
+    <hr />
+
+    <script src="text_formatting.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
