@@ -20,6 +20,14 @@ hr {
 p {
   line-height: 2;
 }
+li {
+  line-height: 2;
+  margin-left: 20px;
+}
+/* red color for selective text in span tag */
+.redcolor {
+  color: red;
+}
 div {
   width: 99%;
   margin-top: 20px;
@@ -64,22 +72,22 @@ h3 {
 }
 /* to display only output */
 .onlyoutput {
-    display: none;
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    background-color: #222831;
-  }
-  /* styling view button */
-  .viewoutput {
-    float: right;
-    padding: 6px;
-    background-color: greenyellow;
-    border: none;
-    font-weight: bolder;
-    border-radius: 10%;
-  }
-  .viewoutput:hover {
-    background-color: rgba(172, 255, 47, 0.452);
-    color: white;
-  }
+  display: none;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: #222831;
+}
+/* styling view button */
+.viewoutput {
+  float: right;
+  padding: 6px;
+  background-color: greenyellow;
+  border: none;
+  font-weight: bolder;
+  border-radius: 10%;
+}
+.viewoutput:hover {
+  background-color: rgba(172, 255, 47, 0.452);
+  color: white;
+}

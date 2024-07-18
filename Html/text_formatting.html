@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Text Formatting</title>
-    <link rel="stylesheet" href="text_formatting.css" />
+    <link rel="stylesheet" href="html.css" />
     <!-- Prism.js CSS -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
@@ -21,51 +21,170 @@
         HTML contains several elements for defining text with a special meaning.
       </p>
     </div>
-    <hr />
+
+    <div class="buttonoutput" id="roundbox">
+      <h3 id="headingDiv">Example</h3>
+      <div class="buttonbox" id="input">
+        <button onclick="displaybtag()">Bold Text</button>
+        <button onclick="displayitag()">Italic Text</button>
+        <button onclick="displaystrongtag()">Strong Text</button>
+        <button onclick="displaysmalltag()">Smaller Text</button>
+        <button onclick="displaybigtag()">Larger Text</button>
+        <button onclick="displaymarktag()">Marked Text</button>
+        <button onclick="displaydeltag()">Deleted Text</button>
+        <button onclick="displayinstag()">Inserted Text</button>
+        <button onclick="displaysubtag()">Subscript Text</button>
+        <button onclick="displaysuptag()">Superscript Text</button>
+        <button onclick="displayutag()">Underlined Text</button>
+      </div>
+      <div class="outputbox" id="output"></div>
+    </div>
+
     <div>
-      <h1>Bold Text</h1>
+      <h1>Quotation Text</h1>
     </div>
     <hr />
     <div class="paragraphBox">
       <p>
-        Anything that appears within &lt;b&gt;...&lt;/b&gt; element, is
-        displayed in bold text.
+        When you want to quote a passage from another source, you should put it
+        in between&lt;blockquote&gt;...&lt;/blockquote&gt; tags.
       </p>
     </div>
     <div class="scriptBox" id="roundbox">
       <pre><code class="language-html">
-        &lt;p&gt;The following word uses a &lt;b&gt;bold&lt;/b&gt; typeface.&lt;/p&gt;
+        &lt;p&gt;Here is a quote from WWF's website:&lt;/p&gt;
+        &lt;blockquote cite="http://www.worldwildlife.org/who/index.html"&gt;
+        For 60 years, WWF has worked to help people and nature thrive. As the world's leading 
+        conservation organization, WWF works in nearly 100 countries. At every level, we 
+        collaborate with people around the world to develop and deliver innovative solutions 
+        that protect communities, wildlife, and the places in which they live.
+        &lt;/blockquote&gt;
       </code></pre>
     </div>
     <hr />
-    <div class="paragraph" id="roundbox">
+    <div class="scriptoutput" id="roundbox">
       <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displaybtag()">View</button>
-      <div class="onlyoutput" id="boutput"></div>
+      <button class="viewoutput" onclick="displayblockquotetag()">View</button>
+      <div class="onlyoutput" id="blockquoteoutput"></div>
     </div>
-    <hr />
     <div>
-      <h1>Italic Text</h1>
+      <h1>Short Quotation Text</h1>
     </div>
     <hr />
     <div class="paragraphBox">
       <p>
-        Anything that appears within &lt;i&gt;...&lt;/i&gt; element is displayed
-        in Italic Text
+        The &lt;q&gt;...&lt;/q&gt; element is used when you want to add a double
+        quote within a sentence.
       </p>
     </div>
     <div class="scriptBox" id="roundbox">
       <pre><code class="language-html">
-        &lt;p&gt;The following word uses a &lt;i&gt;italicized&lt;/i&gt; typeface.&lt;/p&gt;
-        </code></pre>
+        &lt;p&gt;WWF's goal is to: &lt;q&gt;Build a future where people live in harmony with nature.&lt;/q&gt;&lt;/p&gt;
+      </code></pre>
     </div>
     <hr />
-    <div class="paragraph" id="roundbox">
+    <div class="scriptoutput" id="roundbox">
       <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displayitag()">View</button>
-      <div class="onlyoutput" id="ioutput"></div>
+      <button class="viewoutput" onclick="displayqtag()">View</button>
+      <div class="onlyoutput" id="qoutput"></div>
+    </div>
+    <div>
+      <h1>Abbreviation Text</h1>
     </div>
     <hr />
+    <div class="paragraphBox">
+      <p>
+        You can abbreviate a text by putting it inside
+        &lt;abbr&gt;...&lt;/abbr&gt; tags.
+      </p>
+      <p>
+        Use the global title attribute to show the description for the
+        abbreviation when you mouse over the element.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;p&gt;The &lt;abbr title="World Health Organization"&gt;WHO&lt;/abbr&gt; was founded in 1948.&lt;/p&gt;
+      </code></pre>
+    </div>
+    <hr />
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayabbrtag()">View</button>
+      <div class="onlyoutput" id="abbroutput"></div>
+    </div>
+    <div>
+      <h1>Address Text</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The &lt;address&gt;...&lt;/address&gt; element is used to contain any
+        address.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;p&gt;The HTML address element defines contact information of article.&lt;/p&gt;
+        &lt;address&gt;
+          Written by John Doe.&lt;br&gt;
+          Visit us at:&lt;br&gt;
+          Example.com&lt;br&gt;
+          Box 564, Disneyland&lt;br&gt;
+          USA
+          &lt;/address&gt;
+      </code></pre>
+    </div>
+    <hr />
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayaddresstag()">View</button>
+      <div class="onlyoutput" id="addressoutput"></div>
+    </div>
+    <div>
+      <h1>Citation Text</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The HTML &lt;cite&gt; tag defines the title of a creative work (e.g. a
+        book, a poem, a song, a movie, a painting, etc.).
+      </p>
+      <p>The text in the &lt;cite&gt; element usually renders in italic.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;p&gt;&lt;cite&gt;The Scream&lt;/cite&gt; by Edvard Munch. Painted in 1893.&lt;/p&gt;
+      </code></pre>
+    </div>
+    <hr />
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaycitetag()">View</button>
+      <div class="onlyoutput" id="citeoutput"></div>
+    </div>
+    <div>
+      <h1>Directional Text</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The &lt;bdo&gt;...&lt;/bdo&gt; element stands for Bi-Directional
+        Override and it is used to override the current text direction.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;p&gt;&lt;bdo dir="ltr"&gt;This text will be written from left to right&lt;/bdo&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;bdo dir="rtl"&gt;This text will be written from right to left&lt;/bdo&gt;&lt;/p&gt;
+      </code></pre>
+    </div>
+    <hr />
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaybdotag()">View</button>
+      <div class="onlyoutput" id="bdooutput"></div>
+    </div>
 
     <script src="text_formatting.js"></script>
     <!-- Prism.js JavaScript -->

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link</title>
+    <link rel="stylesheet" href="html.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>HTML Links</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>HTML links are hyperlinks.</p>
+      <p>You can click on a link and jump to another document.</p>
+      <p>The HTML &lt;a&gt; tag defines a hyperlink.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>It has the following syntax:</p>
+      <pre><code class="language-html">
+            &lt;a href="url"&gt;link text&lt;/a&gt;
+        </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The most important attribute of the
+        <span class="redcolor">&lt;a&gt;</span> element is the
+        <span class="redcolor">href</span>
+        attribute, which indicates the link's destination.
+      </p>
+    </div>
+    <div>
+      <h1>HTML Links - The target Attribute</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        By default, the linked page will be displayed in the current browser
+        window. To change this, you must specify another
+        <span class="redcolor">target</span> for the link.
+      </p>
+      <p>
+        The <span class="redcolor">target</span> attribute specifies where to
+        open the linked document.
+      </p>
+      <p>
+        The <span class="redcolor">target</span> attribute can have one of the
+        following values:
+      </p>
+      <ul>
+        <li>
+          <span class="redcolor">_self</span> - Default. Opens the document in
+          the same window/tab as it was clicked
+        </li>
+        <li>
+          <span class="redcolor">_blank</span> - Opens the document in a new
+          window or tab
+        </li>
+        <li>
+          <span class="redcolor">_parent</span> - Opens the document in the
+          parent frame
+        </li>
+        <li>
+          <span class="redcolor">_top</span> - Opens the document in the full
+          body of the window
+        </li>
+      </ul>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Use target="_blank" to open the linked document in a new browser window:
+      </p>
+      <pre><code class="language-html">
+            &lt;a href="https://www.w3schools.com/" target="_blank"&gt;Visit W3Schools!&lt;/a&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaylinktag()">View</button>
+      <div class="onlyoutput" id="linkoutput"></div>
+    </div>
+    <div>
+      <h1>Absolute URLs vs. Relative URLs</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>Absolute URL is a full web address</p>
+      <p>
+        A local link is specified with a relative URL (without the "https://www"
+        part)
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+            &lt;h2&gt;Absolute URLs&lt;/h2&gt;
+            &lt;p&gt;&lt;a href="https://www.w3.org/"&gt;W3C&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;a href="https://www.google.com/"&gt;Google&lt;/a&gt;&lt;/p&gt;
+
+            &lt;h2&gt;Relative URLs&lt;/h2&gt;
+            &lt;p&gt;&lt;a href="html_images.asp"&gt;HTML Images&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;a href="/css/default.asp"&gt;CSS Tutorial&lt;/a&gt;&lt;/p&gt;
+            </code></pre>
+    </div>
+    <div>
+      <h1>Use an Image as a Link</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        To use an image as a link, just put the &lt;img&gt; tag inside the
+        &lt;a&gt; tag:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+        &lt;a href="default.asp"&gt;
+        &lt;img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;"&gt;
+        &lt;/a&gt;
+      </code></pre>
+    </div>
+    <div>
+      <h1>Link to an Email Address</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        Use <span class="redcolor">mailto:</span> inside the
+        <span class="redcolor">href</span> attribute to create a link that opens
+        the user's email program:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+          &lt;a href="mailto:someone@example.com"&gt;Send email&lt;/a&gt;
+        </code></pre>
+    </div>
+    <div>
+      <h1>Button as a Link</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        To use an HTML button as a link, you have to add some JavaScript code.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+            &lt;button onclick="document.location='default.asp'"&gt;HTML Tutorial&lt;/button&gt;
+          </code></pre>
+    </div>
+
+    <script src="link.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>

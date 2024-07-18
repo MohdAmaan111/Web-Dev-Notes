@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments</title>
+    <link rel="stylesheet" href="html.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>Comment Tag</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        HTML comments are not displayed in the browser, but they can help
+        document your HTML source code.
+      </p>
+      <p>
+        You can add comments to your HTML source by using the following syntax:
+      </p>
+      <p>&lt;!-- Write your comments here --&gt;</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;!-- This is a comment --&gt;
+        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+        &lt;!-- Remember to add more information here --&gt;
+        </code></pre>
+    </div>
+    <div>
+      <h1>Hide Content</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>Comments can be used to hide HTML element.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+        &lt;!-- &lt;p&gt;This is another paragraph &lt;/p&gt; --&gt;
+        &lt;p&gt;This is a paragraph too.&lt;/p&gt;
+        </code></pre>
+    </div>
+    <div>
+      <h1>Hide Inline Content</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>Comments can be used to hide parts in the middle of the HTML code.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;p&gt;This &lt;!-- great text --&gt; is a paragraph.&lt;/p&gt;
+        </code></pre>
+    </div>
+
+    <script src=""></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
