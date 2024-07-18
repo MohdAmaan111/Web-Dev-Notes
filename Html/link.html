@@ -36,7 +36,7 @@
       </p>
     </div>
     <div>
-      <h1>HTML Links - The target Attribute</h1>
+      <h1>Target Attribute</h1>
     </div>
     <hr />
     <div class="paragraphBox">
@@ -91,10 +91,7 @@
     <hr />
     <div class="paragraphBox">
       <p>Absolute URL is a full web address</p>
-      <p>
-        A local link is specified with a relative URL (without the "https://www"
-        part)
-      </p>
+      <p>Use a full URL to link to a web page</p>
     </div>
     <div class="scriptBox" id="roundbox">
       <p>Example</p>
@@ -102,14 +99,25 @@
             &lt;h2&gt;Absolute URLs&lt;/h2&gt;
             &lt;p&gt;&lt;a href="https://www.w3.org/"&gt;W3C&lt;/a&gt;&lt;/p&gt;
             &lt;p&gt;&lt;a href="https://www.google.com/"&gt;Google&lt;/a&gt;&lt;/p&gt;
-
-            &lt;h2&gt;Relative URLs&lt;/h2&gt;
-            &lt;p&gt;&lt;a href="html_images.asp"&gt;HTML Images&lt;/a&gt;&lt;/p&gt;
-            &lt;p&gt;&lt;a href="/css/default.asp"&gt;CSS Tutorial&lt;/a&gt;&lt;/p&gt;
             </code></pre>
     </div>
+    <div class="paragraphBox">
+      <p>
+        A local link is specified with a relative URL (without the "https://www"
+        part)
+      </p>
+      <p>Link to a page located in the html folder on the current web site.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+              &lt;h2&gt;Relative URLs&lt;/h2&gt;
+              &lt;p&gt;&lt;a href="html_images.asp"&gt;HTML Images&lt;/a&gt;&lt;/p&gt;
+              &lt;p&gt;&lt;a href="/css/default.asp"&gt;CSS Tutorial&lt;/a&gt;&lt;/p&gt;
+              </code></pre>
+    </div>
     <div>
-      <h1>Use an Image as a Link</h1>
+      <h1 id="imagelinkbookmark">Use an Image as a Link</h1>
     </div>
     <hr />
     <div class="paragraphBox">
@@ -157,6 +165,77 @@
       <pre><code class="language-html">
             &lt;button onclick="document.location='default.asp'"&gt;HTML Tutorial&lt;/button&gt;
           </code></pre>
+    </div>
+    <div>
+      <h1>Link Titles</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The title <span class="redcolor">attribute</span> specifies extra
+        information about an element.
+      </p>
+      <p>
+        The information is most often shown as a tooltip text when the mouse
+        moves over the element.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+        &lt;a href="https://www.w3schools.com/" title="Go to W3Schools HTML section"&gt;Visit W3Schools!&lt;/a&gt;
+            </code></pre>
+    </div>
+    <div>
+      <h1>Create Bookmarks</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        HTML links can be used to create bookmarks, so that readers can jump to
+        specific parts of a web page.
+      </p>
+      <p>Bookmarks can be useful if a web page is very long.</p>
+      <p>
+        To create a bookmark - first create the bookmark, then add a link to it.
+      </p>
+      <p>
+        When the link is clicked, the page will scroll down or up to the
+        location with the bookmark.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        First, use the <span class="redcolor">id</span> attribute to create a
+        bookmark:
+      </p>
+      <pre><code class="language-html">
+        &lt;h1 id="imagelinkbookmark"&gt;Use an Image as a Link&lt;/h1&gt;
+              </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Then, use the <span class="redcolor">href</span> attribute to link to the bookmark:</p>
+      <pre><code class="language-html">
+          &lt;a href="#imagelinkbookmark"&gt;Image as Link&lt;/a&gt;
+                </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaybookmarktag()">View</button>
+      <div class="onlyoutput" id="bookmarkoutput"></div>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>You can also add a link to a bookmark on another page:</p>
+      <pre><code class="language-html">
+            &lt;a href="html_tags.html#paragraphbookmark"&gt;Paragraph Tag&lt;/a&gt;
+                  </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayparabookmarktag()">
+        View
+      </button>
+      <div class="onlyoutput" id="parabookmarkoutput"></div>
     </div>
 
     <script src="link.js"></script>

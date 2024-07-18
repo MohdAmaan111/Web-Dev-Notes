@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meta Tag</title>
+    <link rel="stylesheet" href="html.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>Meta Tags</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        Metadata is the additional important information about a document in a
+        variety of ways.
+      </p>
+      <p>
+        The &lt;meta&gt; tag is used to provide such additional information.
+        This tag is an empty element and so does not have a closing tag but it
+        carries information within its attributes.
+      </p>
+      <p>
+        You can include one or more meta tags in your document based on what
+        information you want to keep in your document
+      </p>
+    </div>
+    <div>
+      <h1>Specifying Keywords</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        You can use &lt;meta /&gt; tag to specify important keywords related to
+        the document and later these keywords are used by the search engines
+        while indexing your webpage for searching purpose.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Following is an example, where we are adding HTML, Meta Tags, Metadata
+        as important keywords about the document.
+      </p>
+      <pre><code class="language-html">
+        &lt;head&gt;
+        &lt;title&gt;Meta Tags Example&lt;/title&gt;
+        &lt;meta name="keywords" content="HTML, Meta Tags, Metadata" /&gt;
+        &lt;/head&gt;
+       </code></pre>
+    </div>
+    <div>
+      <h1>Document Description</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        You can use &lt;meta /&gt; tag to give a short description about the
+        document. This again can be used by various search engines while
+        indexing your webpage for searching purpose.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+        &lt;head&gt;
+        &lt;title&gt;Meta Tags Example&lt;/title&gt;
+        &lt;meta name="keywords" content="HTML, Meta Tags, Metadata" /&gt;
+        &lt;meta name="description" content="Learning about Meta Tags." /&gt;
+        &lt;/head&gt;
+       </code></pre>
+    </div>
+    <div>
+      <h1>Document Revision Date</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        You can use &lt;meta /&gt; tag to give information about when last time
+        the document was updated. This information can be used by various web
+        browsers while refreshing your webpage.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+        &lt;head&gt;
+        &lt;title&gt;Meta Tags Example&lt;/title&gt;
+        &lt;meta name="keywords" content="HTML, Meta Tags, Metadata" /&gt;
+        &lt;meta name="description" content="Learning about Meta Tags." /&gt;
+        &lt;meta name="revised" content="Tutorialspoint, 3/7/2014" /&gt;
+
+        &lt;/head&gt;
+       </code></pre>
+    </div>
+    <div>
+      <h1>Document Refreshing</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        A &lt;meta /&gt; tag can be used to specify a duration after which your
+        web page will keep refreshing automatically.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>If you want your page keep refreshing after every 5 seconds.</p>
+      <pre><code class="language-html">
+        &lt;head&gt;
+        &lt;title&gt;Meta Tags Example&lt;/title&gt;
+        &lt;meta name="keywords" content="HTML, Meta Tags, Metadata" /&gt;
+        &lt;meta name="description" content="Learning about Meta Tags." /&gt;
+        &lt;meta name="revised" content="Tutorialspoint, 3/7/2014" /&gt;
+        &lt;meta http-equiv="refresh" content="5" /&gt;
+
+        &lt;/head&gt;
+       </code></pre>
+    </div>
+    <div>
+      <h1>Page Redirection</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        You can use &lt;meta /&gt; tag to redirect your page to any other
+        webpage.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Example of redirecting current page to another page after 5 seconds. If
+        you want to redirect page immediately then do not specify content
+        attribute.
+      </p>
+      <pre><code class="language-html">
+        &lt;head&gt;
+        &lt;title&gt;Meta Tags Example&lt;/title&gt;
+        &lt;meta name="keywords" content="HTML, Meta Tags, Metadata" /&gt;
+        &lt;meta name="description" content="Learning about Meta Tags." /&gt;
+        &lt;meta name="revised" content="Tutorialspoint, 3/7/2014" /&gt;
+        &lt;meta http-equiv="refresh" content="5; url=http://www.tutorialspoint.com" /&gt;
+
+        &lt;/head&gt;
+       </code></pre>
+    </div>
+    <div>
+      <h1>Setting Cookies</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>Cookies are data, stored in small text files on your computer.</p>
+      <p>The cookies were invented to remember the information of the user.</p>
+      <p>
+        It is exchanged between web browser and web server to keep track of
+        various information based on your web application need.
+      </p>
+      <p>
+        You can use &lt;meta /&gt; tag to store cookies on client side and later
+        this information can be used by the Web Server to track a site visitor.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Example of redirecting current page to another page after 5 seconds. If
+        you want to redirect page immediately then do not specify content
+        attribute.
+      </p>
+      <pre><code class="language-html">
+        &lt;head&gt;
+        &lt;title&gt;Meta Tags Example&lt;/title&gt;
+        &lt;meta name="keywords" content="HTML, Meta Tags, Metadata" /&gt;
+        &lt;meta name="description" content="Learning about Meta Tags." /&gt;
+        &lt;meta name="revised" content="Tutorialspoint, 3/7/2014" /&gt;
+        &lt;meta http-equiv="refresh" content="5; url=http://www.tutorialspoint.com" /&gt;
+        &lt;meta http-equiv="cookie" content="useri8d=xyz; expires=sunday, 24-Sep-19 3:59:59 GMT;" /&gt;
+
+        &lt;/head&gt;
+       </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        If the expiration date and time is not included, the cookie is
+        considered to be a session cookie and will be deleted soon after the
+        user exits the browser.This is a type of temporary storage of
+        information.
+      </p>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
