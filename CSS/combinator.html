@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>CSS Combinators</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        A combinator is something that explains the relationship between the
+        selectors.
+      </p>
+      <p>There are four different combinators in CSS:</p>
+      <ul>
+        <li>descendant selector (space)</li>
+        <li>child selector (>)</li>
+        <li>adjacent sibling selector (+)</li>
+        <li>general sibling selector (~)</li>
+      </ul>
+    </div>
+    <div>
+      <h1>Descendant Selector</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The descendant selector matches all elements that are descendants of a
+        specified element.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects all &lt;p&gt; elements inside &lt;div&gt;
+        elements:
+      </p>
+      <pre><code class="language-css">
+          div p {
+            background-color: yellow;
+          }
+              </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+                div p {
+                color: blue;
+                }
+               &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+              &lt;div&gt;
+              &lt;p&gt;
+                 This paragraph is inside a div and will be blue.
+              &lt;/p&gt;
+              &lt;section&gt;
+                  &lt;p&gt;
+                  This paragraph is inside a section which is inside 
+                  a div and will also be blue.
+                  &lt;/p&gt;
+              &lt;/section&gt;
+              &lt;/div&gt;
+              &lt;p&gt;
+                    This paragraph is outside the div and will not be blue.
+              &lt;/p&gt;
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaydescendanttag()">View</button>
+      <div class="onlyoutput" id="descendantoutput"></div>
+    </div>
+    <div>
+      <h1>Child Selector (>)</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The child selector selects all elements that are the children of a
+        specified element.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects all &lt;p&gt; elements that are children
+        of a &lt;div&gt; element:
+      </p>
+      <pre><code class="language-css">
+            div > p {
+               background-color: yellow;
+            }
+                </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+
+      <pre><code class="language-html">
+        &lt;head&gt;
+        &lt;style&gt;
+              div > p {
+              color: blue;
+              }
+             &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div&gt;
+            &lt;p&gt;
+               This paragraph is inside a div and will be blue.
+            &lt;/p&gt;
+            &lt;section&gt;
+                &lt;p&gt;
+                  This paragraph is inside a section which is inside a div and 
+                  will not be blue as this is not direct child.
+                &lt;/p&gt;
+            &lt;/section&gt;
+            &lt;/div&gt;
+            &lt;p&gt;
+                  This paragraph is outside the div and will not be blue.
+            &lt;/p&gt;
+         &lt;/body&gt;
+        </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaychildtag()">View</button>
+      <div class="onlyoutput" id="childoutput"></div>
+    </div>
+    <div>
+      <h1>Adjacent Sibling Selector (+)</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The adjacent sibling selector is used to select an element that is
+        directly after another specific element.
+      </p>
+      <p>
+        Sibling elements must have the same parent element, and "adjacent" means
+        "immediately following".
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects the first &lt;p&gt; element that are
+        placed immediately after &lt;div&gt; elements:
+      </p>
+
+      <pre><code class="language-css">
+        div + p {
+            background-color: yellow;
+          }
+        </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+
+      <pre><code class="language-html">
+        &lt;head&gt;
+           &lt;style&gt;
+                 div + p {
+                    color: blue;
+                 }
+                 &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;p&gt;
+               This paragraph is above the div and will not be blue.
+            &lt;/p&gt;
+        &lt;div&gt;
+            &lt;p&gt;
+                This paragraph is inside a div and will not be blue.
+            &lt;/p&gt;
+        &lt;/div&gt;
+            &lt;p&gt;
+               This paragraph 1 after the div and will be blue.
+            &lt;/p&gt;
+            &lt;p&gt;This paragraph 2 after the div and will not be blue.
+            &lt;/p&gt;
+        &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayadjacenttag()">View</button>
+      <div class="onlyoutput" id="adjacentoutput"></div>
+    </div>
+    <div>
+      <h1>General Sibling Selector (~)</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The general sibling selector selects all elements that are next siblings
+        of a specified element.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects all &lt;p&gt; elements that are next
+        siblings of &lt;div&gt; elements:
+      </p>
+
+      <pre><code class="language-css">
+        div ~ p {
+            background-color: yellow;
+          }
+          </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+
+      <pre><code class="language-html">
+          &lt;head&gt;
+             &lt;style&gt;
+                   div ~ p {
+                       color: blue;
+                   }
+                   &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+              &lt;p&gt;
+                  This paragraph is above the div and will not be blue.
+              &lt;/p&gt;
+          &lt;div&gt;
+              &lt;p&gt;
+                  This paragraph is inside a div and will not be blue.
+              &lt;/p&gt;
+          &lt;/div&gt;
+              &lt;p&gt;
+                 This paragraph 1 after the div and will be blue.
+              &lt;/p&gt;
+              &lt;p&gt;This paragraph 2 after the div and will be blue.
+              &lt;/p&gt;
+          &lt;/body&gt;
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaysiblingtag()">View</button>
+      <div class="onlyoutput" id="siblingoutput"></div>
+    </div>
+
+    <script src="combinator.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>

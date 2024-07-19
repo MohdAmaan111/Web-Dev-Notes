@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>CSS</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>CSS stands for Cascading Style Sheets</p>
+      <p>CSS is the language we use to style a Web page.</p>
+      <p>
+        CSS describes how HTML elements are to be displayed on screen, paper, or
+        in other media
+      </p>
+      <p>A style rule is made of three parts :</p>
+      <ul>
+        <li>
+          <span class="redcolor">Selector</span> − A selector is an HTML tag at
+          which a style will be applied. This could be any tag like &lt;h1&gt;
+          or &lt;table&gt; etc.
+        </li>
+        <li>
+          <span class="redcolor">Property</span> − A property is a type of
+          attribute of HTML tag. Put simply, all the HTML attributes are
+          converted into CSS properties. They could be color, border etc.
+        </li>
+        <li>
+          <span class="redcolor">Value</span> − Values are assigned to
+          properties. For example, color property can have value either red or
+          #F1F1F1 etc.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h1>Syntax</h1>
+    </div>
+    <img
+      src="../Images/css_syntax.jpg"
+      alt="CSS Syntax"
+      style="border-radius: 10px"
+    />
+    <div class="paragraphBox">
+      <p>The selector points to the HTML element you want to style.</p>
+      <p>
+        The declaration block contains one or more declarations separated by
+        semicolons.
+      </p>
+      <p>
+        Each declaration includes a CSS property name and a value, separated by
+        a colon.
+      </p>
+      <p>
+        Multiple CSS declarations are separated with semicolons, and declaration
+        blocks are surrounded by curly braces.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        In this example all &lt;p&gt; elements will be center-aligned, with a
+        red text color:
+      </p>
+      <pre><code class="language-css">
+        p {
+          color: red;
+          text-align: center;
+        }
+        </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <ul>
+        <li><span class="redcolor">p</span> is a selector in CSS</li>
+        <li>
+          <span class="redcolor">color</span> is a property, and
+          <span class="redcolor">red</span> is the property value
+        </li>
+        <li>
+          <span class="redcolor">text-align</span> is a property, and
+          <span class="redcolor">center</span> is the property value
+        </li>
+      </ul>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
