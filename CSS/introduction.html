@@ -90,6 +90,55 @@
         </li>
       </ul>
     </div>
+    <div>
+      <h1>CSS Comments</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        Comments are used to explain the code, and may help when you edit the
+        source code at a later date.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        A CSS comment is placed inside the &lt;style&gt; element, and starts
+        with /* and ends with */:
+      </p>
+      <pre><code class="language-css">
+        /* This is a single-line comment */
+        p {
+          color: red;
+        }
+          </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>You can add comments wherever you want in the code:</p>
+      <pre><code class="language-css">
+        p {
+          color: red;  /* Set text color to red */
+        }
+          </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Even in the middle of a code line:</p>
+      <pre><code class="language-css">
+        p {
+          color: /*red*/blue; 
+        }
+          </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Comments can also span multiple lines:</p>
+      <pre><code class="language-css">
+        /* This is
+        a multi-line
+        comment */
+        p {
+          color: red;
+        }
+          </code></pre>
+    </div>
 
     <!-- Prism.js JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert CSS</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>How To Add CSS</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        When a browser reads a style sheet, it will format the HTML document
+        according to the information in the style sheet.
+      </p>
+      <p>There are three ways of inserting a style sheet:</p>
+      <ul>
+        <li>External CSS</li>
+        <li>Internal CSS</li>
+        <li>Inline CSS</li>
+      </ul>
+    </div>
+    <div>
+      <h1>External CSS</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        With an external style sheet, you can change the look of an entire
+        website by changing just one file!
+      </p>
+      <p>
+        An external style sheet can be written in any text editor, and must be
+        saved with a .css extension.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        External styles are defined within the
+        <span class="redcolor">&lt;link&gt;</span> element, inside the
+        <span class="redcolor">&lt;head&gt;</span> section of an HTML page:
+      </p>
+      <pre><code class="language-html">
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;link rel="stylesheet" href="mystyle.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;This is a heading&lt;/h1&gt;
+            &lt;p&gt;This is a paragraph.&lt;/p&gt;
+         &lt;/body&gt;
+         &lt;/html&gt;
+              </code></pre>
+    </div>
+    <div>
+      <h1>Internal CSS</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        An internal style sheet may be used if one single HTML page has a unique
+        style.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Internal styles are defined within the
+        <span class="redcolor">&lt;link&gt;</span> element, inside the
+        <span class="redcolor">&lt;head&gt;</span> section of an HTML page:
+      </p>
+      <pre><code class="language-html">
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;style&gt;
+        body {
+          background-color: linen;
+        }
+        h1 {
+          color: maroon;
+          margin-left: 40px;
+        }
+        &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;This is a heading&lt;/h1&gt;
+            &lt;p&gt;This is a paragraph.&lt;/p&gt;
+         &lt;/body&gt;
+         &lt;/html&gt;
+          </code></pre>
+    </div>
+    <div>
+      <h1>Inline CSS</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        An inline style may be used to apply a unique style for a single
+        element.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Inline styles are defined within the "style" attribute of the relevant
+        element:
+      </p>
+      <pre><code class="language-html">
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;body&gt;
+            &lt;h1 style="color:blue;text-align:center;"&gt;This is a heading&lt;/h1&gt;
+            &lt;p style="color:red;"&gt;This is a paragraph.&lt;/p&gt;
+         &lt;/body&gt;
+         &lt;/html&gt;
+          </code></pre>
+    </div>
+    <div>
+      <h1>Multiple Style Sheets</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        If some properties have been defined for the same selector (element) in
+        different style sheets, the value from the last read style sheet will be
+        used.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        If the internal style is defined after the link to the external style
+        sheet, the &lt;h1&gt; elements will be "orange":
+      </p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
+          &lt;style&gt;
+          h1 {
+            color: orange;
+          }
+              &lt;/style&gt;
+          &lt;/head&gt;
+          </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        However, if the internal style is defined before the link to the
+        external style sheet, the &lt;h1&gt; elements will be "navy":
+      </p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+          h1 {
+            color: orange;
+          }
+              &lt;/style&gt;
+              &lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
+          &lt;/head&gt;
+          </code></pre>
+    </div>
+    <div>
+      <h1>Cascading Order</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        What style will be used when there is more than one style specified for
+        an HTML element?
+      </p>
+      <p>
+        All the styles in a page will "cascade" into a new "virtual" style sheet
+        by the following rules, where number one has the highest priority:
+      </p>
+      <ol>
+        <li>Inline style (inside an HTML element)</li>
+        <li>External and internal style sheets (in the head section)</li>
+        <li>Browser default</li>
+      </ol>
+      <p>
+        So, an inline style has the highest priority, and will override external
+        and internal styles and browser defaults.
+      </p>
+    </div>
+
+    <script src="attribute_selector.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
