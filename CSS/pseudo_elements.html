@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction</title>
+    <title>Pseudo-elements</title>
     <link rel="stylesheet" href="../iframe_content.css" />
     <!-- Prism.js CSS -->
     <link
@@ -17,433 +17,241 @@
     </div>
     <hr />
     <div class="paragraphBox">
-      <p>A pseudo-class is used to define a special state of an element.</p>
+      <p>
+        A CSS pseudo-element is used to style specified parts of an element.
+      </p>
       <p>For example, it can be used to:</p>
       <ul>
-        <li>Style an element when a user mouses over it</li>
-        <li>Style visited and unvisited links differently</li>
-        <li>Style an element when it gets focus</li>
+        <li>Style the first letter, or line, of an element</li>
+        <li>Insert content before, or after, the content of an element</li>
       </ul>
     </div>
-    <div>
-      <h1>Syntax</h1>
-    </div>
     <div class="scriptBox" id="roundbox">
+      <p>The syntax of pseudo-elements:</p>
       <pre><code class="language-css">
-          selector:pseudo-class {
+          selector::pseudo-element {
             property: value;
           }
               </code></pre>
     </div>
     <div>
-      <h1>Anchor Pseudo-classes</h1>
+      <h1>The ::first-line Pseudo-element</h1>
     </div>
     <hr />
+    <div class="paragraphBox">
+      <p>It is used to add a special style to the first line of a text.</p>
+    </div>
     <div class="scriptBox" id="roundbox">
       <p>
-        The following example selects all &lt;p&gt; elements inside &lt;div&gt;
-        elements:
+        The following example formats the first line of the text in all
+        &lt;p&gt; elements:
       </p>
-      <pre><code class="language-css">
-        /* unvisited link */
-        a:link {
-          color: #FF0000;
-        }
-        /* visited link */
-        a:visited {
-          color: #00FF00;
-        }
-        /* Change background color on hover */
-        a:hover {
-          color: #FF00FF;
-        }
-        /* Change background color on clicking button */
-        a:active {
-          color: #0000FF;
-        }
-        /* Change border color on focusing input */
-        input:focus {
-        border-color: blue;
-        }
-        </code></pre>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+              p::first-line {
+                color: red;
+                font-variant: small-caps;
+              }
+               &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+              &lt;p&gt;
+              You can use the ::first-line pseudo-element to add a special effect to the first 
+              line of a text. Some more text. And even more, and more, and more, and more, and 
+              more, and more, and more, and more, and more, and more, and more, and more.
+              &lt;/p&gt;
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayfirstline()">View</button>
+      <div class="onlyoutput" id="firstlineoutput"></div>
+    </div>
+    <div>
+      <h1>The ::first-letter Pseudo-element</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>It is used to add a special style to the first letter of a text.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example formats the first letter of the text in all
+        &lt;p&gt; elements:
+      </p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+                p::first-letter {
+                  color: red;
+                  font-size: xx-large;
+                }
+               &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+              &lt;p&gt;
+              You can use the ::first-letter pseudo-element to add a special effect to the first 
+              character of a text!
+              &lt;/p&gt;
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayfirstletter()">View</button>
+      <div class="onlyoutput" id="firstletteroutput"></div>
+    </div>
+    <div>
+      <h1>Multiple Pseudo-elements</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>Several pseudo-elements can also be combined.</p>
     </div>
     <div class="scriptBox" id="roundbox">
       <p>Example</p>
       <pre><code class="language-html">
           &lt;head&gt;
           &lt;style&gt;
-              .changelink:link {
-                color: red;
-              }
-              .changevisitedlink:visited {
-                color: pink;
-              }
-              .changeonhover:hover {
-                background-color: peachpuff;
-                color: green;
-                font-size: 2em;
-              }
-              .changeonactive:active {
-                background-color: yellow;
-              }
-              .changeonfocus:focus {
-                background-color: green;
-              }
-               &lt;/style&gt;
-          &lt;/head&gt;
-          &lt;body&gt;
-              &lt;h2&gt;Pseudo-class selector&lt;/h2&gt;
-              &lt;p&gt;
-                    Change the following unvisited link
-              &lt;/p&gt;
-              &lt;a href="https://www.tutorialspoint.com">
-                Tutorialspoint
-              &lt;/a&gt;
-              &lt;p&gt;
-                    Change the visited link
-              &lt;/p&gt;
-              &lt;a href="">
-                Tutorialspoint
-              &lt;/a&gt;
-              &lt;p&gt;
-                    Change the following link on hover
-              &lt;/p&gt;
-              &lt;a href="https://www.tutorialspoint.com">
-                Tutorialspoint
-              &lt;/a&gt;
-              &lt;p&gt;
-                    Change background color on clicking button
-              &lt;/p&gt;
-              &lt;button&gt;Click Me&lt;/button&gt;
-              &lt;p&gt;
-                    Change background color on focusing input
-              &lt;/p&gt;
-              &lt;input type="text"&gt;
-           &lt;/body&gt;
-          </code></pre>
-    </div>
-    <div class="scriptoutput" id="roundbox">
-      <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displayanchortag()">View</button>
-      <div class="onlyoutput" id="anchoroutput"></div>
-    </div>
-    <div>
-      <h1>Simple Tooltip Hover</h1>
-    </div>
-    <hr />
-    <div class="paragraphBox">
-      <p>
-        Hover over a &lt;div&gt; element to show a &lt;p&gt; element (like a
-        tooltip):
-      </p>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>Example</p>
-      <pre><code class="language-html">
-          &lt;head&gt;
-          &lt;style&gt;
-              p {
-                display: none;
-                background-color: yellow;
-                padding: 20px;
-              }
-              div:hover p {
-                display: block;
-              }
-               &lt;/style&gt;
-          &lt;/head&gt;
-          &lt;body&gt;
-              &lt;div&gt;Hover over this div element to show the p element
-              &lt;p&gt;
-                  Hello! Here I am!
-              &lt;/p&gt;
-              &lt;/div&gt;
-           &lt;/body&gt;
-          </code></pre>
-    </div>
-    <div class="scriptoutput" id="roundbox">
-      <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displaytooltip()">View</button>
-      <div class="onlyoutput" id="tooltipoutput"></div>
-    </div>
-    <div>
-      <h1>The :first-child Pseudo-class</h1>
-    </div>
-    <hr />
-    <div class="paragraphBox">
-      <p>
-        The <span class="redcolor">:first-child</span> pseudo-class matches a
-        specified element that is the first child of another element.
-      </p>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>
-        In the following example, the selector matches any &lt;p&gt; element
-        that is the first child of any element:
-      </p>
-      <pre><code class="language-html">
-          &lt;head&gt;
-          &lt;style&gt;
-                  p:first-child {
-                      color: blue;
-                  } 
-              &lt;/style&gt;
-          &lt;/head&gt;
-          &lt;body&gt;
-              &lt;p&gt;This is some text.&lt;/p&gt;
-              &lt;p&gt;This is some text.&lt;/p&gt;
-              &lt;div&gt;
-                  &lt;p&gt;This is some text.&lt;/p&gt;
-                  &lt;p&gt;This is some text.&lt;/p&gt;
-              &lt;/div&gt;
-           &lt;/body&gt;
-          </code></pre>
-    </div>
-    <div class="scriptoutput" id="roundbox">
-      <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displayfirstchildpseudo()">
-        View
-      </button>
-      <div class="onlyoutput" id="firstchildpseudooutput"></div>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>
-        In the following example, the selector matches the first &lt;i&gt;
-        element in all &lt;p&gt; elements:
-      </p>
-      <pre><code class="language-html">
-          &lt;head&gt;
-          &lt;style&gt;
-                  p i:first-child {
-                    color: blue;
-                  }
-              &lt;/style&gt;
-          &lt;/head&gt;
-          &lt;body&gt;
-              &lt;p&gt;I am a &lt;i&gt;strong&lt;/i&gt; person. I am a &lt;i&gt;strong&lt;/i&gt; person.&lt;/p&gt;
-              &lt;p&gt;I am a &lt;i&gt;strong&lt;/i&gt; person. I am a &lt;i&gt;strong&lt;/i&gt; person.&lt;/p&gt;
-           &lt;/body&gt;
-          </code></pre>
-    </div>
-    <div class="scriptoutput" id="roundbox">
-      <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displayfirstchildpseudo2()">
-        View
-      </button>
-      <div class="onlyoutput" id="firstchildpseudo2output"></div>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>
-        In the following example, the selector matches all &lt;i&gt; elements in
-        &lt;p&gt; elements that are the first child of another element:
-      </p>
-      <pre><code class="language-html">
-          &lt;head&gt;
-          &lt;style&gt;
-                  p:first-child i {
-                    color: blue;
-                  }
-              &lt;/style&gt;
-          &lt;/head&gt;
-          &lt;body&gt;
-              &lt;p&gt;I am a &lt;i&gt;strong&lt;/i&gt; person. I am a &lt;i&gt;strong&lt;/i&gt; person.&lt;/p&gt;
-              &lt;p&gt;I am a &lt;i&gt;strong&lt;/i&gt; person. I am a &lt;i&gt;strong&lt;/i&gt; person.&lt;/p&gt;
-              &lt;div&gt;
-                  &lt;p&gt;I am a &lt;i&gt;strong&lt;/i&gt; person. I am a &lt;i&gt;strong&lt;/i&gt; person.&lt;/p&gt;
-                  &lt;p&gt;I am a &lt;i&gt;strong&lt;/i&gt; person. I am a &lt;i&gt;strong&lt;/i&gt; person.&lt;/p&gt;
-                  &lt;div&gt;
-                      &lt;p&gt;I am a &lt;i&gt;strong&lt;/i&gt; person. I am a &lt;i&gt;strong&lt;/i&gt; person.&lt;/p&gt;
-                      &lt;p&gt;I am a &lt;i&gt;strong&lt;/i&gt; person. I am a &lt;i&gt;strong&lt;/i&gt; person.&lt;/p&gt;
-                  &lt;/div&gt;
-              &lt;/div&gt;
-           &lt;/body&gt;
-          </code></pre>
-    </div>
-    <div class="scriptoutput" id="roundbox">
-      <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displayfirstchildpseudo3()">
-        View
-      </button>
-      <div class="onlyoutput" id="firstchildpseudo3output"></div>
-    </div>
-    <div>
-      <h1>The :last-child Selector</h1>
-    </div>
-    <hr />
-    <div class="paragraphBox">
-      <p>
-        The <span class="redcolor">:last-child</span> selector matches every
-        element that is the last child of its parent.
-      </p>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>
-        In the following example, the selector matches any &lt;p&gt; element
-        that is the last child of any element:
-      </p>
-      <pre><code class="language-html">
-          &lt;head&gt;
-          &lt;style&gt;
-                  p:last-child {
-                      color: blue;
-                  }
-              &lt;/style&gt;
-          &lt;/head&gt;
-          &lt;body&gt;
-              &lt;p&gt;This is some text.&lt;/p&gt;
-              &lt;p&gt;This is some text.&lt;/p&gt;
-              &lt;div&gt;
-                  &lt;p&gt;This is some text.&lt;/p&gt;
-                  &lt;p&gt;This is some text.&lt;/p&gt;
-              &lt;/div&gt;
-           &lt;/body&gt;
-          </code></pre>
-    </div>
-    <div class="scriptoutput" id="roundbox">
-      <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displaylastchildpseudo()">
-        View
-      </button>
-      <div class="onlyoutput" id="lastchildpseudooutput"></div>
-    </div>
-    <div>
-      <h1>The :nth-child() Selector</h1>
-    </div>
-    <hr />
-    <div class="paragraphBox">
-      <p>
-        The <span class="redcolor">:nth-child(n)</span> selector matches every
-        element that is the nth child of its parent.
-      </p>
-      <p>
-        Here n can be a number, a keyword (odd or even), or a formula (like 2n +
-        2).
-      </p>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>Use the :nth-child() selector:</p>
-      <pre><code class="language-html">
-          &lt;head&gt;
-          &lt;style&gt;
-          /* Selects the second element of div siblings */
-          div:nth-child(2) {
-            background: red;
+          p::first-letter {
+            color: red;
+            font-size: xx-large;
           }
-          /* Selects the second li element in a list */
-          li:nth-child(2) {
-            background: lightgreen;
-          }
-          /* Selects every third element among any group of siblings */
-          :nth-child(3) {
-            background: grey;
-          }
-          /* Selects every even element of div siblings */
-          div:nth-child(even) {
-            border:6px solid green;
-          }
-          /* Selects every odd element in a list */
-          li:nth-child(odd) {
-            border:6px solid white;
+          p::first-line {
+            color: blue;
+            font-variant: small-caps;
           }
               &lt;/style&gt;
           &lt;/head&gt;
           &lt;body&gt;
-              &lt;div&gt;
-                  &lt;p&gt;This is some text.&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div&gt;
-                  &lt;p&gt;This is some text.&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div&gt;
-                  &lt;p&gt;This is some text.&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;ul&gt;
-                  &lt;li&gt;First list item&lt;/li&gt;
-                  &lt;li&gt;Second list item&lt;/li&gt;
-                  &lt;li&gt;Third list item&lt;/li&gt;
-                  &lt;li&gt;Fourth list item&lt;/li&gt;
-                  &lt;li&gt;Fifth list item&lt;/li&gt;
-              &lt;/ul&gt;
-              
+              &lt;p&gt;You can combine the ::first-letter and ::first-line pseudo-elements to add 
+              a special effect to the first letter and the first line of a text!&lt;/p&gt;
            &lt;/body&gt;
           </code></pre>
     </div>
     <div class="scriptoutput" id="roundbox">
       <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displaynthchild()">View</button>
-      <div class="onlyoutput" id="nthchildoutput"></div>
+      <button class="viewoutput" onclick="displaymultiplepseudo()">View</button>
+      <div class="onlyoutput" id="multiplepseudooutput"></div>
     </div>
     <div>
-      <h1>The :not Selector</h1>
+      <h1>The ::before & ::after Pseudo-element</h1>
     </div>
     <hr />
     <div class="paragraphBox">
       <p>
-        The <span class="redcolor">:not(selector)</span> selector matches every
-        element that is NOT the specified element/selector.
+        It can be used to insert some content before & after the content of an
+        element.
       </p>
     </div>
     <div class="scriptBox" id="roundbox">
       <p>
-        Set a background color for all elements that are not a &lt;p&gt;
-        element:
+        The following example inserts the content before & after the each
+        &lt;h1&gt; element:
       </p>
       <pre><code class="language-html">
           &lt;head&gt;
           &lt;style&gt;
-              p {
-                color: red;
-              }
-              :not(p) {
-                color: black;
-              }
+          h1::before {
+              content: "Note: ";
+              font-weight: bold;
+              color: red;
+          }
+          h1::after {
+            content: " [Read more]";
+            font-weight: bold;
+            color: green;
+          }
               &lt;/style&gt;
           &lt;/head&gt;
           &lt;body&gt;
               &lt;h1&gt;This is a heading&lt;/h1&gt;
+              &lt;p&gt;The ::before pseudo-element inserts content before the content of an element.&lt;/p&gt;
+              &lt;h1&gt;This is a heading&lt;/h1&gt;
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaybeforeafterelement()">
+        View
+      </button>
+      <div class="onlyoutput" id="beforeafterelementoutput"></div>
+    </div>
+    <div>
+      <h1>The ::marker Pseudo-element</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>It selects the markers of list items.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>The following example styles the markers of list items:</p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+          ::marker { 
+            color: red;
+            font-size: 23px;
+          }
+              &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+          &lt;ul&gt;
+          &lt;li&gt;Coffee&lt;/li&gt;
+          &lt;li&gt;Tea&lt;/li&gt;
+          &lt;li&gt;Milk&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;ol&gt;
+          &lt;li&gt;First&lt;/li&gt;
+          &lt;li&gt;Second&lt;/li&gt;
+          &lt;li&gt;Third&lt;/li&gt;
+          &lt;/ol&gt;
+          
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displaymarkerpseudo()">View</button>
+      <div class="onlyoutput" id="markerpseudooutput"></div>
+    </div>
+    <div>
+      <h1>The ::selection Pseudo-element</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>It matches the portion of an element that is selected by a user.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example makes the selected text red on a yellow
+        background:
+      </p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+          ::selection {
+            color: red;
+            background: yellow;
+          }
+              &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+              &lt;h1&gt;Select some text on this page:&lt;/h1&gt;
               &lt;p&gt;This is a paragraph.&lt;/p&gt;
-              &lt;p&gt;This is another paragraph.&lt;/p&gt;
               &lt;div&gt;This is some text in a div element.&lt;/div&gt;
            &lt;/body&gt;
           </code></pre>
     </div>
     <div class="scriptoutput" id="roundbox">
       <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displaynotselector()">View</button>
-      <div class="onlyoutput" id="notselectoroutput"></div>
-    </div>
-    <div>
-      <h1>The :lang Pseudo-class</h1>
-    </div>
-    <hr />
-    <div class="paragraphBox">
-      <p>
-        The <span class="redcolor">:lang</span> pseudo-class allows you to
-        define special rules for different languages.
-      </p>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>
-        In the following example, <span class="redcolor">:lang</span> defines
-        the quotation marks for &lt;q&gt; elements with lang="no":
-      </p>
-      <pre><code class="language-html">
-          &lt;head&gt;
-          &lt;style&gt;
-                q:lang(no) {
-                    quotes: "~" "~";
-                }
-                &lt;/style&gt;
-          &lt;/head&gt;
-          &lt;body&gt;
-              &lt;p&gt;Some text &lt;q lang="no"&gt;A quote in a paragraph&lt;/q&gt; Some text..&lt;/p&gt;
-           &lt;/body&gt;
-          </code></pre>
-    </div>
-    <div class="scriptoutput" id="roundbox">
-      <h3 id="headingDiv">Output</h3>
-      <button class="viewoutput" onclick="displaylangpseudo()">View</button>
-      <div class="onlyoutput" id="langpseudooutput"></div>
+      <button class="viewoutput" onclick="displayselectionpseudo()">
+        View
+      </button>
+      <div class="onlyoutput" id="selectionpseudooutput"></div>
     </div>
 
     <script src="pseudo_elements.js"></script>

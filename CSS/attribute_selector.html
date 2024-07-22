@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-elements</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>Attribute Selectors</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        It is possible to style HTML elements that have specific attributes or
+        attribute values.
+      </p>
+    </div>
+    <div>
+      <h1>[attribute] Selector</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">[attribute]</span> selector is used to select
+        elements with a specified attribute.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects all &lt;a&gt; elements with a target
+        attribute:
+      </p>
+      <pre><code class="language-html">
+        &lt;head&gt;
+        &lt;style&gt;
+        a[target] {
+          background-color: yellow;
+        }
+             &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;p&gt;
+            The links with a target attribute gets a yellow background:
+            &lt;/p&gt;
+            &lt;a href="https://www.w3schools.com"&gt;w3schools.com&lt;/a&gt;
+            &lt;a href="https://www.disney.com" target="_blank"&gt;disney.com&lt;/a&gt;
+            &lt;a href="https://www.wikipedia.com" target="_top"&gt;wikipedia.com&lt;/a&gt;
+         &lt;/body&gt;
+              </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayattributeselector()">
+        View
+      </button>
+      <div class="onlyoutput" id="attributeselectoroutput"></div>
+    </div>
+    <div>
+      <h1>[attribute="value"] Selector</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">[attribute="value"]</span> selector is used
+        to select elements with a specified attribute and value.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects all &lt;a&gt; elements with a
+        target="_blank" attribute:
+      </p>
+      <pre><code class="language-html">
+        &lt;head&gt;
+        &lt;style&gt;
+        a[target="_blank"] {
+          background-color: yellow;
+        }
+             &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;p&gt;
+            The links with a target attribute gets a yellow background:
+            &lt;/p&gt;
+            &lt;a href="https://www.w3schools.com"&gt;w3schools.com&lt;/a&gt;
+            &lt;a href="https://www.disney.com" target="_blank"&gt;disney.com&lt;/a&gt;
+            &lt;a href="https://www.wikipedia.com" target="_top"&gt;wikipedia.com&lt;/a&gt;
+         &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayattributevalues()">
+        View
+      </button>
+      <div class="onlyoutput" id="attributevaluesoutput"></div>
+    </div>
+    <div>
+      <h1>[attribute~="value"] Selector</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">[attribute~="value"]</span> is used to select
+        elements with an attribute value containing a specified word.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects all elements with a title attribute that
+        contains a space-separated list of words, one of which is "Anime":
+      </p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+          [title~="flower"] {
+            border: 5px solid red;
+          }
+               &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+              &lt;p&gt;
+              All images with the title attribute containing the word "Anime" get a yellow border.
+              &lt;/p&gt;
+              &lt;img src="../Images/Pikachu.jpg" title="Pikachu Anime" width="150" height="150"&gt;
+              &lt;img src="../Images/Goku.jpg" title="Goku Anime" width="224" height="230"&gt;
+              &lt;img src="../Images/Spiderman.jpg" title="Spiderman Cartoon" width="250" height="358"&gt;
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayattributevalues2()">
+        View
+      </button>
+      <div class="onlyoutput" id="attributevalues2output"></div>
+    </div>
+    <div>
+      <h1>[attribute|="value"] Selector</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">[attribute|="value"]</span> is used to select
+        elements with the specified attribute, whose value can be exactly the
+        specified value, or the specified value followed by a hyphen (-).
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The value has to be a whole word, either alone, like class="top", or
+        followed by a hyphen( - ), like class="top-text".
+      </p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+          [class|="top"] {
+              border: 4px solid yellow;
+              background: red;
+          }
+              &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+              &lt;h2&gt;CSS [attribute|="value"] Selector&lt;/h2&gt;
+
+              &lt;h1 class="top-header"&gt;Welcome&lt;/h1&gt;
+              &lt;p class="text-top"&gt;Hello world!&lt;/p&gt;
+              &lt;p class="topcontent"&gt;Are you learning CSS?&lt;/p&gt;
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayattributevalues3()">
+        View
+      </button>
+      <div class="onlyoutput" id="attributevalues3output"></div>
+    </div>
+    <div>
+      <h1>[attribute^="value"] Selector</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">[attribute^="value"]</span> selector is used
+        to select elements with the specified attribute, whose value starts with
+        the specified value.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects all elements with a class attribute value
+        that starts with "top":
+      </p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+          [class^="top"] {
+            background: red;
+          }
+              &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+          &lt;h2&gt;CSS [attribute^="value"] Selector&lt;/h2&gt;
+
+          &lt;h1 class="top-header"&gt;Welcome&lt;/h1&gt;
+          &lt;p class="text-top"&gt;Hello world!&lt;/p&gt;
+          &lt;p class="topcontent"&gt;Are you learning CSS?&lt;/p&gt;
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayattributevalues4()">
+        View
+      </button>
+      <div class="onlyoutput" id="attributevalues4output"></div>
+    </div>
+    <div>
+      <h1>[attribute$="value"] Selector</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">[attribute$="value"]</span> selector is used
+        to select elements whose attribute value ends with a specified value.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects all elements with a class attribute value
+        that ends with "test":
+      </p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+          [class$="test"] {
+            background: red;
+          }
+              &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+          &lt;h2&gt;CSS [attribute$="value"] Selector&lt;/h2&gt;
+
+          &lt;div class="first_test"&gt;The first div element.&lt;/div&gt;
+          &lt;div class="second"&gt;The second div element.&lt;/div&gt;
+          &lt;div class="my-test"&gt;The third div element.&lt;/div&gt;
+          &lt;p class="mytest"&gt;This is some text in a paragraph.&lt;/p&gt;
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayattributevalues5()">
+        View
+      </button>
+      <div class="onlyoutput" id="attributevalues5output"></div>
+    </div>
+    <div>
+      <h1>[attribute*="value"] Selector</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">[attribute*="value"]</span>selector is used
+        to select elements whose attribute value contains a specified value.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects all elements with a class attribute value
+        that contains "te":
+      </p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+          [class*="te"] {
+            background: red;
+          }
+              &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+          &lt;h2&gt;CSS [attribute*="value"] Selector&lt;/h2&gt;
+
+          &lt;div class="first_test"&gt;The first div element.&lt;/div&gt;
+          &lt;div class="second"&gt;The second div element.&lt;/div&gt;
+          &lt;div class="test-third"&gt;The third div element.&lt;/div&gt;
+          &lt;p class="mytest"&gt;This is some text in a paragraph.&lt;/p&gt;
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayattributevalues6()">
+        View
+      </button>
+      <div class="onlyoutput" id="attributevalues6output"></div>
+    </div>
+    <div>
+      <h1>Styling Forms</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The attribute selectors can be useful for styling forms without class or
+        ID:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example selects all elements with a class attribute value
+        that contains "te":
+      </p>
+      <pre><code class="language-html">
+          &lt;head&gt;
+          &lt;style&gt;
+          input[type="text"] {
+            width: 150px;
+            display: block;
+            margin-bottom: 10px;
+            background-color: yellow;
+          }
+          
+          input[type="button"] {
+            width: 120px;
+            margin-left: 35px;
+            display: block;
+          }
+              &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+          &lt;h2&gt;Styling Forms&lt;/h2&gt;
+
+          &lt;form name="input" action="" method="get"&gt;
+          Firstname:&lt;input type="text" name="Name" value="Peter" size="20"&gt;
+          Lastname:&lt;input type="text" name="Name" value="Griffin" size="20"&gt;
+          &lt;input type="button" value="Example Button"&gt;
+          &lt;/form&gt;
+           &lt;/body&gt;
+          </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Output</h3>
+      <button class="viewoutput" onclick="displayattributestylingform()">
+        View
+      </button>
+      <div class="onlyoutput" id="attributestylingformoutput"></div>
+    </div>
+
+    <script src="attribute_selector.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
