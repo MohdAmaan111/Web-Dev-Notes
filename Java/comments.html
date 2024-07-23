@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Comments</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-java.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Comments</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Comments can be used to explain Java code, and to make it more readable.
+      </p>
+      <p>
+        It can also be used to prevent execution when testing alternative code.
+      </p>
+    </div>
+    <hr />
+    <div>
+      <h1>Single-line Comments</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Single-line comments start with two forward slashes
+        <span class="redcolor">//</span>.
+      </p>
+      <p>
+        Any text between <span class="redcolor">//</span> and the end of the
+        line is ignored by Java (will not be executed).
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>This example uses a single-line comment before a line of code:</p>
+      <pre><code class="language-java">
+        // This is a comment
+        System.out.println("Hello World");
+            </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        This example uses a single-line comment at the end of a line of code:
+      </p>
+      <pre><code class="language-java">
+        System.out.println("Hello World"); // This is a comment
+            </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>Multi-line Comments</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Multi-line comments start with <span class="redcolor">/*</span> and ends
+        with <span class="redcolor">*/</span>.
+      </p>
+      <p>
+        Any text between <span class="redcolor">/*</span> and
+        <span class="redcolor">*/</span> will be ignored by Java.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>This example uses a multi-line comment to explain the code:</p>
+      <pre><code class="language-java">
+        /* The code below will print the words Hello World
+        to the screen, and it is amazing */
+        System.out.println("Hello World");
+            </code></pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Introduction</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-java.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Java</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>Java is a popular programming language, created in 1995.</p>
+      <p>It is used for:</p>
+      <ul>
+        <li>Mobile applications (specially Android apps)</li>
+        <li>Desktop applications</li>
+        <li>Web applications</li>
+        <li>Web servers and application servers</li>
+        <li>Games</li>
+        <li>Database connection</li>
+        <li>And much, much more!</li>
+      </ul>
+    </div>
+    <hr />
+    <div>
+      <h1>Why Use Java?</h1>
+    </div>
+    <div class="paragraphBox">
+      <ul>
+        <li>
+          Java works on different platforms (Windows, Mac, Linux, Raspberry Pi,
+          etc.)
+        </li>
+        <li>
+          It is one of the most popular programming languages in the world
+        </li>
+        <li>It is open-source and free</li>
+        <li>It is secure, fast and powerful</li>
+        <li>
+          Java is an object oriented language which gives a clear structure to
+          programs and allows code to be reused, lowering development costs
+        </li>
+      </ul>
+    </div>
+    <hr />
+    <div>
+      <h1>Java Syntax</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        In Java, every application begins with a class name, and that class must
+        match the filename.
+      </p>
+      <p>Let's create our first Java file, called Main.java</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>File Name:- main.java</p>
+      <pre><code class="language-java">
+        public class main {
+          public static void main(String[] args) {
+            System.out.println("Hello World");
+          }
+        }
+            </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Every line of code that runs in Java must be inside a class. In our
+        example, we named the class Main. A class should always start with an
+        uppercase first letter.
+      </p>
+      <p>
+        <span class="redcolor">Note:</span> Java is case-sensitive: "MyClass"
+        and "myclass" has different meaning.
+      </p>
+      <p>
+        The name of the java file must match the class name. When saving the
+        file, save it using the class name and add ".java" to the end of the
+        filename
+      </p>
+    </div>
+    <hr />
+    <div>
+      <h1>The main Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The main() method is required and you will see it in every Java program:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>File Name:- main.java</p>
+      <pre><code class="language-java">
+        public static void main(String[] args)
+            </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>System.out.println()</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Inside the main() method, we can use the println() method to print
+        output to the screen:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        System.out.println("Hello World");
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+          <p>Hello World</p>
+      </p>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        You can add as many println() methods as you want. Note that it will add
+        a new line for each method:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        System.out.println("Hello World!");
+        System.out.println("I am learning Java.");
+        System.out.println("It is awesome!");
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+          <p>Hello World!</p>
+          <p>I am learning Java.</p>
+          <p>It is awesome!</p>
+      </p>
+    </div>
+    <hr />
+    <div>
+      <h1>The Print() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>There is also a print() method, which is similar to println().</p>
+      <p>
+        The only difference is that it does not insert a new line at the end of
+        the output:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        System.out.print("Hello World! ");
+        System.out.print("I will print on the same line.");
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+        <p>Hello World! I will print on the same line.</p>
+      </p>
+    </div>
+    <hr>
+    <div>
+      <h1>Print Numbers</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>You can also use the println() method to print numbers.</p>
+      <p>
+        However, unlike text, we don't put numbers inside double quotes:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        System.out.println(3);
+        System.out.println(658);
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+        <p>3</p>
+        <p>658</p>
+      </p>
+    </div>
+    <div class="paragraphBox">
+      <p>You can also perform mathematical calculations inside the println() method:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        System.out.println(3 + 3);
+        System.out.println(2 * 5);
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+        <p>6</p>
+        <p>10</p>
+      </p>
+    </div>
+  </body>
+</html>

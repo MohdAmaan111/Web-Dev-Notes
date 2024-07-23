@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Identifiers</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-java.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Variables</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>Variables are containers for storing data values.</p>
+      <p>In Java, there are different types of variables, for example:</p>
+      <ul>
+        <li><span class="redcolor">String</span> - stores text, such as "Hello". String values are surrounded by double quotes</li>
+        <li><span class="redcolor">int</span> - stores integers (whole numbers), without decimals, such as 123 or -123</li>
+        <li><span class="redcolor">float</span> - stores floating point numbers, with decimals, such as 19.99 or -19.99</li>
+        <li><span class="redcolor">char</span> - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes</li>
+        <li><span class="redcolor">boolean</span> - stores values with two states: true or false</li>
+      </ul>
+    </div>
+    <hr />
+    <div>
+      <h1>Declaring (Creating) Variables</h1>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>To create a variable, you must specify the type and assign it a value:</p>
+      <pre><code class="language-java">
+        type variableName = value;
+            </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Where <i>type</i> is one of Java's types (such as <span class="redcolor">int</span> or <span class="redcolor">String</span>)
+      </p>
+      <p>
+        The <i>variableName</i> is the name of the variable
+      </p>
+      <p>
+        The <i>equal sign</i> is used to assign values to the variable.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Create a variable called name of type String and assign it the value "John":</p>
+      <pre><code class="language-java">
+        String name = "John";
+        System.out.println(name);
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+          <p>John</p>
+      </p>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>To create a variable that should store a number, look at the following example:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Create a variable called myNum of type <span class="redcolor">int</span> and assign it the value 15:</p>
+      <pre><code class="language-java">
+        int myNum = 15;
+        System.out.println(myNum);
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+          <p>15</p>
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>You can also declare a variable without assigning the value, and assign the value later:</p>
+      <pre><code class="language-java">
+        int myNum;
+        myNum = 15;
+        System.out.println(myNum);
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+          <p>15</p>
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Note that if you assign a new value to an existing variable, it will overwrite the previous value:</p>
+      <pre><code class="language-java">
+        int myNum = 15;
+        myNum = 20;  // myNum is now 20
+        System.out.println(myNum);
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+          <p>20</p>
+      </p>
+    </div>
+    <div>
+      <h1>Final Variables</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        If you don't want others to overwrite existing values, use the final keyword (this will declare 
+        the variable as "final" or "constant", which means unchangeable and read-only):
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        final int myNum = 15;
+        myNum = 20;  // will generate an error: cannot assign a value to a final variable
+            </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>Other Types</h1>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>A demonstration of how to declare variables of other types:</p>
+      <pre><code class="language-java">
+        int myNum = 5;
+        float myFloatNum = 5.99f;
+        char myLetter = 'D';
+        boolean myBool = true;
+        String myText = "Hello";
+            </code></pre>
+    </div>
+    <hr>
+    <div>
+      <h1>Display Variables</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>The <span class="redcolor">println()</span> method is often used to display variables.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>To combine both text and a variable, use the <span class="redcolor">+</span> character:</p>
+      <pre><code class="language-java">
+        String name = "John";
+        System.out.println("Hello " + name);
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+        <p>Hello John</p>
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>You can also use the + character to add a variable to another variable:</p>
+      <pre><code class="language-java">
+        String firstName = "John ";
+        String lastName = "Doe";
+        String fullName = firstName + lastName;
+        System.out.println(fullName);
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+        <p>John Doe</p>
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>For numeric values, the <span class="redcolor">+</span> character works as a mathematical operator</p>
+      <pre><code class="language-java">
+        int x = 5;
+        int y = 6;
+        System.out.println(x + y); // Print the value of x + y
+            </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <p>
+        <span class="redcolor">Output: </span>
+        <p>11</p>
+      </p>
+    </div>
+    <hr>
+    <div>
+      <h1>Declare Many Variables</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>To declare more than one variable of the same type, you can use a comma-separated list:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Instead of writing:</p>
+      <pre><code class="language-java">
+        int x = 5;
+        int y = 6;
+        int z = 50;
+        System.out.println(x + y + z);
+      </code></pre>
+      <p>You can simply write:</p>
+      <pre><code class="language-java">
+        int x = 5, y = 6, z = 50;
+        System.out.println(x + y + z);
+      </code></pre>
+    </div>
+    <div>
+      <h1>One Value to Multiple Variables</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>You can also assign the same value to multiple variables in one line:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        int x, y, z;
+        x = y = z = 50;
+        System.out.println(x + y + z);
+      </code></pre>
+    </div>
+  </body>
+</html>
