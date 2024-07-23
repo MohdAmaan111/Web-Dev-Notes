@@ -91,3 +91,19 @@ h3 {
   background-color: rgba(172, 255, 47, 0.452);
   color: white;
 }
+/* designing a table in paragraph box div */
+.paragraphBox table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.paragraphBox tr:nth-child(odd) {
+  background-color: #496e74;
+}
+.paragraphBox tr:nth-child(even) {
+  background-color: #384252;
+}
+.paragraphBox th,
+td {
+  padding: 8px;
+}
