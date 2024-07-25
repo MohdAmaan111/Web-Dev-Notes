@@ -19,292 +19,211 @@
     </div>
     <hr />
     <div class="paragraphBox">
-      <p>Operators are used to perform operations on variables and values.</p>
+      <p>Strings are used for storing text.</p>
+      <p>
+        A String variable contains a collection of characters surrounded by
+        double quotes.
+      </p>
     </div>
     <div class="scriptBox" id="roundbox">
       <p>
-        In the example below, we use the + operator to add together two values:
+        Create a variable of type <span class="redcolor">String</span> and
+        assign it a value:
       </p>
       <pre><code class="language-java">
-        int x = 100 + 50;
-      </code></pre>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>
-        Although the + operator is often used to add together two values, a
-        variable and a value, or a variable and another variable:
-      </p>
-      <pre><code class="language-java">
-        int sum1 = 100 + 50;        // 150 (100 + 50)
-        int sum2 = sum1 + 250;      // 400 (150 + 250)
-        int sum3 = sum2 + sum2;     // 800 (400 + 400)
+        String greeting = "Hello";
       </code></pre>
     </div>
     <hr />
-    <div class="paragraphBox">
-      <p>Java divides the operators into the following groups:</p>
-      <ul>
-        <li>Arithmetic operators</li>
-        <li>Assignment operators</li>
-        <li>Comparison operators</li>
-        <li>Logical operators</li>
-        <li>Bitwise operators</li>
-      </ul>
-    </div>
-    <hr />
     <div>
-      <h1>Arithmetic Operators</h1>
+      <h1>String Length</h1>
     </div>
     <div class="paragraphBox">
       <p>
-        Arithmetic operators are used to perform common mathematical operations.
+        A String in Java is actually an object, which contain methods that can
+        perform certain operations on strings.
       </p>
-      <table>
-        <tr>
-          <th>Operator</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Example</th>
-        </tr>
-        <tr>
-          <td>+</td>
-          <td>Addition</td>
-          <td>Adds together two values</td>
-          <td>x + y</td>
-        </tr>
-        <tr>
-          <td>-</td>
-          <td>Subtraction</td>
-          <td>Subtracts one value from another</td>
-          <td>x - y</td>
-        </tr>
-        <tr>
-          <td>*</td>
-          <td>Multiplication</td>
-          <td>Multiplies two values</td>
-          <td>x * y</td>
-        </tr>
-        <tr>
-          <td>/</td>
-          <td>Division</td>
-          <td>Divides one value by another</td>
-          <td>x / y</td>
-        </tr>
-        <tr>
-          <td>%</td>
-          <td>Modulus</td>
-          <td>Returns the division remainder</td>
-          <td>x % y</td>
-        </tr>
-        <tr>
-          <td>++</td>
-          <td>Increment</td>
-          <td>Increases the value of a variable by 1</td>
-          <td>++x</td>
-        </tr>
-        <tr>
-          <td>--</td>
-          <td>Decrement</td>
-          <td>Decreases the value of a variable by 1</td>
-          <td>--x</td>
-        </tr>
-      </table>
-    </div>
-    <hr />
-    <div>
-      <h1>Assignment Operators</h1>
-    </div>
-    <div class="paragraphBox">
-      <p>Assignment operators are used to assign values to variables.</p>
     </div>
     <div class="scriptBox" id="roundbox">
       <p>
-        In the example below, we use the assignment operator (<span
-          class="redcolor"
-          >=</span
-        >) to assign the value 10 to a variable called x:
+        For example, the length of a string can be found with the
+        <span class="redcolor">length()</span>
+        method:
       </p>
+      <pre><code class="language-java">
+        String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        System.out.println("The length of the txt string is: " + txt.length());  //The length of the txt string is: 26
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>More String Methods</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        There are many string methods available, for example toUpperCase() and
+        toLowerCase():
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        String txt = "Hello World";
+        System.out.println(txt.toUpperCase());   // Outputs "HELLO WORLD"
+        System.out.println(txt.toLowerCase());   // Outputs "hello world"
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>Finding a Character in a String</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The indexOf() method returns the index (the position) of the first
+        occurrence of a specified text in a string (including whitespace):
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        String txt = "Please locate where 'locate' occurs!";
+        System.out.println(txt.indexOf("locate")); // Outputs 7
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>String Concatenation</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The + operator can be used between strings to combine them. This is
+        called concatenation:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        String firstName = "John";
+        String lastName = "Doe";
+        System.out.println(firstName + " " + lastName);    //John Doe
+      </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>You can also use the concat() method to concatenate two strings:</p>
+      <pre><code class="language-java">
+        String firstName = "John ";
+        String lastName = "Doe";
+        System.out.println(firstName.concat(lastName));    //John Doe
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>Java Numbers and Strings</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>Java uses the + operator for both addition and concatenation.</p>
+      <p>Numbers are added. Strings are concatenated.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>If you add two numbers, the result will be a number:</p>
       <pre><code class="language-java">
         int x = 10;
+        int y = 20;
+        int z = x + y;  // z will be 30 (an integer/number)
+      </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>If you add two strings, the result will be a string concatenation:</p>
+      <pre><code class="language-java">
+        String x = "10";
+        String y = "20";
+        String z = x + y;  // z will be 1020 (a String)
       </code></pre>
     </div>
     <div class="scriptBox" id="roundbox">
       <p>
-        The addition assignment operator (<span class="redcolor">+=</span>) adds
-        a value to a variable:
+        If you add a number and a string, the result will be a string
+        concatenation:
       </p>
       <pre><code class="language-java">
-        int x = 10;
-        x += 5;
+        String x = "10";
+        int y = 20;
+        String z = x + y;  // z will be 1020 (a String)
       </code></pre>
-    </div>
-    <div class="paragraphBox">
-      <p>A list of all assignment operators:</p>
-      <table>
-        <tr>
-          <th>Operator</th>
-          <th>Example</th>
-          <th>Same As</th>
-        </tr>
-        <tr>
-          <td>=</td>
-          <td>x = 5</td>
-          <td>x = 5</td>
-        </tr>
-        <tr>
-          <td>+=</td>
-          <td>x += 3</td>
-          <td>x = x + 3</td>
-        </tr>
-        <tr>
-          <td>-=</td>
-          <td>x -= 3</td>
-          <td>x = x - 3</td>
-        </tr>
-        <tr>
-          <td>*=</td>
-          <td>x *= 3</td>
-          <td>x = x * 3</td>
-        </tr>
-        <tr>
-          <td>/=</td>
-          <td>x /= 3</td>
-          <td>x = x / 3</td>
-        </tr>
-        <tr>
-          <td>%=</td>
-          <td>x %= 3</td>
-          <td>x = x % 3</td>
-        </tr>
-        <tr>
-          <td>&=</td>
-          <td>x &= 3</td>
-          <td>x = x & 3</td>
-        </tr>
-        <tr>
-          <td>|=</td>
-          <td>x |= 3</td>
-          <td>x = x | 3</td>
-        </tr>
-        <tr>
-          <td>^=</td>
-          <td>x ^= 3</td>
-          <td>x = x ^ 3</td>
-        </tr>
-        <tr>
-          <td>>>=</td>
-          <td>x >>= 3</td>
-          <td>x = x >> 3</td>
-        </tr>
-        <tr>
-          <td><<=</td>
-          <td>x <<= 3</td>
-          <td>x = x << 3</td>
-        </tr>
-      </table>
     </div>
     <hr />
     <div>
-      <h1>Comparison Operators</h1>
+      <h1>Strings - Special Characters</h1>
     </div>
     <div class="paragraphBox">
-      <p>Comparison operators are used to compare two values (or variables).</p>
-      <p>The return value of a comparison is either true or false.</p>
+      <p>
+        Because strings must be written within quotes, Java will misunderstand
+        this string, and generate an error:
+      </p>
     </div>
     <div class="scriptBox" id="roundbox">
-      <p>
-        In the following example, we use the greater than operator (<span
-          class="redcolor"
-          >></span
-        >) to find out if 5 is greater than 3:
-      </p>
       <pre><code class="language-java">
-        int x = 5;
-        int y = 3;
-        System.out.println(x > y); // returns true, because 5 is higher than 3
+        String txt = "We are the so-called "Vikings" from the north.";
       </code></pre>
     </div>
     <div class="paragraphBox">
-      <p>A list of all assignment operators:</p>
-      <table>
-        <tr>
-          <th>Operator</th>
-          <th>Name</th>
-          <th>Example</th>
-        </tr>
-        <tr>
-          <td>==</td>
-          <td>Equal to</td>
-          <td>x == y</td>
-        </tr>
-        <tr>
-          <td>!=</td>
-          <td>Not equal</td>
-          <td>x != y</td>
-        </tr>
-        <tr>
-          <td>></td>
-          <td>Greater than</td>
-          <td>x > y</td>
-        </tr>
-        <tr>
-          <td><</td>
-          <td>Less than</td>
-          <td>x < y</td>
-        </tr>
-        <tr>
-          <td>>=</td>
-          <td>Greater than or equal to</td>
-          <td>x >= y</td>
-        </tr>
-        <tr>
-          <td><=</td>
-          <td>Less than or equal to</td>
-          <td>x <= y</td>
-        </tr>
-      </table>
-    </div>
-    <hr />
-    <div>
-      <h1>Logical Operators</h1>
-    </div>
-    <div class="paragraphBox">
       <p>
-        You can also test for <span class="redcolor">true</span> or
-        <span class="redcolor">false</span> values with logical operators.
+        The solution to avoid this problem, is to use the backslash escape
+        character.
       </p>
-    </div>
-    <div class="paragraphBox">
       <p>
-        Logical operators are used to determine the logic between variables or
-        values:
+        The backslash (<span class="redcolor">\</span>) escape character turns
+        special characters into string characters:
       </p>
       <table>
         <tr>
-          <th>Operator</th>
-          <th>Name</th>
+          <th>Escape character</th>
+          <th>Result</th>
           <th>Description</th>
-          <th>Example</th>
         </tr>
         <tr>
-          <td>&&</td>
-          <td>Logical and</td>
-          <td>Returns true if both statements are true</td>
-          <td>x < 5 && x < 10</td>
+          <td>\'</td>
+          <td>'</td>
+          <td>Single quote</td>
         </tr>
         <tr>
-          <td>||</td>
-          <td>Logical or</td>
-          <td>Returns true if one of the statements is true</td>
-          <td>x < 5 || x < 4</td>
+          <td>\"</td>
+          <td>"</td>
+          <td>Double quote</td>
         </tr>
         <tr>
-          <td>!</td>
-          <td>Logical not</td>
-          <td>Reverse the result, returns false if the result is true</td>
-          <td>!(x < 5 && x < 10)</td>
+          <td>\\</td>
+          <td>\</td>
+          <td>Backslash</td>
+        </tr>
+        <tr>
+          <td>\n</td>
+          <td>\n</td>
+          <td>New Line</td>
         </tr>
       </table>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>The sequence \" inserts a double quote in a string:</p>
+      <pre><code class="language-java">
+        String txt = "We are the so-called \"Vikings\" from the north.";   //We are the so-called "Vikings" from the north.
+      </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>The sequence \' inserts a single quote in a string:</p>
+      <pre><code class="language-java">
+        String txt = "It\'s alright.";   //It's alright.
+      </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>The sequence \\ inserts a single backslash in a string:</p>
+      <pre><code class="language-java">
+        String txt = "The character \\ is called backslash.";   //The character \ is called backslash.
+      </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>The sequence \n changes a line in a string:</p>
+      <pre><code class="language-java">
+        String txt = "Hello\nWorld!";   //Hello
+                                        World!
+      </code></pre>
     </div>
   </body>
 </html>

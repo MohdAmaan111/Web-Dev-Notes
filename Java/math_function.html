@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Math Function</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-java.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Math Function</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The Java Math class has many methods that allows you to perform
+        mathematical tasks on numbers.
+      </p>
+    </div>
+    <hr />
+    <div>
+      <h1>Math.max(x,y)</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The Math.max(x,y) method can be used to find the highest value of x and
+        y:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        Math.max(5, 10);   //10
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>Math.min(x,y)</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The Math.min(x,y) method can be used to find the lowest value of x and
+        y:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        Math.min(5, 10);   //5
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>Math.sqrt(x)</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>The Math.sqrt(x) method returns the square root of x:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        Math.sqrt(64);   //8.0
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>Math.abs(x)</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>The Math.abs(x) method returns the absolute (positive) value of x:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        Math.abs(-4.7);   //4.7
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>Random Numbers</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Math.random() returns a random number between 0.0 (inclusive), and 1.0
+        (exclusive):
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        Math.random();   //0.9384948992913766
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To get more control over the random number, for example, if you only
+        want a random number between 0 and 100, you can use the following
+        formula:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-java">
+        int randomNum = (int)(Math.random() * 101);  // 0 to 100
+      </code></pre>
+    </div>
+  </body>
+</html>
