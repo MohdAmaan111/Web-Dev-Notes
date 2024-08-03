@@ -26,148 +26,405 @@
       <h1>Color Names</h1>
     </div>
     <hr />
-    <div class="scriptBox" id="roundbox">
+    <div class="paragraphBox">
       <p>In CSS, a color can be specified by using a predefined color name:</p>
-      <pre><code class="language-html">
-        &lt;!DOCTYPE html&gt;
-        &lt;html&gt;
-        &lt;head&gt;
-        &lt;link rel="stylesheet" href="mystyle.css"&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;h1&gt;This is a heading&lt;/h1&gt;
-            &lt;p&gt;This is a paragraph.&lt;/p&gt;
-         &lt;/body&gt;
-         &lt;/html&gt;
-              </code></pre>
+      <table>
+        <tr>
+          <td style="background-color: tomato">Tomato</td>
+          <td style="background-color: orange">Orange</td>
+          <td style="background-color: dodgerblue">DodgerBlue</td>
+          <td style="background-color: mediumseagreen">MediumSeaGreen</td>
+        </tr>
+        <tr>
+          <td style="background-color: gray">Gray</td>
+          <td style="background-color: slateblue">SlateBlue</td>
+          <td style="background-color: purple">Purple</td>
+          <td style="background-color: lightgray">LightGray</td>
+        </tr>
+        <tr>
+          <td style="background-color: mistyrose">MistyRose</td>
+          <td style="background-color: aqua">Aqua</td>
+          <td style="background-color: violet">Violet</td>
+          <td style="background-color: teal">Teal</td>
+        </tr>
+      </table>
     </div>
     <div>
-      <h1>Internal CSS</h1>
+      <h1>CSS Background Color</h1>
     </div>
     <hr />
     <div class="paragraphBox">
+      <p>You can set the background color for HTML elements:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;h1 style="background-color:DodgerBlue;"&gt;Hello World&lt;/h1&gt;
+        &lt;p style="background-color:Tomato;"&gt;Lorem ipsum...&lt;/p&gt;
+      </code></pre>
+    </div>
+    <div>
+      <h1 style="background-color: DodgerBlue">Hello World</h1>
+      <p style="background-color: Tomato">Lorem ipsum...</p>
+    </div>
+    <hr />
+    <div>
+      <h1>CSS Text Color</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>You can set the color of text:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+      &lt;h1 style="color:Tomato;"&gt;Hello World&lt;/h1&gt;
+      &lt;p style="color:DodgerBlue;"&gt;Lorem ipsum...&lt;/p&gt;
+      &lt;p style="color:MediumSeaGreen;"&gt;Ut wisi enim...&lt;/p&gt;
+      </code></pre>
+    </div>
+    <div>
+      <h1 style="color: Tomato">Hello World</h1>
+      <p style="color: DodgerBlue">Lorem ipsum...</p>
+      <p style="color: MediumSeaGreen">Ut wisi enim...</p>
+    </div>
+    <hr />
+    <div>
+      <h1>CSS Border Color</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>You can set the color of borders:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+          &lt;h1 style="border:2px solid Tomato;"&gt;Hello World&lt;/h1&gt;
+          &lt;h1 style="border:2px solid DodgerBlue;"&gt;Hello World&lt;/h1&gt;
+          &lt;h1 style="border:2px solid Violet;"&gt;Hello World&lt;/h1&gt;
+      </code></pre>
+    </div>
+    <div>
+      <h1 style="border: 2px solid Tomato">Hello World</h1>
+      <br />
+      <h1 style="border: 2px solid DodgerBlue">Hello World</h1>
+      <br />
+      <h1 style="border: 2px solid Violet">Hello World</h1>
+    </div>
+    <hr />
+    <div>
+      <h1>CSS Color Values</h1>
+    </div>
+    <div class="paragraphBox">
       <p>
-        An internal style sheet may be used if one single HTML page has a unique
-        style.
+        To represent a color in CSS, you have to find a way to translate the
+        analog concept of "color" into a digital form that a computer can use.
+      </p>
+      <p>
+        This is typically done by breaking the color down into components, such
+        as amounts of different primary colors to mix together, or brightness
+        and hue.
+      </p>
+      <p>We can describe color in CSS in several ways:</p>
+    </div>
+    <div>
+      <h1 class="td-u">Keywords</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The web defines a set of standard color names that lets you use keywords
+        instead of numeric representations to describe colors.
+      </p>
+      <p>There are named colors of special interest:</p>
+      <ul>
+        <li>
+          transparent :
+          <p>The transparent keyword represents a fully transparent color.</p>
+          <p>
+            This makes the background behind the colored item completely
+            visible.
+          </p>
+          <p>Technically, transparent is a shortcut for rgb(0 0 0 / 0%).</p>
+          <div class="scriptBox" id="roundbox">
+            <p>HTML :</p>
+            <pre><code class="language-html">
+              &lt;div id="container"&gt;
+                &lt;div id="one"&gt;&lt;/div&gt;
+                &lt;div id="two"&gt;&lt;/div&gt;
+                &lt;div id="three"&gt;&lt;/div&gt;
+              &lt;/div&gt;
+            </code></pre>
+            <p>CSS :</p>
+            <pre><code class="language-css">
+              #container {
+                display: flex;
+                justify-content: space-around;
+                background-color: darkslateblue;
+                padding: 20px;
+              }
+              #container > div {
+                height: 100px;
+                width: 100px;
+                margin: 3px;
+                border: 2px solid black;
+              }
+              #one {
+                background-color: red;
+              }
+              #two {
+                background-color: lavender;
+              }
+              #three {
+                background-color: transparent;
+              }
+            </code></pre>
+          </div>
+          <div>
+            <div
+              style="
+                display: flex;
+                justify-content: space-around;
+                background-color: darkslateblue;
+                padding: 20px;
+              "
+            >
+              <div
+                style="
+                  height: 100px;
+                  width: 100px;
+                  margin: 3px;
+                  border: 2px solid black;
+                  background-color: red;
+                "
+              ></div>
+              <div
+                style="
+                  height: 100px;
+                  width: 100px;
+                  margin: 3px;
+                  border: 2px solid black;
+                  background-color: lavender;
+                "
+              ></div>
+              <div
+                style="
+                  height: 100px;
+                  width: 100px;
+                  margin: 3px;
+                  border: 2px solid black;
+                  background-color: transparent;
+                "
+              ></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          currentcolor :
+          <p>
+            The currentcolor keyword represents the value of an element's color
+            property.
+          </p>
+          <p>
+            If <span class="c-r">currentcolor</span> is used as the value of the
+            color property, it instead takes its value from the inherited value
+            of the color property.
+          </p>
+          <div class="scriptBox" id="roundbox">
+            <pre><code class="language-html">
+                &lt;div style="color: blue; border: 1px dashed currentcolor;"&gt;
+                  The color of this text is blue.
+                  &lt;div style="background: currentcolor; height:9px;"&gt;&lt;/div&gt;
+                  This block is surrounded by a blue border.
+                &lt;/div&gt;
+            </code></pre>
+          </div>
+          <div>
+            <div style="color: yellow; border: 1px dashed currentcolor">
+              The color of this text is yellow.
+              <div style="background: currentcolor; height: 9px"></div>
+              This block is surrounded by a yellow border.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h1 class="td-u">RGB Colors</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>An RGB color value represents RED, GREEN, and BLUE light sources.</p>
+      <p>
+        A color can be specified as an RGB value, using this formula: rgb(red,
+        green, blue)
+      </p>
+      <p>
+        Each parameter (red, green, and blue) defines the intensity of the color
+        between 0 and 255.
+      </p>
+      <table>
+        <tr>
+          <td style="background-color: rgb(255, 0, 0)">rgb(255, 0, 0)</td>
+          <td style="background-color: rgb(0, 255, 0)">rgb(0, 255, 0)</td>
+          <td style="background-color: rgb(0, 0, 255)">rgb(0, 0, 255)</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(0, 0, 0)">rgb(0, 0, 0)</td>
+          <td style="background-color: rgb(255, 255, 255); color: black">
+            rgb(255, 255, 255)
+          </td>
+          <td style="background-color: rgb(238, 130, 238)">
+            rgb(238, 130, 238)
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(60, 60, 60)">rgb(60, 60, 60)</td>
+          <td style="background-color: rgb(180, 180, 180)">
+            rgb(180, 180, 180)
+          </td>
+          <td style="background-color: rgb(240, 240, 240); color: black">
+            rgb(240, 240, 240)
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <h1>RGBA Value</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        RGBA color values are an extension of RGB color values with an alpha
+        channel - which specifies the opacity for a color.
+      </p>
+      <p>An RGBA color value is specified with:</p>
+      <p><i>rgba(red, green, blue, alpha)</i></p>
+      <p>
+        The alpha parameter is a number between 0.0 (fully transparent) and 1.0
+        (not transparent at all):
+      </p>
+      <table>
+        <tr>
+          <td style="background-color: rgb(255, 0, 0, 0.2)">
+            rgb(255, 0, 0, 0.2)
+          </td>
+          <td style="background-color: rgb(255, 0, 0, 0.6)">
+            rgb(255, 0, 0, 0.6)
+          </td>
+          <td style="background-color: rgb(255, 0, 0, 1)">rgb(255, 0, 0, 1)</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <h1 class="td-u">HEX Colors</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>A color can be specified using a hexadecimal value in the form:</p>
+      <p><i>#rrggbb</i></p>
+      <p>
+        Where rr (red), gg (green) and bb (blue) are hexadecimal values between
+        00 and ff (same as decimal 0-255).
+      </p>
+      <table>
+        <tr>
+          <td style="background-color: #ff0000">#ff0000</td>
+          <td style="background-color: #00ff00">#00ff00</td>
+          <td style="background-color: #0000ff">#0000ff</td>
+        </tr>
+        <tr>
+          <td style="background-color: #000000">#000000</td>
+          <td style="background-color: #ffffff; color: black">#ffffff</td>
+          <td style="background-color: #6a5acd">#6a5acd</td>
+        </tr>
+        <tr>
+          <td style="background-color: #3c3c3c">#3c3c3c</td>
+          <td style="background-color: #787878">#787878</td>
+          <td style="background-color: #f0f0f0; color: black">#f0f0f0</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <h1>3 Digit HEX Value</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>Sometimes you will see a 3-digit hex code in the CSS source.</p>
+      <p>The 3-digit hex code is a shorthand for some 6-digit hex codes.</p>
+      <p>
+        The 3-digit hex code can only be used when both the values (RR, GG, and
+        BB) are the same for each component. So, if we have #ff00cc, it can be
+        written like this: #f0c.
       </p>
     </div>
     <div class="scriptBox" id="roundbox">
-      <p>
-        Internal styles are defined within the
-        <span class="redcolor">&lt;link&gt;</span> element, inside the
-        <span class="redcolor">&lt;head&gt;</span> section of an HTML page:
-      </p>
-      <pre><code class="language-html">
-        &lt;!DOCTYPE html&gt;
-        &lt;html&gt;
-        &lt;head&gt;
-        &lt;style&gt;
+      <pre><code class="language-css">
         body {
-          background-color: linen;
+          background-color: #fc9; /* same as #ffcc99 */
         }
         h1 {
-          color: maroon;
-          margin-left: 40px;
+          color: #f0f; /* same as #ff00ff */
         }
-        &lt;/style&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;h1&gt;This is a heading&lt;/h1&gt;
-            &lt;p&gt;This is a paragraph.&lt;/p&gt;
-         &lt;/body&gt;
-         &lt;/html&gt;
-          </code></pre>
+        p {
+          color: #b58; /* same as #bb5588 */
+        }
+      </code></pre>
     </div>
     <div>
-      <h1>Inline CSS</h1>
+      <h1 class="td-u">HSL Colors</h1>
     </div>
-    <hr />
     <div class="paragraphBox">
+      <p>HSL stands for hue, saturation, and lightness.</p>
       <p>
-        An inline style may be used to apply a unique style for a single
-        element.
+        In CSS, a color can be specified using hue, saturation, and lightness
+        (HSL) in the form:
       </p>
-    </div>
-    <div class="scriptBox" id="roundbox">
+      <p><i>hsl(hue, saturation, lightness) </i></p>
       <p>
-        Inline styles are defined within the "style" attribute of the relevant
-        element:
+        Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is
+        green, and 240 is blue.
       </p>
-      <pre><code class="language-html">
-        &lt;!DOCTYPE html&gt;
-        &lt;html&gt;
-        &lt;body&gt;
-            &lt;h1 style="color:blue;text-align:center;"&gt;This is a heading&lt;/h1&gt;
-            &lt;p style="color:red;"&gt;This is a paragraph.&lt;/p&gt;
-         &lt;/body&gt;
-         &lt;/html&gt;
-          </code></pre>
+      <p>
+        Saturation is a percentage value. 0% means a shade of gray, and 100% is
+        the full color.
+      </p>
+      <p>
+        Lightness is also a percentage. 0% is black, 50% is neither light or
+        dark, 100% is white
+      </p>
+      <table>
+        <tr>
+          <td style="background-color: hsl(0, 100%, 50%)">hsl(0, 100%, 50%)</td>
+          <td style="background-color: hsl(120, 100%, 50%)">
+            hsl(120, 100%, 50%)
+          </td>
+          <td style="background-color: hsl(240, 100%, 50%)">
+            hsl(240, 100%, 50%)
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: hsl(0, 100%, 0%)">hsl(0, 100%, 0%)</td>
+          <td style="background-color: hsl(120, 100%, 100%); color: black">
+            hsl(120, 100%, 100%)
+          </td>
+          <td style="background-color: hsl(39, 100%, 50%)">
+            hsl(39, 100%, 50%)
+          </td>
+        </tr>
+      </table>
     </div>
     <div>
-      <h1>Multiple Style Sheets</h1>
+      <h1>HSLA Colors</h1>
     </div>
-    <hr />
     <div class="paragraphBox">
       <p>
-        If some properties have been defined for the same selector (element) in
-        different style sheets, the value from the last read style sheet will be
-        used.
+        HSLA color values are an extension of HSL color values with an alpha
+        channel - which specifies the opacity for a color.
       </p>
-    </div>
-    <div class="scriptBox" id="roundbox">
+      <p>An HSLA color value is specified with:</p>
+      <p><i>hsla(hue, saturation, lightness, alpha) </i></p>
       <p>
-        If the internal style is defined after the link to the external style
-        sheet, the &lt;h1&gt; elements will be "orange":
+        The alpha parameter is a number between 0.0 (fully transparent) and 1.0
+        (not transparent at all):
       </p>
-      <pre><code class="language-html">
-          &lt;head&gt;
-          &lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
-          &lt;style&gt;
-          h1 {
-            color: orange;
-          }
-              &lt;/style&gt;
-          &lt;/head&gt;
-          </code></pre>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>
-        However, if the internal style is defined before the link to the
-        external style sheet, the &lt;h1&gt; elements will be "navy":
-      </p>
-      <pre><code class="language-html">
-          &lt;head&gt;
-          &lt;style&gt;
-          h1 {
-            color: orange;
-          }
-              &lt;/style&gt;
-              &lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
-          &lt;/head&gt;
-          </code></pre>
-    </div>
-    <div>
-      <h1>Cascading Order</h1>
-    </div>
-    <hr />
-    <div class="paragraphBox">
-      <p>
-        What style will be used when there is more than one style specified for
-        an HTML element?
-      </p>
-      <p>
-        All the styles in a page will "cascade" into a new "virtual" style sheet
-        by the following rules, where number one has the highest priority:
-      </p>
-      <ol>
-        <li>Inline style (inside an HTML element)</li>
-        <li>External and internal style sheets (in the head section)</li>
-        <li>Browser default</li>
-      </ol>
-      <p>
-        So, an inline style has the highest priority, and will override external
-        and internal styles and browser defaults.
-      </p>
+      <table>
+        <tr>
+          <td style="background-color: hsl(0, 100%, 50%, 0.2)">hsl(0, 100%, 50%, 0.2)</td>
+          <td style="background-color: hsl(0, 100%, 50%, 0.6)">hsl(0, 100%, 50%, 0.6)</td>
+          <td style="background-color: hsl(0, 100%, 50%, 1)">hsl(0, 100%, 50%, 1)</td>
+        </tr>
+      </table>
     </div>
 
     <script src="attribute_selector.js"></script>

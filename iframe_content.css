@@ -107,3 +107,11 @@ h3 {
 td {
   padding: 8px;
 }
+/* text color red */
+.c-r {
+  color: red;
+}
+/* text underline */
+.td-u {
+  text-decoration: underline;
+}

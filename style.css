@@ -50,6 +50,7 @@ nav li:hover {
   height: 85vh;
   background-color: #26292e;
   color: rgba(255, 255, 255, 0.6);
+  overflow: auto;
 }
 .leftsidecontent ul {
   list-style-type: none;

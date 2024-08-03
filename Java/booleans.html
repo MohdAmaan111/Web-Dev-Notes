@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Booleans</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-java.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Booleans</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Very often, in programming, you will need a data type that can only have
+        one of two values, like:
+      </p>
+      <ul>
+        <li>YES / NO</li>
+        <li>ON / OFF</li>
+        <li>TRUE / FALSE</li>
+      </ul>
+      <p>
+        For this, Java has a boolean data type, which can store true or false
+        values.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        A boolean type is declared with the boolean keyword and can only take
+        the values true or false:
+      </p>
+      <pre><code class="language-java">
+        boolean isJavaFun = true;
+        boolean isFishTasty = false;
+        System.out.println(isJavaFun);     // Outputs true
+        System.out.println(isFishTasty);   // Outputs false
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>Boolean Expression</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>A Boolean expression returns a boolean value: true or false.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        For example, you can use a comparison operator, such as the greater than
+        (>) operator, to find out if an expression is true or false:
+      </p>
+      <pre><code class="language-java">
+        int x = 10;
+        int y = 9;
+        System.out.println(x > y); // returns true, because 10 is higher than 9
+      </code></pre>
+      <pre><code class="language-java">
+        System.out.println(10 > 9); // returns true, because 10 is higher than 9
+      </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        In the examples below, we use the equal to (==) operator to evaluate an
+        expression:
+      </p>
+      <pre><code class="language-java">
+        int x = 10;
+        System.out.println(x == 10); // returns true, because the value of x is equal to 10
+      </code></pre>
+      <pre><code class="language-java">
+        System.out.println(10 == 15); // returns false, because 10 is not equal to 15
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>Real Life Example</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Let's think of a "real life example" where we need to find out if a
+        person is old enough to vote.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        In the example below, we use the >= comparison operator to find out if
+        the age (25) is greater than OR equal to the voting age limit, which is
+        set to 18:
+      </p>
+      <pre><code class="language-java">
+        int myAge = 25;
+        int votingAge = 18;
+        System.out.println(myAge >= votingAge);   //true
+      </code></pre>
+    </div>
+  </body>
+</html>

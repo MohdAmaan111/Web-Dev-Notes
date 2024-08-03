@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>Media Queries</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">@media</span> rule, made it possible to
+        define different style rules for different media types.
+      </p>
+      <p>Media queries can be used to check many things, such as:</p>
+      <ul>
+        <li>width and height of the viewport</li>
+        <li>orientation of the viewport (landscape or portrait)</li>
+        <li>resolution</li>
+      </ul>
+    </div>
+    <hr />
+    <div>
+      <h1>Media Types</h1>
+    </div>
+    <div class="paragraphBox">
+      <table>
+        <tr>
+          <th>Value</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>all</td>
+          <td>Used for all media type devices</td>
+        </tr>
+        <tr>
+          <td>print</td>
+          <td>Used for print preview mode</td>
+        </tr>
+        <tr>
+          <td>screen</td>
+          <td>Used for computer screens, tablets, smart-phones etc.</td>
+        </tr>
+      </table>
+    </div>
+    <hr />
+    <div>
+      <h1>Common Media Features</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>Here are some commonly used media features:</p>
+      <table>
+        <tr>
+          <th>Value</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>max-height</td>
+          <td>Maximum height of the viewport</td>
+        </tr>
+        <tr>
+          <td>min-height</td>
+          <td>Minimum height of the viewport</td>
+        </tr>
+        <tr>
+          <td>height</td>
+          <td>Height of the viewport (including scrollbar)</td>
+        </tr>
+        <tr>
+          <td>max-width</td>
+          <td>Maximum width of the viewport</td>
+        </tr>
+        <tr>
+          <td>min-width</td>
+          <td>Minimum width of the viewport</td>
+        </tr>
+        <tr>
+          <td>width</td>
+          <td>Width of the viewport (including scrollbar)</td>
+        </tr>
+      </table>
+    </div>
+    <hr />
+    <div>
+      <h1>Media Query Syntax</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        A media query consists of a media type and can contain one or more media
+        features, which resolve to either true or false.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        @media not|only mediatype and (media feature) and (media feature) {
+          CSS-Code;
+        }
+          </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>The mediatype is optional (if omitted, it will be set to all).</p>
+      <p>However, if you use not or only, you must also specify a mediatype.</p>
+      <p>
+        The result of the query is true if the specified media type matches the
+        type of device the document is being displayed on and all media features
+        in the media query are true. When a media query is true, the
+        corresponding style sheet or style rules are applied, following the
+        normal cascading rules.
+      </p>
+      <p>Meaning of the not, only, and and keywords:</p>
+      <ul>
+        <li>
+          <span class="redcolor">not:</span> This keyword inverts the meaning of
+          an entire media query.
+        </li>
+        <li>
+          <span class="redcolor">only:</span> This keyword prevents older
+          browsers that do not support media queries from applying the specified
+          styles. It has no effect on modern browsers.
+        </li>
+        <li>
+          <span class="redcolor">and:</span> This keyword combines a media type
+          and one or more media features.
+        </li>
+      </ul>
+      <p>
+        You can also link to different stylesheets for different media and
+        different widths of the browser window (viewport):
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-css">
+    &lt;link rel="stylesheet" media="print" href="print.css"&gt;
+    &lt;link rel="stylesheet" media="screen" href="screen.css"&gt;
+    &lt;link rel="stylesheet" media="screen and (min-width: 480px)" href="example1.css"&gt;
+    &lt;link rel="stylesheet" media="screen and (min-width: 701px) and (max-width: 900px)" href="example2.css"&gt;
+    etc....
+        </code></pre>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <h1>Media Queries Simple Examples</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        One way to use media queries is to have an alternate CSS section right
+        inside your style sheet.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example changes the background-color to lightgreen if the
+        viewport is 480 pixels wide or wider (if the viewport is less than 480
+        pixels, the background-color will be pink):
+      </p>
+      <pre><code class="language-css">
+        @media screen and (min-width: 480px) {
+          body {
+            background-color: lightgreen;
+          }
+        }
+          </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example shows a menu that will float to the left of the
+        page if the viewport is 480 pixels wide or wider (if the viewport is
+        less than 480 pixels, the menu will be on top of the content):
+      </p>
+      <pre><code class="language-css">
+        @media screen and (min-width: 480px) {
+          #leftsidebar {width: 200px; float: left;}
+          #main {margin-left: 216px;}
+        }
+          </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Many range features can be prefixed with "min-" or "max-" to express
+        "minimum condition" or "maximum condition" constraints.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        For example, this CSS will apply styles only if your browser's viewport
+        width is equal to or less than 1250px:
+      </p>
+      <pre><code class="language-css">
+        @media (max-width: 1250px) {
+          /* … */
+        }        
+      </code></pre>
+      <p>This can also be written as:</p>
+      <pre><code class="language-css">
+        @media (width <= 1250px) {
+          /* … */
+        }             
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        With media query range features, you can either use the inclusive
+        <span class="redcolor">min-</span> and
+        <span class="redcolor">max-</span> prefixes or the more concise range
+        syntax operators <span class="redcolor"><=</span> and
+        <span class="redcolor">=></span>.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>The following media queries are equivalent:</p>
+      <pre><code class="language-css">
+        @media (min-width: 30em) and (max-width: 50em) {
+          /* … */
+        }
+        
+        @media (30em <= width <= 50em) {
+          /* … */
+        }
+          </code></pre>
+    </div>
+
+    <script src="attribute_selector.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
