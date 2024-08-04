@@ -16,6 +16,7 @@ body {
 hr {
   width: 99%;
   border-color: rgba(255, 0, 0, 0.4);
+  margin: 2rem 0;
 }
 p {
   line-height: 2;
@@ -27,6 +28,11 @@ li {
 /* red color for selective text in span tag */
 .redcolor {
   color: red;
+}
+/* Display Div Box in flex */
+.displayFlex {
+  display: flex;
+  justify-content: space-between;
 }
 div {
   width: 99%;
@@ -45,7 +51,7 @@ h3 {
 }
 /* buttonbox is for multiple tags of button */
 .buttonbox {
-  width: 45%;
+  width: 49%;
   height: auto;
 }
 .buttonbox button {
@@ -62,11 +68,8 @@ h3 {
 }
 /* outputbox is to see selected tag output */
 .outputbox {
-  position: absolute;
-  top: 30px;
-  right: 10px;
-  width: 50%;
-  height: 70%;
+  width: 49%;
+  height: 16rem;
   padding: 10px;
   background-color: #222831;
 }

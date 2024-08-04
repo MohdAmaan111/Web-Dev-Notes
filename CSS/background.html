@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Backgrounds</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      #bgImage {
+        border: 2px solid;
+        background-image: url("../Images/Goku.jpg");
+        background-size: 5rem;
+      }
+      #bgImageInElement h1 {
+        background-image: url("../Images/Goku.jpg");
+        background-size: 5rem;
+      }
+      #bgImagePos {
+        width: 100%;
+        height: 80%;
+        border: 2px solid white;
+        background-image: url("../Images/Goku.jpg");
+        background-size: 10%;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Backgrounds</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The CSS background properties are used to add background effects for
+        elements.
+      </p>
+    </div>
+    <hr />
+    <div>
+      <h1>CSS background-color</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The background-color property specifies the background color of an
+        element.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>The background color of a page is set like this:</p>
+      <pre><code class="language-css">
+        body {
+          background-color: lightblue;
+        }        
+      </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>You can set the background color for any HTML elements:</p>
+      <pre><code class="language-css">
+        h1 {
+          background-color: green;
+        }
+        div {
+          background-color: lightblue;
+        }
+        p {
+          background-color: yellow;
+        }       
+      </code></pre>
+    </div>
+    <div>
+      <h1 style="background-color: green">Hello</h1>
+      <div
+        style="background-color: lightblue; width: 10rem; height: 10rem"
+      ></div>
+      <p style="background-color: yellow; color: black">Lorem ipsum...</p>
+    </div>
+    <hr />
+    <div>
+      <h1>Opacity</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The opacity property specifies the opacity/transparency of an element.
+      </p>
+      <p>
+        It can take a value from 0.0 - 1.0. The lower value, the more
+        transparent:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        div {
+          background-color: green;
+          opacity: 0.3;
+        }
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <table>
+        <tr>
+          <td style="background-color: green; opacity: 1; height: 10rem">
+            opacity 1
+          </td>
+          <td style="background-color: green; opacity: 0.6; height: 10rem">
+            opacity 0.6
+          </td>
+          <td style="background-color: green; opacity: 0.3; height: 10rem">
+            opacity 0.3
+          </td>
+          <td style="background-color: green; opacity: 0.1; height: 10rem">
+            opacity 0.1
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr />
+    <div>
+      <h1>CSS background-image</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The background-image property specifies an image to use as the
+        background of an element.
+      </p>
+      <p>By default, the image is repeated so it covers the entire element.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Set the background image for a page:</p>
+      <pre><code class="language-css">
+        body {
+          background-image: url("../Images/Goku.jpg");
+        }
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <div id="bgImage" style="border: 2px solid; height: 15rem"></div>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The background image can also be set for specific elements, like the
+        &lt;p&gt; element:
+      </p>
+      <pre><code class="language-css">
+          p {
+            background-image: url("../Images/Goku.jpg");
+          }
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <div id="bgImageInElement" style="border: 3px solid; height: 5rem">
+        <h1 style="color: black">Hello</h1>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <h1>CSS background-repeat</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        By default, the background-image property repeats an image both
+        horizontally and vertically.
+      </p>
+    </div>
+    <div class="paragraphBox">
+      <div id="bgImage" style="height: 15rem"></div>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          If the image above is repeated only horizontally (background-repeat:
+          repeat-x;) :
+        </p>
+        <pre><code class="language-css">
+          body {
+            background-image: url("../Images/Goku.jpg");
+            background-repeat: repeat-x;
+          }
+        </code></pre>
+      </div>
+    </div>
+    <div class="paragraphBox">
+      <div
+        id="bgImage"
+        style="height: 15rem; background-repeat: repeat-x"
+      ></div>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        If the image above is repeated only vertically (background-repeat:
+        repeat-y;) :
+      </p>
+      <pre><code class="language-css">
+        body {
+          background-image: url("../Images/Goku.jpg");
+          background-repeat: repeat-y;
+        }
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <div
+        id="bgImage"
+        style="height: 15rem; background-repeat: repeat-y"
+      ></div>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Showing the background image only once is also specified by the
+        background-repeat property:
+      </p>
+      <pre><code class="language-css">
+        body {
+          background-image: url("../Images/Goku.jpg");
+          background-repeat: no-repeat;
+        }
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <div
+        id="bgImage"
+        style="height: 15rem; background-repeat: no-repeat"
+      ></div>
+    </div>
+    <hr />
+    <div>
+      <h1>CSS background-position</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The background-position property is used to specify the position of the
+        background image.
+      </p>
+      <p>
+        By default, a background-image is placed at the top-left corner of an
+        element, and repeated both vertically and horizontally.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        body {
+          background-image: url("../Images/Goku.jpg");
+          background-repeat: no-repeat;
+          background-position: left top;
+        }
+      </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="headingDiv">Example</h3>
+      <div class="displayFlex">
+        <div class="buttonbox" id="input">
+          <button onclick="bg_p_1()">left top</button>
+          <button onclick="bg_p_2()">left center</button>
+          <button onclick="bg_p_3()">left bottom</button>
+          <button onclick="bg_p_4()">right top</button>
+          <button onclick="bg_p_5()">right center</button>
+          <button onclick="bg_p_6()">right bottom</button>
+          <button onclick="bg_p_7()">center top</button>
+          <button onclick="bg_p_8()">center center</button>
+          <button onclick="bg_p_9()">center bottom</button>
+          <button onclick="bg_p_10()">x% y%</button>
+          <button onclick="bg_p_11()">xpos ypos</button>
+        </div>
+        <div class="outputbox" id="output" style="height: 16rem">
+          <div id="bgImagePos"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="background.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
