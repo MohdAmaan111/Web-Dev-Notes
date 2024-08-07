@@ -28,6 +28,27 @@
         background-size: 10%;
         background-repeat: no-repeat;
       }
+      #bgImageAttach {
+        width: 100%;
+        height: 80%;
+        border: 2px solid white;
+        background-image: url("../Images/Goku.jpg");
+        background-size: contain;
+        background-position: 70% 0%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      #bgImageOrigin {
+        width: 100%;
+        height: 80%;
+        border: 10px dashed white;
+        padding: 2rem;
+        color: red;
+        background-image: url("../Images/Goku.jpg");
+        background-size: 10rem;
+        background-repeat: no-repeat;
+        background-origin: padding-box;
+      }
     </style>
   </head>
   <body>
@@ -167,7 +188,6 @@
       </p>
     </div>
     <div class="paragraphBox">
-      <div id="bgImage" style="height: 15rem"></div>
       <div class="scriptBox" id="roundbox">
         <p>
           If the image above is repeated only horizontally (background-repeat:
@@ -225,6 +245,31 @@
     </div>
     <hr />
     <div>
+      <h1>CSS background-size</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The background-size property is used to specify the size of the
+        background image.
+      </p>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="bg_s_headingDiv">Example</h3>
+      <div class="displayFlex">
+        <div class="buttonbox" id="input">
+          <button onclick="bg_s_1()">auto</button>
+          <button onclick="bg_s_2()">length</button>
+          <button onclick="bg_s_3()">percentage</button>
+          <button onclick="bg_s_4()">cover</button>
+          <button onclick="bg_s_5()">contain</button>
+        </div>
+        <div class="outputbox" id="bg_s_output" style="height: 16rem">
+          <div id="bgImagePos" style="background-size: auto"></div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div>
       <h1>CSS background-position</h1>
     </div>
     <div class="paragraphBox">
@@ -264,6 +309,129 @@
         </div>
         <div class="outputbox" id="output" style="height: 16rem">
           <div id="bgImagePos"></div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <h1>CSS background-attachment</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The background-attachment property specifies whether the background
+        image should scroll or be fixed (will not scroll with the rest of the
+        page):
+      </p>
+    </div>
+    <div class="paragraphBox">
+      <div
+        id="bgImage"
+        style="
+          height: 15rem;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-attachment: fixed;
+        "
+      ></div>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="bg_a_headingDiv">Example</h3>
+      <div class="displayFlex">
+        <div class="buttonbox" id="input">
+          <button onclick="bg_a_f()">fixed</button>
+          <button onclick="bg_a_s()">scroll</button>
+        </div>
+        <div class="outputbox" id="bg_a_output" style="height: 16rem">
+          <div id="bgImageAttach"></div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <h1>Shorthand property</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        It is also possible to specify all the background properties in one
+        single property.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Instead of writing:</p>
+      <pre><code class="language-css">
+        body {
+          background-color: #ffffff;
+          background-image: url("img_tree.png");
+          background-repeat: no-repeat;
+          background-position: right top;
+        }
+      </code></pre>
+      <p>You can use the shorthand property background:</p>
+      <pre><code class="language-css">
+        body {
+          background: #ffffff url("img_tree.png") no-repeat right top;
+        }
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>background-position-x & -position-y</h1>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>How to position a background-image on x-axis:</p>
+      <pre><code class="language-css">
+        div {
+          background-image: url('w3css.gif');
+          background-repeat: no-repeat;
+          background-position-x: center;
+        }
+      </code></pre>
+      <p>How to position a background-image on y-axis:</p>
+      <pre><code class="language-css">
+        div {
+          background-image: url('w3css.gif');
+          background-repeat: no-repeat;
+          background-position-y: center;
+        }
+      </code></pre>
+    </div>
+    <hr />
+    <div>
+      <h1>background-origin</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The background-origin property specifies the origin position (the
+        background positioning area) of a background image.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-css">
+        #example1 {
+          border: 10px dashed black;
+          padding: 25px;
+          background: url(paper.gif);
+          background-repeat: no-repeat;
+          background-origin: padding-box;
+        }
+      </code></pre>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="bg_o_headingDiv">Example</h3>
+      <div class="displayFlex">
+        <div class="buttonbox" id="input">
+          <button onclick="bg_o_1()">padding-box</button>
+          <button onclick="bg_o_2()">border-box</button>
+          <button onclick="bg_o_3()">content-box</button>
+        </div>
+        <div class="outputbox" id="bg_o_output" style="height: 16rem">
+          <div id="bgImageOrigin">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+            repellendus rem atque dignissimos minus quaerat quibusdam nulla
+            voluptatibus molestias dolore optio nisi dolorum unde alias illo
+            sequi, voluptatem labore voluptate.
+          </div>
         </div>
       </div>
     </div>

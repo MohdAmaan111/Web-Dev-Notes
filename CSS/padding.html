@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padding</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>CSS Padding</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Padding is used to create space around an element's content, inside of
+        any defined borders.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Padding - Individual Sides</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        CSS has properties for specifying the padding for each side of an
+        element:
+      </p>
+      <ul>
+        <li><span class="redcolor">padding-top</span></li>
+        <li><span class="redcolor">padding-right</span></li>
+        <li><span class="redcolor">padding-bottom</span></li>
+        <li><span class="redcolor">padding-left</span></li>
+      </ul>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Set different padding for all four sides of a &lt;div&gt; element:</p>
+      <pre><code class="language-css">
+        div {
+          padding-top: 50px;
+          padding-right: 30px;
+          padding-bottom: 50px;
+          padding-left: 80px;
+        }    
+      </code></pre>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Padding - Shorthand Property</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To shorten the code, it is possible to specify all the padding
+        properties in one property.
+      </p>
+      <p>
+        The padding property is a shorthand property for the following
+        individual padding properties:
+      </p>
+      <ul>
+        <li><span class="redcolor">padding-top</span></li>
+        <li><span class="redcolor">padding-right</span></li>
+        <li><span class="redcolor">padding-bottom</span></li>
+        <li><span class="redcolor">padding-left</span></li>
+      </ul>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        p.one {
+          padding: 25px;  /* all four padding are 25px */
+        }
+        
+        p.two {
+          padding: 25px 50px;  /* top and bottom are 25px, right and left are 50px */
+        }
+
+        p.three {
+          padding: 25px 50px 75px; /* top 25px, right and left 50px, bottom 75px */
+        }
+        
+        p.four {
+          padding: 25px 50px 75px 100px;  /* top 25x, right 50px, bottom 75px, left 100px */
+        }
+      </code></pre>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Padding and Element Width</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The CSS width property specifies the width of the element's content
+        area. The content area is the portion inside the padding, border, and
+        margin of an element.
+      </p>
+      <p>
+        If an element has a specified width, the padding added to that element
+        will be added to the total width of the element.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Here, the &lt;div&gt; element is given a width of 300px. However, the
+        actual width of the &lt;div&gt; element will be 350px (300px + 25px of
+        left padding + 25px of right padding):
+      </p>
+      <pre><code class="language-css">
+        div {
+          width: 300px;
+          padding: 25px;
+        }
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To keep the width at 300px, no matter the amount of padding, you can use
+        the box-sizing property.
+      </p>
+      <p>
+        This causes the element to maintain its actual width; if you increase
+        the padding, the available content space will decrease.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Use the <span class="redcolor">box-sizing</span> property to keep the
+        width at 300px, no matter the amount of padding:
+      </p>
+      <pre><code class="language-css">
+        div {
+          width: 300px;
+          padding: 25px;
+          box-sizing: border-box;
+        }
+      </code></pre>
+    </div>
+
+    <script src="borders.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>

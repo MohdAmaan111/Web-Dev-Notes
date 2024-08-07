@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Margins</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>CSS Margins</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Margins are used to create space around elements, outside of any defined
+        borders.
+      </p>
+      <p>
+        With CSS, you have full control over the margins. There are properties
+        for setting the margin for each side of an element (top, right, bottom,
+        and left).
+      </p>
+    </div>
+    <hr />
+    <div>
+      <h1>Margin - Individual Sides</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        CSS has properties for specifying the margin for each side of an
+        element:
+      </p>
+      <ul>
+        <li><span class="redcolor">margin-top</span></li>
+        <li><span class="redcolor">margin-right</span></li>
+        <li><span class="redcolor">margin-bottom</span></li>
+        <li><span class="redcolor">margin-left</span></li>
+      </ul>
+      <p>All the margin properties can have the following values:</p>
+      <ul>
+        <li>
+          <span class="redcolor">auto</span> - the browser calculates the margin
+        </li>
+        <li>
+          <span class="redcolor">length</span> - specifies a margin in px, pt,
+          cm, etc.
+        </li>
+        <li>
+          <span class="redcolor">%</span> - specifies a margin in % of the width
+          of the containing element
+        </li>
+        <li>
+          <span class="redcolor">inherit</span> - specifies that the margin
+          should be inherited from the parent element
+        </li>
+      </ul>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Set different margins for all four sides of a element:</p>
+      <pre><code class="language-css">
+        p {
+          margin-top: 100px;
+          margin-bottom: 100px;
+          margin-right: 150px;
+          margin-left: 80px;
+        }        
+      </code></pre>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Margin - Shorthand Property</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To shorten the code, it is possible to specify all the margin properties
+        in one property.
+      </p>
+      <p>
+        The margin property is a shorthand property for the following individual
+        margin properties:
+      </p>
+      <ul>
+        <li><span class="redcolor">margin-top</span></li>
+        <li><span class="redcolor">margin-right</span></li>
+        <li><span class="redcolor">margin-bottom</span></li>
+        <li><span class="redcolor">margin-left</span></li>
+      </ul>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        p.one {
+          margin: 25px;  /* all four margins are 25px */
+        }
+        
+        p.two {
+          margin: 25px 50px;  /* top and bottom are 25px, right and left are 50px */
+        }
+
+        p.three {
+          margin: 25px 50px 75px; /* top 25px, right and left 50px, bottom 75px */
+        }
+        
+        p.four {
+          margin: 25px 50px 75px 100px;  /* top 25x, right 50px, bottom 75px, left 100px */
+        }
+      </code></pre>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>The auto Value</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        You can set the margin property to auto to horizontally center the
+        element within its container.
+      </p>
+      <p>
+        The element will then take up the specified width, and the remaining
+        space will be split equally between the left and right margins.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        div {
+          width: 300px;
+          margin: auto;
+          border: 2px solid blue;
+        }
+      </code></pre>
+    </div>
+    <div style="width: 30%; margin: auto; border: 2px solid blue">
+      This div will be horizontally centered because it has margin: auto;
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>The inherit Value</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        This example lets the left margin of the &lt;p class="ex1"&gt; element
+        be inherited from the parent element (&lt;div&gt;):
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+    &lt;style&gt;
+        div {
+          border: 1px solid red;
+          margin-left: 100px;
+        }
+
+        p.ex1 {
+          margin-left: inherit;
+        }
+    &lt;/style&gt;
+    &lt;body&gt;
+    &lt;div&gt;
+        &lt;p class="ex1"&gt;This paragraph has an inherited left margin (from the div element).&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;/body&gt;
+      </code></pre>
+    </div>
+    <div style="border: 1px solid red; margin-left: 100px">
+      <p style="margin-left: inherit">
+        This paragraph has an inherited left margin (from the div element).
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Margin Collapse</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Top and bottom margins of elements are sometimes collapsed into a single
+        margin that is equal to the largest of the two margins.
+      </p>
+      <p>
+        This does not happen on left and right margins! Only top and bottom
+        margins!
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-css">
+        h1 {
+          margin: 0 0 50px 0;
+        }
+        
+        h2 {
+          margin: 20px 0 0 0;
+        }
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        In the example above, the &lt;h1&gt; element has a bottom margin of 50px
+        and the &lt;h2&gt; element has a top margin set to 20px.
+      </p>
+      <p>
+        Common sense would seem to suggest that the vertical margin between the
+        &lt;h1&gt; and the &lt;h2&gt; would be a total of 70px (50px + 20px).
+      </p>
+      <p>But due to margin collapse, the actual margin ends up being 50px.</p>
+    </div>
+
+    <script src="borders.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>

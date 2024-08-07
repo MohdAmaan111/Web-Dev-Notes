@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert CSS</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      #contentBorder {
+        border: 2px solid white;
+        font-size: 1.6em;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Borders</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The CSS border properties allow you to specify the style, width, and
+        color of an element's border.
+      </p>
+      <p>The following values are allowed:</p>
+      <ul>
+        <li><span class="redcolor">dotted</span> - Defines a dotted border</li>
+        <li><span class="redcolor">dashed</span> - Defines a dashed border</li>
+        <li><span class="redcolor">solid</span> - Defines a solid border</li>
+        <li><span class="redcolor">double</span> - Defines a double border</li>
+        <li>
+          <span class="redcolor">groove</span> - Defines a 3D grooved border.
+          The effect depends on the border-color value
+        </li>
+        <li>
+          <span class="redcolor">ridge</span> - Defines a 3D ridged border. The
+          effect depends on the border-color value
+        </li>
+        <li>
+          <span class="redcolor">inset</span> - Defines a 3D inset border. The
+          effect depends on the border-color value
+        </li>
+        <li>
+          <span class="redcolor">outset</span> - Defines a 3D outset border. The
+          effect depends on the border-color value
+        </li>
+        <li><span class="redcolor">none</span> - Defines no border</li>
+        <li><span class="redcolor">hidden</span> - Defines a hidden border</li>
+      </ul>
+    </div>
+    <div class="scriptoutput" id="roundbox">
+      <h3 id="Heading">
+        border :
+        <span id="borderWidthHeading">2px</span>
+        <span id="borderStyleHeading">solid</span>
+        <span id="borderColorHeading">white</span>;
+      </h3>
+      <div class="displayFlex">
+        <div class="buttonbox" id="input">
+          <table>
+            <tr>
+              <button onclick="b_w_1()" style="width: 30%">2px</button>
+              <button onclick="b_s_1()" style="width: 30%">dotted</button>
+              <button onclick="b_c_1()" style="width: 30%">red</button>
+            </tr>
+            <tr>
+              <button onclick="b_w_2()" style="width: 30%">4px</button>
+              <button onclick="b_s_2()" style="width: 30%">dashed</button>
+              <button onclick="b_c_2()" style="width: 30%">blue</button>
+            </tr>
+            <tr>
+              <button onclick="b_w_3()" style="width: 30%">6px</button>
+              <button onclick="b_s_3()" style="width: 30%">solid</button>
+              <button onclick="b_c_3()" style="width: 30%">green</button>
+            </tr>
+            <tr>
+              <button onclick="b_w_4()" style="width: 30%">8px</button>
+              <button onclick="b_s_4()" style="width: 30%">double</button>
+              <button onclick="b_c_4()" style="width: 30%">yellow</button>
+            </tr>
+            <tr>
+              <button onclick="b_w_5()" style="width: 30%">10px</button>
+              <button onclick="b_s_5()" style="width: 30%">groove</button>
+              <button onclick="b_c_5()" style="width: 30%">black</button>
+            </tr>
+            <tr>
+              <button onclick="b_w_6()" style="width: 30%">12px</button>
+              <button onclick="b_s_6()" style="width: 30%">ridge</button>
+              <button onclick="b_c_6()" style="width: 30%">gray</button>
+            </tr>
+            <tr>
+              <button onclick="b_w_7()" style="width: 30%">14px</button>
+              <button onclick="b_s_7()" style="width: 30%">inset</button>
+              <button onclick="b_c_7()" style="width: 30%">pink</button>
+            </tr>
+            <tr>
+              <button onclick="b_w_8()" style="width: 30%">16px</button>
+              <button onclick="b_s_8()" style="width: 30%">outset</button>
+              <button onclick="b_c_8()" style="width: 30%">beige</button>
+            </tr>
+            <tr>
+              <button onclick="b_w_9()" style="width: 30%">18px</button>
+              <button onclick="b_s_9()" style="width: 30%">hidden</button>
+              <button onclick="b_c_9()" style="width: 30%">skyblue</button>
+            </tr>
+            <tr>
+              <button onclick="b_w_10()" style="width: 30%">20px</button>
+              <button onclick="b_s_10()" style="width: 30%">none</button>
+              <button onclick="b_c_10()" style="width: 30%">white</button>
+            </tr>
+          </table>
+        </div>
+        <div class="outputbox" id="borderOutput">
+          <div id="contentBorder">CSS Borders</div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <h1>Border Width</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>The border-width property specifies the width of the four borders.</p>
+      <p>
+        The width can be set as a specific size (in px, pt, cm, em, etc) or by
+        using one of the three pre-defined values: thin, medium, or thick:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Demonstration of the different border widths:</p>
+      <pre><code class="language-css">
+        p.one {
+          border-style: solid;
+          border-width: 5px;
+        }
+        
+        p.two {
+          border-style: solid;
+          border-width: medium;
+        }
+        
+        p.three {
+          border-style: dotted;
+          border-width: thick;
+        }
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The border-width property can have from one to four values (for the top
+        border, right border, bottom border, and the left border):
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        p.one {
+          border-style: solid;
+          border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+        }
+        
+        p.two {
+          border-style: solid;
+          border-width: 20px 5px; /* 20px top and bottom, 5px on the sides */
+        }
+        
+        p.three {
+          border-style: solid;
+          border-width: 20px 60px 5px; /* 20px top, 60px on the sides, and 5px bottom */
+        }
+        
+        p.four {
+          border-style: solid;
+          border-width: 25px 10px 4px 80px; /* 25px top, 10px right, 4px bottom and 35px left */
+        }
+      </code></pre>
+    </div>
+    <div style="border: solid green; border-width: 5px 20px">p.one</div>
+    <div style="border: solid green; border-width: 20px 5px">p.two</div>
+    <div style="border: solid green; border-width: 20px 60px 5px">p.three</div>
+    <div style="border: solid green; border-width: 25px 10px 4px 80px">
+      p.four
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Border Color</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The border-color property is used to set the color of the four borders.
+      </p>
+      <p>If border-color is not set, it inherits the color of the element.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        p.one {
+          border-style: solid;
+          border-color: red;
+        }
+        
+        p.two {
+          border-style: solid;
+          border-color: green;
+        }
+
+        p.three {
+          border-style: dotted;
+          border-color: blue;
+        }
+        
+        p.four {
+          border-style: solid;
+          border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+        }
+      </code></pre>
+    </div>
+    <div style="border-style: solid; border-color: red; border-width: 10px">
+      p.one
+    </div>
+    <div style="border-style: solid; border-color: green; border-width: 10px">
+      p.two
+    </div>
+    <div style="border-style: dotted; border-color: blue; border-width: 10px">
+      p.three
+    </div>
+    <div
+      style="
+        border-style: solid;
+        border-color: red green blue yellow;
+        border-width: 10px;
+      "
+    >
+      p.four
+    </div>
+    <hr />
+    <div>
+      <h1>Border Sides</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>Properties for specifying each of the border styles</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        div.one {
+          border-top-style: dotted;
+          border-right-style: solid;
+          border-bottom-style: dotted;
+          border-left-style: solid;
+        }
+        div.two {
+          border-style: solid dotted; /* top and bottom are solid, right and left are dotted */
+        }
+        div.three {
+          border-style: dashed solid double; /* top is dashed, right and left are solid, bottom is double */
+        }
+        div.four {
+          border-style: dashed solid double dotted;  /* top dotted, right solid, bottom double, left double */
+        }
+      </code></pre>
+    </div>
+    <div style="border-style: dotted solid; border-width: 10px">div.one</div>
+    <div style="border-style: solid dotted; border-width: 10px">div.two</div>
+    <div style="border-style: dashed solid double; border-width: 10px">
+      div.three
+    </div>
+    <div style="border-style: dashed solid double dotted; border-width: 10px">
+      div.four
+    </div>
+    <hr />
+    <div>
+      <h1>Shorthand Border Property</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To shorten the code, it is also possible to specify all the individual
+        border properties in one property.
+      </p>
+      <p>
+        The border property is a shorthand property for the following individual
+        border properties:
+      </p>
+      <ul>
+        <li>border-width</li>
+        <li>border-style (required)</li>
+        <li>border-color</li>
+      </ul>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        p {
+          border: 5px solid red;
+        }
+      </code></pre>
+    </div>
+    <div style="border: 5px solid red">CSS Borders</div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        You can also specify all the individual border properties for just one
+        side:
+      </p>
+      <pre><code class="language-css">
+        p.top {
+          border-top: 6px solid red;
+        }
+        p.right {
+          border-right: 6px solid red;
+        }
+        p.bottom {
+          border-bottom: 6px solid red;
+        }
+        p.left {
+          border-left: 6px solid red;
+        }
+      </code></pre>
+    </div>
+    <div style="border-top: 6px solid red">p.left</div>
+    <div style="border-right: 6px solid red">p.right</div>
+    <div style="border-bottom: 6px solid red">p.bottom</div>
+    <div style="border-left: 6px solid red">p.left</div>
+    <hr />
+    <div>
+      <h1>Rounded Borders</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The border-radius property is used to add rounded borders to an element:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        p.normal {
+          border: 6px solid red;
+          padding: 5px;
+        }
+        
+        p.round1 {
+          border: 6px solid red;
+          border-radius: 5px;
+          padding: 5px;
+        }
+        
+        p.round2 {
+          border: 6px solid red;
+          border-radius: 8px;
+          padding: 5px;
+        }
+        
+        p.round3 {
+          border: 6px solid red;
+          border-radius: 12px;
+          padding: 5px;
+        }
+      </code></pre>
+    </div>
+    <div style="border: 6px solid red; padding: 5px">p.normal</div>
+    <div style="border: 6px solid red; padding: 5px; border-radius: 5px">
+      p.round1
+    </div>
+    <div style="border: 6px solid red; padding: 5px; border-radius: 8px">
+      p.round2
+    </div>
+    <div style="border: 6px solid red; padding: 5px; border-radius: 12px">
+      p.round3
+    </div>
+
+    <script src="borders.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
