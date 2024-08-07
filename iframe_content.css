@@ -115,7 +115,26 @@ td {
 .c-r {
   color: red;
 }
+/* text color black */
+.c-b {
+  color: black;
+}
 /* text underline */
 .td-u {
   text-decoration: underline;
+}
+/* align text in center */
+.ta-c {
+  text-align: center;
+}
+/* set div box in center with margin */
+.margin {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* important note box style */
+.note {
+  border: 1.4px solid red;
+  border-left: 6px solid red;
+  padding: 0.5rem;
 }
