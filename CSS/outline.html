@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outline</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>CSS Outline</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        An outline is a line that is drawn around elements, OUTSIDE the borders,
+        to make the element "stand out".
+      </p>
+    </div>
+    <div
+      class="margin c-b ta-c"
+      style="
+        width: 90%;
+        height: 23rem;
+        background-color: antiquewhite;
+        font-size: 1.2em;
+        border: 2px dashed gray;
+        padding-top: 0.6rem;
+      "
+    >
+      Outline
+      <div
+        class="margin c-b"
+        style="
+          width: 90%;
+          height: 16rem;
+          background-color: green;
+          padding-top: 0.6rem;
+        "
+      >
+        Borders
+        <div
+          class="margin c-b"
+          style="
+            width: 80%;
+            height: 10rem;
+            background-color: silver;
+            padding-top: 0.6rem;
+          "
+        >
+          Padding
+          <div
+            class="margin c-b"
+            style="
+              width: 70%;
+              height: 4rem;
+              background-color: white;
+              border: 2px dashed gray;
+              padding-top: 0.8rem;
+            "
+          >
+            Content
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <p>
+        Note: Outline differs from borders! Unlike border, the outline is drawn
+        outside the element's border, and may overlap other content. Also, the
+        outline is NOT a part of the element's dimensions; the element's total
+        width and height is not affected by the width of the outline.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>CSS Outline Style</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">outline-style</span> property specifies the
+        style of the outline, and can have one of the following values:
+      </p>
+      <ul>
+        <li><span class="redcolor">dotted</span> - Defines a dotted border</li>
+        <li><span class="redcolor">dashed</span> - Defines a dashed border</li>
+        <li><span class="redcolor">solid</span> - Defines a solid border</li>
+        <li><span class="redcolor">double</span> - Defines a double border</li>
+        <li>
+          <span class="redcolor">groove</span> - Defines a 3D grooved border.
+          The effect depends on the border-color value
+        </li>
+        <li>
+          <span class="redcolor">ridge</span> - Defines a 3D ridged border. The
+          effect depends on the border-color value
+        </li>
+        <li>
+          <span class="redcolor">inset</span> - Defines a 3D inset border. The
+          effect depends on the border-color value
+        </li>
+        <li>
+          <span class="redcolor">outset</span> - Defines a 3D outset border. The
+          effect depends on the border-color value
+        </li>
+        <li><span class="redcolor">none</span> - Defines no border</li>
+        <li><span class="redcolor">hidden</span> - Defines a hidden border</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>CSS Outline Width</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">outline-width</span> property specifies the
+        width of the outline, and can have one of the following values:
+      </p>
+      <ul>
+        <li>thin (typically 1px)</li>
+        <li>medium (typically 3px)</li>
+        <li>thick (typically 5px)</li>
+        <li>A specific size (in px, pt, cm, em, etc)</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>CSS Outline Color</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">outline-color</span> property is used to set
+        the color of the outline.
+      </p>
+      <p>The color can be set by:</p>
+      <ul>
+        <li>name - specify a color name, like "red"</li>
+        <li>HEX - specify a hex value, like "#ff0000"</li>
+        <li>RGB - specify a RGB value, like "rgb(255,0,0)"</li>
+        <li>HSL - specify a HSL value, like "hsl(0, 100%, 50%)"</li>
+        <li>
+          invert - performs a color inversion (which ensures that the outline is
+          visible, regardless of color background)
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Outline - Shorthand property</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The outline property is a shorthand property for setting the following
+        individual outline properties:
+      </p>
+      <ul>
+        <li>outline-width</li>
+        <li>outline-style (required)</li>
+        <li>outline-color</li>
+      </ul>
+      <p>
+        The outline property is specified as one, two, or three values from the
+        list above. The order of the values does not matter.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example shows some outlines specified with the shorthand
+        <span class="redcolor">outline</span> property:
+      </p>
+      <pre><code class="language-css">
+        p.ex1 {outline: dashed;}
+        p.ex2 {outline: dotted red; border: 4px solid white;}
+        p.ex3 {outline: 5px solid yellow;}
+        p.ex4 {outline: thick ridge pink;}
+      </code></pre>
+    </div>
+    <div style="outline: dashed">p.ex1</div>
+    <div style="outline: dashed red; border: 4px solid white">p.ex2</div>
+    <div style="outline: 5px solid yellow">p.ex3</div>
+    <div style="outline: thick ridge pink">p.ex4</div>
+
+    <hr />
+
+    <div>
+      <h1>CSS Outline Offset</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">outline-offset</span> property adds space
+        between an outline and the border of an element.
+      </p>
+      <p>The space between an element and its outline is transparent.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example shows that the space between an element and its
+        outline is transparent:
+      </p>
+      <pre><code class="language-css">
+        p {
+          margin: 30px;
+          border: 4px solid green;
+          outline: 2px solid red;
+          outline-offset: 15px;
+        }
+      </code></pre>
+    </div>
+    <div
+      style="
+        width: 94%;
+        margin: 30px;
+        border: 4px solid green;
+        outline: 2px solid blue;
+        outline-offset: 15px;
+      "
+    >
+      This paragraph has an outline of 15px outside the border edge.
+    </div>
+
+    <script src="borders.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>

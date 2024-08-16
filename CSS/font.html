@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fonts</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>CSS Fonts</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Choosing the right font has a huge impact on how the readers experience
+        a website.
+      </p>
+      <p>
+        The font adds value to your text. It is also important to choose the
+        correct color and text size for the font.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>The CSS font-family Property</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        In CSS, we use the <span class="redcolor">font-family</span> property to
+        specify the font of a text.
+      </p>
+      <p>
+        The font-family property should hold several font names as a "fallback"
+        system, to ensure maximum compatibility between browsers
+      </p>
+    </div>
+    <div class="note">
+      <p>
+        Note: If the font name is more than one word, it must be in quotation
+        marks, like: "Times New Roman".
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        p {
+          font-family: Cursive, Times, serif;
+        }
+      </code></pre>
+    </div>
+    <div>
+      <p style="font-family: Cursive, Times, serif">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eligendi
+        tempora delectus quia quam porro harum placeat accusamus quae ullam.
+        Sequi, voluptates ducimus excepturi eos temporibus obcaecati sapiente
+        voluptatum sed.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>What are Web Safe Fonts?</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Web safe fonts are fonts that are universally installed across all
+        browsers and devices.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Font Style</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">font-style</span> property is mostly used to
+        specify italic text.
+      </p>
+      <p>This property has three values:</p>
+      <ul>
+        <li>normal - The text is shown normally</li>
+        <li>italic - The text is shown in italics</li>
+        <li>
+          oblique - The text is "leaning" (oblique is very similar to italic,
+          but less supported)
+        </li>
+      </ul>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        p.normal {
+          font-style: normal;
+        }
+        
+        p.italic {
+          font-style: italic;
+        }
+        
+        p.oblique {
+          font-style: oblique;
+        }
+      </code></pre>
+    </div>
+    <div>
+      <p style="font-style: normal">This is a paragraph in normal style.</p>
+      <p style="font-style: italic">This is a paragraph in italic style.</p>
+      <p style="font-style: oblique">This is a paragraph in oblique style.</p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Font Weight</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>The font-weight property specifies the weight of a font:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        p.normal {
+          font-weight: normal;
+        }
+        
+        p.thick {
+          font-weight: bold;
+        }
+      </code></pre>
+    </div>
+    <div>
+      <p style="font-weight: normal">This is a paragraph.</p>
+      <p style="font-weight: bold">This is a paragraph.</p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Font Variant</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The font-variant property specifies whether or not a text should be
+        displayed in a small-caps font.
+      </p>
+      <p>
+        In a small-caps font, all lowercase letters are converted to uppercase
+        letters. However, the converted uppercase letters appears in a smaller
+        font size than the original uppercase letters in the text.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        p.normal {
+          font-variant: normal;
+        }
+        
+        p.small {
+          font-variant: small-caps;
+        }
+      </code></pre>
+    </div>
+    <div>
+      <p style="font-variant: normal">My name is Hege Refsnes.</p>
+      <p style="font-variant: small-caps">My name is Hege Refsnes.</p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Font Size</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>The font-size property sets the size of the text.</p>
+    </div>
+    <div class="note">
+      <p>
+        Note: If you do not specify a font size, the default size for normal
+        text, like paragraphs, is 16px (16px=1em).
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Set Font Size With Pixels</p>
+      <pre><code class="language-css">
+        p.exp1 {
+          font-size: 40px;
+        }
+        
+        p.exp2 {
+          font-size: 30px;
+        }
+        
+        p.exp3 {
+          font-size: 14px;
+        }
+      </code></pre>
+    </div>
+    <div>
+      <p style="font-size: 40px">This is a paragraph.</p>
+      <p style="font-size: 30px">This is a paragraph.</p>
+      <p style="font-size: 14px">This is a paragraph.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Set Font Size With Em</p>
+      <pre><code class="language-css">
+        p.exp1 {
+          font-size: 1em; /* 16px * 1em = 16px */
+        }
+
+        p.exp2 {
+          font-size: 2.5em; /* 16px * 2.5em = 40px */
+        }
+        
+        p.exp3 {
+          font-size: 0.875em; /* 16px * 0.875em = 14px */
+        }
+      </code></pre>
+    </div>
+    <div>
+      <p style="font-size: 1em">This is a paragraph.</p>
+      <p style="font-size: 2.5em">This is a paragraph.</p>
+      <p style="font-size: 0.875em">This is a paragraph.</p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Responsive Font Size</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The text size can be set with a <span class="redcolor">vw</span> unit,
+        which means the "viewport width".
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        &lt;h1 style="font-size:10vw"&gt;Hello World&lt;/h1&gt;
+      </code></pre>
+    </div>
+    <div>
+      <h1 style="font-size:10vw">Hello World</h1>
+    </div>
+    <div class="note">0
+      Viewport is the browser window size. 1vw = 1% of viewport width. If the
+      viewport is 50cm wide, 1vw is 0.5cm.
+    </div>
+
+    <script src="borders.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
