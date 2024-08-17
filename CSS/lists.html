@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fonts</title>
+    <title>Lists</title>
     <link rel="stylesheet" href="../iframe_content.css" />
     <!-- Prism.js CSS -->
     <link
@@ -13,72 +13,93 @@
   </head>
   <body>
     <div>
-      <h1>CSS Fonts</h1>
+      <h1>CSS Lists</h1>
     </div>
     <div class="paragraphBox">
-      <p>
-        Choosing the right font has a huge impact on how the readers experience
-        a website.
-      </p>
-      <p>
-        The font adds value to your text. It is also important to choose the
-        correct color and text size for the font.
-      </p>
+      <p>The CSS list properties allow you to:</p>
+      <ul>
+        <li>Set different list item markers for ordered lists</li>
+        <li>Set different list item markers for unordered lists</li>
+        <li>Set an image as the list item marker</li>
+        <li>Add background colors to lists and list items</li>
+      </ul>
     </div>
 
     <hr />
 
     <div>
-      <h1>The CSS font-family Property</h1>
+      <h1>Different List Item Markers</h1>
     </div>
     <div class="paragraphBox">
       <p>
-        In CSS, we use the <span class="redcolor">font-family</span> property to
-        specify the font of a text.
-      </p>
-      <p>
-        The font-family property should hold several font names as a "fallback"
-        system, to ensure maximum compatibility between browsers
-      </p>
-    </div>
-    <div class="note">
-      <p>
-        Note: If the font name is more than one word, it must be in quotation
-        marks, like: "Times New Roman".
+        The list-style-type property specifies the type of list item marker.
       </p>
     </div>
     <div class="scriptBox" id="roundbox">
       <pre><code class="language-css">
-        p {
-          font-family: Cursive, Times, serif;
+        ul.a {
+          list-style-type: circle;
+        }
+        
+        ul.b {
+          list-style-type: square;
+        }
+        
+        ol.c {
+          list-style-type: upper-roman;
+        }
+        
+        ol.d {
+          list-style-type: lower-alpha;
         }
       </code></pre>
     </div>
-    <div>
-      <p style="font-family: Cursive, Times, serif">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eligendi
-        tempora delectus quia quam porro harum placeat accusamus quae ullam.
-        Sequi, voluptates ducimus excepturi eos temporibus obcaecati sapiente
-        voluptatum sed.
-      </p>
+    <div class="listMarker">
+      <ul style="list-style-type: circle">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+      <ul style="list-style-type: square">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+      <ol style="list-style-type: upper-roman">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+      <ol style="list-style-type: lower-alpha">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
     </div>
 
     <hr />
 
     <div>
-      <h1>What are Web Safe Fonts?</h1>
+      <h1>An Image as The List Item Marker</h1>
     </div>
     <div class="paragraphBox">
       <p>
-        Web safe fonts are fonts that are universally installed across all
-        browsers and devices.
+        The list-style-image property specifies an image as the list item
+        marker:
       </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        ul {
+          list-style-image: url('sqpurple.gif');
+        }
+      </code></pre>
     </div>
 
     <hr />
 
     <div>
-      <h1>Font Style</h1>
+      <h1>Position The List Item Markers</h1>
     </div>
     <div class="paragraphBox">
       <p>
@@ -246,7 +267,7 @@
       </code></pre>
     </div>
     <div>
-      <h1 style="font-size:10vw">Hello World</h1>
+      <h1 style="font-size: 10vw">Hello World</h1>
     </div>
     <div class="note">
       Viewport is the browser window size. 1vw = 1% of viewport width. If the

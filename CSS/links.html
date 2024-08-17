@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Links</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .linkStates a {
+        color: lightpink;
+        text-decoration: underline;
+      }
+      .linkStates a:link {
+        color: red;
+      }
+      .linkStates a:visited {
+        color: green;
+      }
+      .linkStates a:hover {
+        color: yellow;
+      }
+      .linkStates a:active {
+        color: blue;
+      }
+      .linkChanges a {
+        color: blue;
+        text-decoration: underline;
+      }
+      .linkChanges a.one:hover {
+        color: yellow;
+      }
+      .linkChanges a.two:hover {
+        font-size:150%;
+        color: white;
+      }
+      .linkChanges a.three:hover {
+        background-color: green;
+        color: blue;
+      }
+      .linkChanges a.four:hover {
+        font-family: monospace;
+      }
+      .linkChanges a.five {
+        text-decoration: none;
+      }
+      .linkChanges a.five:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Links</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>With CSS, links can be styled in many different ways.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        a {
+          color: hotpink;
+        }
+      </code></pre>
+    </div>
+    <div>
+      <a href="#" style="color: hotpink; text-decoration: underline"
+        >This is a link</a
+      >
+    </div>
+    <div class="paragraphBox">
+      <p>
+        In addition, links can be styled differently depending on what state
+        they are in.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>The four links states are:</p>
+      <pre><code class="language-css">
+        /* unvisited link */
+        a:link {
+         color: red;
+        }
+
+        /* visited link */
+        a:visited {
+          color: green;
+        }
+
+        /* mouse over link */
+        a:hover {
+          color: hotpink;
+        }
+
+        /* selected link */
+        a:active {
+          color: blue;
+        }
+      </code></pre>
+    </div>
+    <div class="linkStates">
+      <a href="#">This is a link</a>
+    </div>
+    <div class="note">
+      <p>
+        When setting the style for several link states, there are some order
+        rules:
+      </p>
+      <p>a:hover MUST come after a:link and a:visited</p>
+      <p>a:active MUST come after a:hover</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>This example demonstrates how to add other styles to hyperlinks:</p>
+      <pre><code class="language-css">
+        a.one:link {color: red;}
+        a.one:visited {color: blue;}
+        a.one:hover {color: yellow;}
+        
+        a.two:link {color: red;}
+        a.two:visited {color: blue;}
+        a.two:hover {font-size: 150%;}
+        
+        a.three:link {color: red;}
+        a.three:visited {color: blue;}
+        a.three:hover {background: green;}
+        
+        a.four:link {color: red;}
+        a.four:visited {color: blue;}
+        a.four:hover {font-family: monospace;}
+        
+        a.five:link {color: red; text-decoration: none;}
+        a.five:visited {color: blue; text-decoration: none;}
+        a.five:hover {text-decoration: underline;}
+      </code></pre>
+    </div>
+    <div class="linkChanges">
+      <a class="one" href="#">This link changes color</a> <br />
+      <a class="two" href="#">This link changes font-size</a> <br />
+      <a class="three" href="#">This link changes background-color</a> <br />
+      <a class="four" href="#">This link changes font-family</a> <br />
+      <a class="five" href="#">This link changes text-decoration</a> <br />
+    </div>
+
+    <script src="borders.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>

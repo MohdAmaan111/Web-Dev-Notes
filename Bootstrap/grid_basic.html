@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grids</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark text-light p-2">
+    <div>
+      <h1>Bootstrap Grids</h1>
+    </div>
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        Bootstrap's grid system is built with flexbox and allows up to 12
+        columns across the page.
+      </p>
+      <p>
+        If you do not want to use all 12 columns individually, you can group the
+        columns together to create wider columns:
+      </p>
+    </div>
+    <div class="container-fluid bg-light">
+      <div class="row">
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+        <div class="col-1 bg-secondary border">span1</div>
+      </div>
+      <div class="row">
+        <div class="col-4 bg-secondary border">span 4 (col-4)</div>
+        <div class="col-4 bg-secondary border">span 4 (col-4)</div>
+        <div class="col-4 bg-secondary border">span 4 (col-4)</div>
+      </div>
+      <div class="row">
+        <div class="col-4 bg-secondary border">span 4 (col-4)</div>
+        <div class="col-8 bg-secondary border">span 8 (col-8)</div>
+      </div>
+      <div class="row">
+        <div class="col-6 bg-secondary border">span 6 (col-6)</div>
+        <div class="col-6 bg-secondary border">span 6 (col-6)</div>
+      </div>
+      <div class="row">
+        <div class="col-12 bg-secondary border">span 12 (col-12)</div>
+      </div>
+    </div>
+    <p>
+      The grid system is responsive, and the columns will re-arrange
+      automatically depending on the screen size.
+    </p>
+
+    <hr />
+
+    <div>
+      <h1>Grid Classes</h1>
+    </div>
+    <div class="paragraphBox">
+      <ul>
+        <li>
+          <span class="text-danger">.col-</span> (extra small devices - screen
+          width less than 576px)
+        </li>
+        <li>
+          <span class="text-danger">.col-sm-</span> (small devices - screen
+          width equal to or greater than 576px)
+        </li>
+        <li>
+          <span class="text-danger">.col-md-</span> (extra small devices -
+          screen width less than 576px)
+        </li>
+        <li>
+          <span class="text-danger">.col-lg-</span> (extra small devices -
+          screen width less than 576px)
+        </li>
+        <li>
+          <span class="text-danger">.col-xl-</span> (extra small devices -
+          screen width less than 576px)
+        </li>
+        <li>
+          <span class="text-danger">.col-xxl-</span> (extra small devices -
+          screen width less than 576px)
+        </li>
+      </ul>
+      <p>
+        Tip: Each class scales up, so if you want to set the same widths for sm
+        and md, you only need to specify sm.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>The following is a basic structure of a Bootstrap 5 grid:</p>
+      <pre><code class="language-html">
+      &lt;!-- Control the column width, and how they should appear on different devices --&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-*-*"&gt;&lt;/div&gt;
+        &lt;div class="col-*-*"&gt;&lt;/div&gt;
+        &lt;div class="col-*-*"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- Or let Bootstrap automatically handle the layout --&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col"&gt;&lt;/div&gt;
+        &lt;div class="col"&gt;&lt;/div&gt;
+        &lt;div class="col"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        First example: create a row (&lt;div class="row"&gt;). Then, add the
+        desired number of columns (tags with appropriate .col-*-* classes).The
+        first star (*) represents the responsiveness: sm, md, lg, xl or xxl,
+        while the second star represents a number, which should add up to 12 for
+        each row.
+      </p>
+      <p>
+        Second example: instead of adding a number to each col, let bootstrap
+        handle the layout, to create equal width columns: two "col" elements =
+        50% width to each col, while three cols = 33.33% width to each col. Four
+        cols = 25% width, etc.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Three Equal Columns</h1>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example shows how to create three equal-width columns, on
+        all devices and screen widths:
+      </p>
+      <pre><code class="language-html">
+      &lt;div class="row"&gt;
+        &lt;div class="col"&gt;.col&lt;/div&gt;
+        &lt;div class="col"&gt;.col&lt;/div&gt;
+        &lt;div class="col"&gt;.col&lt;/div&gt;
+      &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col border bg-secondary p-3">.col</div>
+        <div class="col border bg-secondary p-3">.col</div>
+        <div class="col border bg-secondary p-3">.col</div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Responsive Columns</h1>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example shows how to create four equal-width columns
+        starting at tablets and scaling to extra large desktops.
+      </p>
+      <pre><code class="language-html">
+      &lt;div class="row"&gt;
+        &lt;div class="col-sm-3"&gt;.col-sm-3&lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;.col-sm-3&lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;.col-sm-3&lt;/div&gt;
+      &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 border bg-secondary p-3">.col-sm-3</div>
+        <div class="col-sm-3 border bg-secondary p-3">.col-sm-3</div>
+        <div class="col-sm-3 border bg-secondary p-3">.col-sm-3</div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Two Unequal Responsive Columns</h1>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example shows how to get two various-width columns
+        starting at tablets and scaling to large extra desktops:
+      </p>
+      <pre><code class="language-html">
+      &lt;div class="row"&gt;
+        &lt;div class="col-sm-4"&gt;.col-sm-4&lt;/div&gt;
+        &lt;div class="col-sm-8"&gt;.col-sm-8&lt;/div&gt;
+      &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 border bg-secondary p-3">.col-sm-4</div>
+        <div class="col-sm-8 border bg-secondary p-3">.col-sm-8</div>
+      </div>
+    </div>
+
+    <script src="attribute_selector.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
