@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark text-light p-2">
+    <div>
+      <h1>Bootstrap Buttons</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>Bootstrap 5 provides different styles of buttons:</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div class="container"&gt;
+          &lt;button type="button" class="btn"&gt;Basic&lt;/button&gt;
+          &lt;button type="button" class="btn btn-primary"&gt;Basic&lt;/button&gt;
+          ...
+          &lt;button type="button" class="btn btn-link"&gt;Link&lt;/button&gt;
+        &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="container bg-white p-1">
+      <button type="button" class="btn">Basic</button>
+      <button type="button" class="btn btn-primary">Basic</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-link">Link</button>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The button classes can be used on &lt;a&gt;, &lt;button&gt;, or
+        &lt;input&gt; elements:
+      </p>
+      <pre><code class="language-html">
+        &lt;div class="container"&gt;
+          &lt;a href="#" class="btn btn-success"&gt;Link Button&lt;/a&gt;
+          &lt;button type="button" class="btn btn-primary"&gt;Button&lt;/button&gt;
+          &lt;input type="button" class="btn btn-danger value="Input Button""&gt;
+        &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="container p-1">
+      <a href="#" class="btn btn-success">Link Button</a>
+      <button type="button" class="btn btn-primary">Button</button>
+      <input type="button" class="btn btn-danger" value="Input Button" />
+    </div>
+    <div class="bg-warning text-dark p-5 rounded">
+      <strong class="mb-5"
+        >Why do we put a # in the href attribute of the link?</strong
+      >
+      <p>
+        Since we do not have any page to link it to, and we do not want to get a
+        "404" message, we put # as the link. In real life it should of course
+        been a real URL to the "Search" page.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Button Outline</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>Bootstrap 5 also provides eight outline/bordered buttons.</p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div class="container"&gt;
+          &lt;button type="button" class="btn btn-outline-primary"&gt;Button&lt;/button&gt;
+          &lt;button type="button" class="btn btn-outline-success"&gt;Button&lt;/button&gt;
+          &lt;button type="button" class="btn btn-outline-danger"&gt;Button&lt;/button&gt;
+        &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="container p-1">
+      <button type="button" class="btn btn-outline-primary">Button</button>
+      <button type="button" class="btn btn-outline-success">Button</button>
+      <button type="button" class="btn btn-outline-danger">Button</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Button Sizes</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Use the
+        <span class="text-danger">.btn-lg</span> class for large buttons or
+        <span class="text-danger">.btn-sm</span> class for small buttons:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div class="container"&gt;
+          &lt;button type="button" class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;
+          &lt;button type="button" class="btn btn-primary"&gt;Default&lt;/button&gt;
+          &lt;button type="button" class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
+        &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="container p-1">
+      <button type="button" class="btn btn-danger btn-lg">Large</button>
+      <button type="button" class="btn btn-danger">Default</button>
+      <button type="button" class="btn btn-danger btn-sm">Small</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Block Level Buttons</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To create a block level button that spans the entire width of the parent
+        element, use the
+        <span class="text-danger">.d-grid</span> "helper" class on the parent
+        element:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div class="d-grid"&gt;
+          &lt;button type="button" class="btn btn-primary btn-block"&gt;Full-Width Button&lt;/button&gt;
+        &lt;/div&gt;
+        </code></pre>
+    </div>
+    <div class="d-grid">
+      <button type="button" class="btn btn-primary btn-block">
+        Full-Width Button
+      </button>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        If you have many block-level buttons, you can control the space between
+        them with the <span class="text-danger">.gap-*</span> class:
+      </p>
+      <pre><code class="language-html">
+        &lt;div class="d-grid gap-3"&gt;
+          &lt;button type="button" class="btn btn-primary btn-block"&gt;Full-Width Button&lt;/button&gt;
+          &lt;button type="button" class="btn btn-primary btn-block"&gt;Full-Width Button&lt;/button&gt;
+          &lt;button type="button" class="btn btn-primary btn-block"&gt;Full-Width Button&lt;/button&gt;
+        &lt;/div&gt;
+        </code></pre>
+    </div>
+    <div class="d-grid gap-3">
+      <button type="button" class="btn btn-primary btn-block">
+        Full-Width Button
+      </button>
+      <button type="button" class="btn btn-primary btn-block">
+        Full-Width Button
+      </button>
+      <button type="button" class="btn btn-primary btn-block">
+        Full-Width Button
+      </button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Active/Disabled Buttons</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        A button can be set to an active (appear pressed) or a disabled
+        (unclickable) state:
+      </p>
+      <p>
+        The class
+        <span class="text-danger">.active</span> makes a button appear pressed,
+        and the <span class="text-danger">disabled</span> attribute makes a
+        button unclickable.
+      </p>
+      <p>
+        Note that &lt;a&gt; elements do not support the disabled attribute and
+        must therefore use the <span class="text-danger">.disabled</span> class
+        to make it visually appear disabled.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div class="container"&gt;
+          &lt;button type="button" class="btn btn-primary"&gt;Primary Button&lt;/button&gt;
+          &lt;button type="button" class="btn btn-primary active"&gt;Active Primary&lt;/button&gt;
+          &lt;button type="button" class="btn btn-primary" disabled&gt;Disabled Primary&lt;/button&gt;
+          &lt;button type="button" class="btn btn-primary disabled"&gt;Disabled Link&lt;/button&gt;
+        &lt;/div&gt;
+        </code></pre>
+    </div>
+    <div class="container">
+      <button type="button" class="btn btn-primary">Primary Button</button>
+      <button type="button" class="btn btn-primary active">
+        Active Primary
+      </button>
+      <button type="button" class="btn btn-primary" disabled>
+        Disabled Primary
+      </button>
+      <button type="button" class="btn btn-primary disabled">
+        Disabled Link
+      </button>
+    </div>
+
+    <script src="attribute_selector.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>
