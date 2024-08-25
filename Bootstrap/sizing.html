@@ -55,7 +55,7 @@
 
     <div class="scriptBox" id="roundbox">
       <pre><code class="language-html">
-        &lt;div class="container bg-secondary d-flex"&gt;
+        &lt;div class="container bg-secondary d-flex" style="height: 15rem"&gt;
           &lt;div class="h-25 p-3 bg-primary"&gt;Height 25%&lt;/div&gt;
           &lt;div class="h-50 p-3 bg-primary"&gt;Height 50%&lt;/div&gt;
           &lt;div class="h-75 p-3 bg-primary"&gt;Height 75%&lt;/div&gt;
@@ -72,50 +72,45 @@
       <div class="h-auto p-3 bg-primary border m-0">Height auto</div>
     </div>
 
-    <hr />
-
-    <div>
-      <h1>Pill Badges</h1>
-    </div>
-    <div class="paragraphBox">
+    <div class="scriptBox" id="roundbox">
       <p>
-        Use the <span class="text-danger">.rounded-pill</span> class to make the
-        badges more round:
+        You can also use max-width: 100%; and max-height: 100%; utilities as
+        needed.
       </p>
-    </div>
-    <div class="scriptBox" id="roundbox">
       <pre><code class="language-html">
-          &lt;span class="badge rounded-pill bg-danger"&gt;Danger&lt;/span&gt;
-          &lt;span class="badge rounded-pill bg-success"&gt;Success&lt;/span&gt;
+        &lt;div style="width: 50%; height: 100px;"&gt;
+          &lt;div class="mw-100" style="width: 200%;"&gt;Max-width 100%&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style="height: 100px;"&gt;
+          &lt;div class="mh-100" style="width: 100px; height: 200px;"&gt;Max-height 100%&lt;/div&gt;
+        &lt;/div&gt;
       </code></pre>
     </div>
-    <div class="btn-group-vertical">
-      <h1>
-        Example heading <span class="badge rounded-pill bg-danger">Danger</span>
-      </h1>
-      <h4>
-        Example heading
-        <span class="badge rounded-pill bg-success">Success</span>
-      </h4>
+    <div class="bg-secondary" style="width: 50%; height: 100px">
+      <div class="mw-100 bg-success border" style="width: 200%">
+        Max-width 100%
+      </div>
+    </div>
+    <div class="bg-secondary" style="height: 100px">
+      <div class="mh-100 bg-success border" style="width: 100px; height: 200px">
+        Max-height 100%
+      </div>
     </div>
 
     <hr />
 
     <div>
-      <h1>Badge inside an Element</h1>
+      <h1>Relative to the viewport</h1>
     </div>
     <div class="scriptBox" id="roundbox">
-      <p>An example of using a badge inside a button:</p>
       <pre><code class="language-html">
-        &lt;button type="button" class="btn btn-primary"&gt;
-          Messages &lt;span class="badge bg-danger"&gt;4&lt;/span&gt;
-        &lt;/button&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="min-vw-100"&gt;Min-width 100vw&lt;/div&gt;
+        &lt;div class="min-vh-100"&gt;Min-height 100vh&lt;/div&gt;
+        &lt;div class="vw-100"&gt;Width 100vw&lt;/div&gt;
+        &lt;div class="vh-100"&gt;Height 100vh&lt;/div&gt;
+      &lt;/div&gt;
       </code></pre>
-    </div>
-    <div class="container">
-      <button type="button" class="btn btn-primary">
-        Messages <span class="badge bg-danger">4</span>
-      </button>
     </div>
 
     <script src="attribute_selector.js"></script>

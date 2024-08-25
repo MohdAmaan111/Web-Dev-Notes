@@ -116,6 +116,28 @@
       </button>
     </div>
 
+    <hr />
+
+    <div>
+      <h1>Positioned</h1>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Use utilities to modify a <span class="text-danger">.badge</span> and
+        position it in the corner of a link or button.
+      </p>
+      <pre><code class="language-html">
+        &lt;button type="button" class="btn btn-primary position-relative"&gt;
+          Inbox &lt;span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger bg-danger"&gt;4&lt;/span&gt;
+          99+ &lt;span class="visually-hidden"&gt;unread messages&lt;/span&gt;
+        &lt;/button&gt;
+      </code></pre>
+    </div>
+    <button type="button" class="btn btn-primary position-relative">
+      Inbox <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger bg-danger">4</span>
+      99+ <span class="visually-hidden">unread messages</span>
+    </button>
+
     <script src="attribute_selector.js"></script>
     <!-- Bootstrap JavaScript -->
     <script
