@@ -54,7 +54,7 @@
         }
       </code></pre>
     </div>
-    <div class="listMarker">
+    <div style="display: flex; gap: 5rem">
       <ul style="list-style-type: circle">
         <li>Coffee</li>
         <li>Tea</li>
@@ -103,176 +103,155 @@
     </div>
     <div class="paragraphBox">
       <p>
-        The <span class="redcolor">font-style</span> property is mostly used to
-        specify italic text.
+        The <span class="redcolor">list-style-position</span> property specifies
+        the position of the list-item markers (bullet points).
       </p>
-      <p>This property has three values:</p>
-      <ul>
-        <li>normal - The text is shown normally</li>
-        <li>italic - The text is shown in italics</li>
-        <li>
-          oblique - The text is "leaning" (oblique is very similar to italic,
-          but less supported)
-        </li>
-      </ul>
     </div>
     <div class="scriptBox" id="roundbox">
+      <p>
+        <span class="redcolor">list-style-position: outside;</span> means that
+        the bullet points will be outside the list item. This is default:
+      </p>
       <pre><code class="language-css">
-        p.normal {
-          font-style: normal;
-        }
-        
-        p.italic {
-          font-style: italic;
-        }
-        
-        p.oblique {
-          font-style: oblique;
+        ul.a {
+          list-style-position: outside;
         }
       </code></pre>
     </div>
-    <div>
-      <p style="font-style: normal">This is a paragraph in normal style.</p>
-      <p style="font-style: italic">This is a paragraph in italic style.</p>
-      <p style="font-style: oblique">This is a paragraph in oblique style.</p>
+    <ul style="list-style-position: outside; width: 30%">
+      <li style="border: 2px solid">Coffee - A brewed drink ...</li>
+      <li style="border: 2px solid">Tea - An aromatic beverage ...</li>
+      <li style="border: 2px solid">Coca Cola - A carbonated soft ...</li>
+    </ul>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        <span class="redcolor">list-style-position: inside;</span> means that
+        the bullet points will be inside the list item.
+      </p>
+      <pre><code class="language-css">
+        ul.b {
+          list-style-position: inside;
+        }
+      </code></pre>
     </div>
+    <ul style="list-style-position: inside; width: 30%">
+      <li style="border: 2px solid">Coffee - A brewed drink ...</li>
+      <li style="border: 2px solid">Tea - An aromatic beverage ...</li>
+      <li style="border: 2px solid">Coca Cola - A carbonated soft ...</li>
+    </ul>
 
     <hr />
 
     <div>
-      <h1>Font Weight</h1>
+      <h1>Remove Default Settings</h1>
     </div>
     <div class="paragraphBox">
-      <p>The font-weight property specifies the weight of a font:</p>
+      <p>
+        The <span class="redcolor">list-style-type:none;</span> property can
+        also be used to remove the markers/bullets.
+      </p>
+      <p>
+        Note that the list also has default margin and padding. To remove this,
+        add margin:0 and padding:0 to
+        <span class="redcolor">&lt;ul&gt;</span> or
+        <span class="redcolor">&lt;ol&gt;</span>:
+      </p>
     </div>
     <div class="scriptBox" id="roundbox">
       <pre><code class="language-css">
-        p.normal {
-          font-weight: normal;
-        }
-        
-        p.thick {
-          font-weight: bold;
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
         }
       </code></pre>
     </div>
-    <div>
-      <p style="font-weight: normal">This is a paragraph.</p>
-      <p style="font-weight: bold">This is a paragraph.</p>
-    </div>
+    <ul style="list-style-type: none; margin: 0; padding: 0">
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Coca Cola</li>
+    </ul>
 
     <hr />
 
     <div>
-      <h1>Font Variant</h1>
+      <h1>Styling List With Colors</h1>
     </div>
     <div class="paragraphBox">
       <p>
-        The font-variant property specifies whether or not a text should be
-        displayed in a small-caps font.
-      </p>
-      <p>
-        In a small-caps font, all lowercase letters are converted to uppercase
-        letters. However, the converted uppercase letters appears in a smaller
-        font size than the original uppercase letters in the text.
+        Anything added to the &lt;ol&gt; or &lt;ul&gt; tag, affects the entire
+        list, while properties added to the &lt;li&gt; tag will affect the
+        individual list items:
       </p>
     </div>
     <div class="scriptBox" id="roundbox">
       <pre><code class="language-css">
-        p.normal {
-          font-variant: normal;
+        ol {
+          background: #ff9999;
+          padding: 20px;
         }
-        
-        p.small {
-          font-variant: small-caps;
-        }
-      </code></pre>
-    </div>
-    <div>
-      <p style="font-variant: normal">My name is Hege Refsnes.</p>
-      <p style="font-variant: small-caps">My name is Hege Refsnes.</p>
-    </div>
-
-    <hr />
-
-    <div>
-      <h1>Font Size</h1>
-    </div>
-    <div class="paragraphBox">
-      <p>The font-size property sets the size of the text.</p>
-    </div>
-    <div class="note">
-      <p>
-        Note: If you do not specify a font size, the default size for normal
-        text, like paragraphs, is 16px (16px=1em).
-      </p>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>Set Font Size With Pixels</p>
-      <pre><code class="language-css">
-        p.exp1 {
-          font-size: 40px;
-        }
-        
-        p.exp2 {
-          font-size: 30px;
-        }
-        
-        p.exp3 {
-          font-size: 14px;
+        ol li {
+          background: #ffe5e5;
+          color: darkred;
+          padding: 5px;
+          margin-left: 35px;
         }
       </code></pre>
     </div>
-    <div>
-      <p style="font-size: 40px">This is a paragraph.</p>
-      <p style="font-size: 30px">This is a paragraph.</p>
-      <p style="font-size: 14px">This is a paragraph.</p>
-    </div>
-    <div class="scriptBox" id="roundbox">
-      <p>Set Font Size With Em</p>
-      <pre><code class="language-css">
-        p.exp1 {
-          font-size: 1em; /* 16px * 1em = 16px */
-        }
+    <ol style="background: #ff9999; padding: 20px">
+      <li
+        style="
+          background: #ffe5e5;
+          color: darkred;
+          padding: 5px;
+          margin-left: 35px;
+        "
+      >
+        Coffee
+      </li>
+      <li
+        style="
+          background: #ffe5e5;
+          color: darkred;
+          padding: 5px;
+          margin-left: 35px;
+        "
+      >
+        Tea
+      </li>
+      <li
+        style="
+          background: #ffe5e5;
+          color: darkred;
+          padding: 5px;
+          margin-left: 35px;
+        "
+      >
+        Coca Cola
+      </li>
+    </ol>
 
-        p.exp2 {
-          font-size: 2.5em; /* 16px * 2.5em = 40px */
-        }
-        
-        p.exp3 {
-          font-size: 0.875em; /* 16px * 0.875em = 14px */
-        }
-      </code></pre>
-    </div>
-    <div>
-      <p style="font-size: 1em">This is a paragraph.</p>
-      <p style="font-size: 2.5em">This is a paragraph.</p>
-      <p style="font-size: 0.875em">This is a paragraph.</p>
-    </div>
-
-    <hr />
-
-    <div>
-      <h1>Responsive Font Size</h1>
-    </div>
-    <div class="paragraphBox">
-      <p>
-        The text size can be set with a <span class="redcolor">vw</span> unit,
-        which means the "viewport width".
-      </p>
-    </div>
     <div class="scriptBox" id="roundbox">
       <pre><code class="language-css">
-        &lt;h1 style="font-size:10vw"&gt;Hello World&lt;/h1&gt;
+        ul {
+          background: #3399ff;
+          padding: 20px;
+        }
+        ul li {
+          background: #cce5ff;
+          color: darkblue;
+          margin: 5px;
+        }
       </code></pre>
     </div>
-    <div>
-      <h1 style="font-size: 10vw">Hello World</h1>
-    </div>
-    <div class="note">
-      Viewport is the browser window size. 1vw = 1% of viewport width. If the
-      viewport is 50cm wide, 1vw is 0.5cm.
-    </div>
+    <ol style="background: #3399ff; padding: 20px">
+      <li style="background: #cce5ff; color: darkblue; margin: 5px">Coffee</li>
+      <li style="background: #cce5ff; color: darkblue; margin: 5px">Tea</li>
+      <li style="background: #cce5ff; color: darkblue; margin: 5px">
+        Coca Cola
+      </li>
+    </ol>
 
     <script src="borders.js"></script>
     <!-- Prism.js JavaScript -->

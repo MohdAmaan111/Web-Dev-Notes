@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>JavaScript</h1>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Why Study JavaScript?</h1>
+    </div>
+    <ol>
+      <li>
+        <span style="font-weight: bold">HTML</span> to define the content of web
+        pages
+      </li>
+      <li>
+        <span style="font-weight: bold">CSS</span> to specify the layout of web
+        pages
+      </li>
+      <li>
+        <span style="font-weight: bold">JavaScript</span> to program the
+        behavior of web pages
+      </li>
+    </ol>
+
+    <hr />
+
+    <div>
+      <h1>Syntax</h1>
+    </div>
+    <img
+      src="../Images/css_syntax.jpg"
+      alt="CSS Syntax"
+      style="border-radius: 10px"
+    />
+    <div class="paragraphBox">
+      <p>The selector points to the HTML element you want to style.</p>
+      <p>
+        The declaration block contains one or more declarations separated by
+        semicolons.
+      </p>
+      <p>
+        Each declaration includes a CSS property name and a value, separated by
+        a colon.
+      </p>
+      <p>
+        Multiple CSS declarations are separated with semicolons, and declaration
+        blocks are surrounded by curly braces.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        In this example all &lt;p&gt; elements will be center-aligned, with a
+        red text color:
+      </p>
+      <pre><code class="language-css">
+        p {
+          color: red;
+          text-align: center;
+        }
+        </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <ul>
+        <li><span class="redcolor">p</span> is a selector in CSS</li>
+        <li>
+          <span class="redcolor">color</span> is a property, and
+          <span class="redcolor">red</span> is the property value
+        </li>
+        <li>
+          <span class="redcolor">text-align</span> is a property, and
+          <span class="redcolor">center</span> is the property value
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h1>CSS Comments</h1>
+    </div>
+
+    <hr />
+    <div class="paragraphBox">
+      <p>
+        Comments are used to explain the code, and may help when you edit the
+        source code at a later date.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        A CSS comment is placed inside the &lt;style&gt; element, and starts
+        with /* and ends with */:
+      </p>
+      <pre><code class="language-css">
+        /* This is a single-line comment */
+        p {
+          color: red;
+        }
+          </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>You can add comments wherever you want in the code:</p>
+      <pre><code class="language-css">
+        p {
+          color: red;  /* Set text color to red */
+        }
+          </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Even in the middle of a code line:</p>
+      <pre><code class="language-css">
+        p {
+          color: /*red*/blue; 
+        }
+          </code></pre>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Comments can also span multiple lines:</p>
+      <pre><code class="language-css">
+        /* This is
+        a multi-line
+        comment */
+        p {
+          color: red;
+        }
+          </code></pre>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>

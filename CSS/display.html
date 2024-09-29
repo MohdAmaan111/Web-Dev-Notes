@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Margins</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>CSS Display</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">display</span> property is used to specify
+        how an element is shown on a web page.
+      </p>
+      <p>
+        Every HTML element has a default display value, depending on what type
+        of element it is.
+      </p>
+      <p>
+        The default display value for most elements is
+        <span class="redcolor">block</span> or
+        <span class="redcolor">inline</span>.
+      </p>
+      <p>
+        The <span class="redcolor">display</span> property is used to change the
+        default display behavior of HTML elements.
+      </p>
+    </div>
+    <hr />
+    <div>
+      <h1>Block-level Elements</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        A block-level element ALWAYS starts on a new line and takes up the full
+        width available (stretches out to the left and right as far as it can).
+      </p>
+      <p>Examples of block-level elements:</p>
+      <ul>
+        <li><span class="redcolor">&lt;div&gt;</span></li>
+        <li><span class="redcolor">&lt;h1&gt; - &lt;h6&gt;</span></li>
+        <li><span class="redcolor">&lt;p&gt;</span></li>
+        <li><span class="redcolor">&lt;form&gt;</span></li>
+        <li><span class="redcolor">&lt;header&gt;</span></li>
+        <li><span class="redcolor">&lt;footer&gt;</span></li>
+        <li><span class="redcolor">&lt;section&gt;</span></li>
+      </ul>
+    </div>
+    <div style="border: 2px solid greenyellow">
+      The &lt;div&gt; element is a block-level element.
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Inline Elements</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        An inline element DOES NOT start on a new line and only takes up as much
+        width as necessary.
+      </p>
+      <p>Examples of inline elements:</p>
+      <ul>
+        <li><span class="redcolor">&lt;span&gt;</span></li>
+        <li><span class="redcolor">&lt;a&gt;</span></li>
+        <li><span class="redcolor">&lt;img&gt;</span></li>
+      </ul>
+    </div>
+    <div>
+      This is
+      <span style="border: 2px solid greenyellow"
+        >an inline &lt;span&gt; element inside</span
+      >
+      a paragraph.
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Display: none;</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        It is commonly used with JavaScript to hide and show elements without
+        deleting and recreating them.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+        &lt;div&gt;
+        This is &lt;span style="display: none;"&gt;a Display: none; element inside&lt;/span&gt; a paragraph.
+        &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div>
+      This is
+      <span style="border: 2px solid greenyellow; display: none"
+        >a Display: none; element inside</span
+      >
+      a paragraph.
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Override The Default Display Value</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        As mentioned, every element has a default display value. However, you
+        can override this.
+      </p>
+      <p>
+        Changing an inline element to a block element, or vice versa, can be
+        useful for making the page look a specific way, and still follow the web
+        standards.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        A common example is making inline &lt;li&gt; elements for horizontal
+        menus:
+      </p>
+      <pre><code class="language-css">
+        li {
+          display: inline;
+        }
+      </code></pre>
+    </div>
+    <ul>
+      <li style="list-style: none; display: inline">
+        <a
+          style="color: greenyellow; text-decoration: underline"
+          href="/html/default.asp"
+          target="_blank"
+          >HTML</a
+        >
+      </li>
+      <li style="list-style: none; display: inline">
+        <a
+          style="color: greenyellow; text-decoration: underline"
+          href="/css/default.asp"
+          target="_blank"
+          >CSS</a
+        >
+      </li>
+      <li style="list-style: none; display: inline">
+        <a
+          style="color: greenyellow; text-decoration: underline"
+          href="/js/default.asp"
+          target="_blank"
+          >JavaScript</a
+        >
+      </li>
+    </ul>
+
+    <hr />
+
+    <div>
+      <h1>Visibility:hidden;</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        <span class="redcolor">visibility:hidden;</span> also hides an element.
+      </p>
+      <p>
+        However, the element will still take up the same space as before. The
+        element will be hidden, but still affect the layout:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>Example</p>
+      <pre><code class="language-html">
+        &lt;div&gt;
+        This is &lt;span style="visibility: hidden;"&gt;a visibility: hidden; element inside&lt;/span&gt; a paragraph.
+        &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div>
+      This is
+      <span style="border: 2px solid greenyellow; visibility: hidden;"
+        >a visibility: hidden; element inside</span
+      >
+      a paragraph.
+    </div>
+    
+
+    <script src="borders.js"></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>

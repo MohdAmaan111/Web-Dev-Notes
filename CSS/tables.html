@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>CSS Tables</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>The look of an HTML table can be greatly improved with CSS:</p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Table Borders</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To specify table borders in CSS, use the
+        <span class="redcolor">border</span> property.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The example below specifies a solid border for &lt;table&gt;,
+        &lt;th&gt;, and &lt;td&gt; elements:
+      </p>
+      <pre><code class="language-css">
+        table, th, td {
+          border: 1px solid;
+        }
+      </code></pre>
+    </div>
+    <table style="border: 1px solid">
+      <tr>
+        <th style="border: 1px solid">Firstname</th>
+        <th style="border: 1px solid">Lastname</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid">Peter</td>
+        <td style="border: 1px solid">Griffin</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid">Lois</td>
+        <td style="border: 1px solid">Griffin</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <div>
+      <h1>Full-Width Table</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        If you need a table that should span the entire screen (full-width), add
+        <span class="redcolor">width: 100%</span> to the &lt;table&gt; element:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        table {
+          width: 100%;
+        }
+      </code></pre>
+    </div>
+    <table style="border: 1px solid; width: 100%">
+      <tr>
+        <th style="border: 1px solid">Firstname</th>
+        <th style="border: 1px solid">Lastname</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid">Peter</td>
+        <td style="border: 1px solid">Griffin</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid">Peter</td>
+        <td style="border: 1px solid">Griffin</td>
+      </tr>
+    </table>
+    <div class="note">
+      Notice that the table in the examples above have double borders. This is
+      because both the table and the &lt;th&gt; and &lt;td&gt; elements have
+      separate borders.
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Collapse Table Borders</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">border-collapse</span> property sets whether
+        the table borders should be collapsed into a single border:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        table {
+          border-collapse: collapse;
+        }
+      </code></pre>
+    </div>
+    <table style="border: 1px solid; width: 99%; border-collapse: collapse">
+      <tr>
+        <th style="border: 1px solid">Firstname</th>
+        <th style="border: 1px solid">Lastname</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid">Peter</td>
+        <td style="border: 1px solid">Griffin</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid">Peter</td>
+        <td style="border: 1px solid">Griffin</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <div>
+      <h1>Table Width and Height</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The width and height of a table are defined by the
+        <span class="redcolor">width</span> and
+        <span class="redcolor">height</span> properties.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        Set the width of the table to 100%, and the height of the &lt;th&gt;
+        elements to 70px:
+      </p>
+      <pre><code class="language-css">
+        table {
+          width: 50%;
+        }
+        
+        th {
+          height: 70px;
+        }
+      </code></pre>
+    </div>
+    <table style="border: 1px solid; width: 50%; border-collapse: collapse">
+      <tr>
+        <th style="border: 1px solid; height: 70px">Firstname</th>
+        <th style="border: 1px solid; height: 70px">Lastname</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid">Peter</td>
+        <td style="border: 1px solid">Griffin</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid">Peter</td>
+        <td style="border: 1px solid">Griffin</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <div>
+      <h1>Horizontal Alignment</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">text-align</span> property sets the
+        horizontal alignment (like left, right, or center) of the content in
+        &lt;th&gt; or &lt;td&gt;.
+      </p>
+      <p>
+        By default, the content of &lt;th&gt; elements are center-aligned and
+        the content of &lt;td&gt; elements are left-aligned.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        td {
+          text-align: center;
+        }
+      </code></pre>
+    </div>
+    <table style="border-collapse: collapse; width: 99%; border: 1px solid">
+      <tr>
+        <th style="border: 1px solid">Firstname</th>
+        <th style="border: 1px solid">Lastname</th>
+        <th style="border: 1px solid">Savings</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid; text-align: center">Peter</td>
+        <td style="border: 1px solid; text-align: center">Griffin</td>
+        <td style="border: 1px solid; text-align: center">$100</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid; text-align: center">Lois</td>
+        <td style="border: 1px solid; text-align: center">Griffin</td>
+        <td style="border: 1px solid; text-align: center">$150</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid; text-align: center">Cleveland</td>
+        <td style="border: 1px solid; text-align: center">Brown</td>
+        <td style="border: 1px solid; text-align: center">$250</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <div>
+      <h1>Vertical Alignment</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">vertical-align</span> property sets the
+        vertical alignment (like top, bottom, or middle) of the content in
+        &lt;th&gt; or &lt;td&gt;.
+      </p>
+      <p>
+        By default, the vertical alignment of the content in a table is middle.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        td {
+          height: 60px;
+          vertical-align: bottom;
+        }
+      </code></pre>
+    </div>
+    <table style="border-collapse: collapse; width: 99%; border: 1px solid">
+      <tr>
+        <th style="border: 1px solid">Firstname</th>
+        <th style="border: 1px solid">Lastname</th>
+        <th style="border: 1px solid">Savings</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid; height: 60px; vertical-align: bottom">
+          Peter
+        </td>
+        <td style="border: 1px solid; height: 60px; vertical-align: bottom">
+          Griffin
+        </td>
+        <td style="border: 1px solid; height: 60px; vertical-align: bottom">
+          $100
+        </td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid; height: 60px; vertical-align: bottom">
+          Lois
+        </td>
+        <td style="border: 1px solid; height: 60px; vertical-align: bottom">
+          Griffin
+        </td>
+        <td style="border: 1px solid; height: 60px; vertical-align: bottom">
+          $150
+        </td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid; height: 60px; vertical-align: bottom">
+          Cleveland
+        </td>
+        <td style="border: 1px solid; height: 60px; vertical-align: bottom">
+          Brown
+        </td>
+        <td style="border: 1px solid; height: 60px; vertical-align: bottom">
+          $250
+        </td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <div>
+      <h1>Table Padding</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To control the space between the border and the content in a table, use
+        the <span class="redcolor">padding</span> property on &lt;th&gt; and
+        &lt;td&gt; elements:
+      </p>
+      <p>
+        By default, the vertical alignment of the content in a table is middle.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        th {
+          padding: 15px;
+        }
+      </code></pre>
+    </div>
+    <table style="border-collapse: collapse; width: 99%; border: 1px solid">
+      <tr>
+        <th style="border: 1px solid; padding: 15px">Firstname</th>
+        <th style="border: 1px solid; padding: 15px">Lastname</th>
+        <th style="border: 1px solid; padding: 15px">Savings</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid; padding: 15px">Peter</td>
+        <td style="border: 1px solid; padding: 15px">Griffin</td>
+        <td style="border: 1px solid; padding: 15px">$100</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <div>
+      <h1>Horizontal Dividers</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Add the <span class="redcolor">border-bottom</span> property to
+        &lt;th&gt; and &lt;td&gt; for horizontal dividers:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        th, td {
+          border-bottom: 1px solid #ddd;
+        }
+      </code></pre>
+    </div>
+    <table style="border-collapse: collapse; width: 99%">
+      <tr>
+        <th style="border-bottom: 1px solid #ddd">Firstname</th>
+        <th style="border-bottom: 1px solid #ddd">Lastname</th>
+        <th style="border-bottom: 1px solid #ddd">Savings</th>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #ddd">Peter</td>
+        <td style="border-bottom: 1px solid #ddd">Griffin</td>
+        <td style="border-bottom: 1px solid #ddd">$100</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <div>
+      <h1>Hoverable Table</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Use the <span class="redcolor">:hover</span> selector on &lt;tr&gt; to
+        highlight table rows on mouse over:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        tr:hover { background-color: coral; }
+      </code></pre>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Striped Tables</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        For zebra-striped tables, use the
+        <span class="redcolor">nth-child()</span> selector and add a
+        <span class="redcolor">background-color</span> to all even (or odd)
+        table rows:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        tr:nth-child(even) { background-color: #f2f2f2; }
+      </code></pre>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Table Color</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The example below specifies the background color and text color of
+        &lt;th&gt; elements:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        th {
+          background-color: #04AA6D;
+          color: white;
+        }
+      </code></pre>
+    </div>
+    <table style="border-collapse: collapse; width: 99%">
+      <tr class="hovertable" style="height: 40px; background-color: #04aa6d">
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Savings</th>
+      </tr>
+      <tr class="hovertable" style="background-color: white">
+        <td style="color: black">Peter</td>
+        <td style="color: black">Griffin</td>
+        <td style="color: black">$100</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <div>
+      <h1>Responsive Table</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        A responsive table will display a horizontal scroll bar if the screen is
+        too small to display the full content:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div style="overflow:auto;"&gt;
+
+        &lt;table&gt;
+          ... table content ...
+        &lt;/table&gt;
+          
+        &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div style="width: 99%; overflow: auto">
+      <table style="border-collapse: collapse">
+        <tr class="hovertable" style="height: 40px; background-color: #04aa6d">
+          <th style="padding: 1rem 3rem">Firstname</th>
+          <th style="padding: 1rem 3rem">Lastname</th>
+          <th style="padding: 1rem 3rem">Points</th>
+          <th style="padding: 1rem 3rem">Points</th>
+          <th style="padding: 1rem 3rem">Points</th>
+          <th style="padding: 1rem 3rem">Points</th>
+          <th style="padding: 1rem 3rem">Points</th>
+          <th style="padding: 1rem 3rem">Points</th>
+        </tr>
+        <tr class="hovertable" style="background-color: white">
+          <td style="color: black">Peter</td>
+          <td style="color: black">Griffin</td>
+          <td style="color: black">$100</td>
+          <td style="color: black">$100</td>
+          <td style="color: black">$100</td>
+          <td style="color: black">$100</td>
+          <td style="color: black">$100</td>
+          <td style="color: black">$100</td>
+        </tr>
+      </table>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Border Spacing</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="redcolor">border-spacing</span> property sets the
+        distance between the borders of adjacent cells.
+      </p>
+    </div>
+    <div class="note">
+      Note: This property works only when border-collapse is separate.
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-css">
+        #table1 {
+          border-collapse: separate;
+          border-spacing: 15px;
+        }
+        
+        #table2 {
+          border-collapse: separate;
+          border-spacing: 15px 50px;
+        }
+      </code></pre>
+    </div>
+    <table style="border-spacing: 15px; width: 99%; border: 1px solid">
+      <tr>
+        <th style="border: 1px solid; padding: 15px">Firstname</th>
+        <th style="border: 1px solid; padding: 15px">Lastname</th>
+        <th style="border: 1px solid; padding: 15px">Savings</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid; padding: 15px">Peter</td>
+        <td style="border: 1px solid; padding: 15px">Griffin</td>
+        <td style="border: 1px solid; padding: 15px">$100</td>
+      </tr>
+    </table>
+    <table
+      style="
+        border-spacing: 15px 50px;
+        width: 99%;
+        border: 1px solid;
+        margin-top: 20px;
+      "
+    >
+      <tr>
+        <th style="border: 1px solid; padding: 15px">Firstname</th>
+        <th style="border: 1px solid; padding: 15px">Lastname</th>
+        <th style="border: 1px solid; padding: 15px">Savings</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid; padding: 15px">Peter</td>
+        <td style="border: 1px solid; padding: 15px">Griffin</td>
+        <td style="border: 1px solid; padding: 15px">$100</td>
+      </tr>
+    </table>
+
+    <!-- Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>

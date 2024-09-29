@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utilities</title>
+    
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="../iframe_content.css" />
+  </head>
+  <body class="bg-dark text-light p-2">
+    <div>
+      <h1>Utilities</h1>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Float and Clearfix</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Float an element to the right with the
+        <span class="text-danger">.float-end</span> class or to the left with
+        <span class="text-danger">.float-start</span> , and clear floats with
+        the <span class="text-danger">.clearfix</span> class:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div class="clearfix"&gt;
+          &lt;span class="float-start"&gt;Float left&lt;/span&gt;
+          &lt;span class="float-end"&gt;Float right&lt;/span&gt;
+        &lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="containers clearfix">
+      <div
+        class="border bg-secondary m-3 text-center float-start"
+        style="width: 8rem; height: 2rem"
+      >
+        Float left
+      </div>
+      <div
+        class="border bg-secondary m-3 text-center float-end"
+        style="width: 8rem; height: 2rem"
+      >
+        Float right
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Responsive Floats</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Float an element to the left or to the right depending on screen width,
+        with the responsive float classes (<span class="text-danger"
+          >.float-*-start|end</span
+        >):
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div class="float-sm-end"&gt;Float right on small screens or wider&lt;/div&gt;&lt;br&gt;
+        &lt;div class="float-md-end"&gt;Float right on medium screens or wider&lt;/div&gt;&lt;br&gt;
+        &lt;div class="float-lg-end"&gt;Float right on large screens or wider&lt;/div&gt;&lt;br&gt;
+        &lt;div class="float-xl-end"&gt;Float right on extra large screens or wider&lt;/div&gt;&lt;br&gt;
+        &lt;div class="float-xxl-end"&gt;Float right on XXL screens or wider&lt;/div&gt;&lt;br&gt;
+        &lt;div class="float-none"&gt;Float none&lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="float-sm-end">Float right on small screens or wider</div>
+    <div class="float-md-end">Float right on medium screens or wider</div>
+    <div class="float-lg-end">Float right on large screens or wider</div>
+    <div class="float-xl-end">Float right on extra large screens or wider</div>
+    <div class="float-xxl-end">Float right on XXL screens or wider</div>
+    <div class="float-right">Float none</div>
+
+    <hr />
+
+    <div>
+      <h1>Center Align</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Center an element with the
+        <span class="text-danger">mx-auto</span> class (adds margin-left and
+        margin-right: auto):
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div class="mx-auto bg-warning text-center" style="width:150px"&gt;Centered&lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="mx-auto bg-warning text-center text-dark" style="width: 150px">
+      Centered
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Vertical Align</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Use the
+        <span class="text-danger">align-</span> classes to change the alignment
+        of elements (only works on inline, inline-block, inline-table and table
+        cell elements):
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;span class="align-baseline""&gt;baseline&lt;/span&gt;
+        &lt;span class="align-top"&gt;top&lt;/span&gt;
+        &lt;span class="align-middle"&gt;middle&lt;/span&gt;
+        &lt;span class="align-bottom"&gt;bottom&lt;/span&gt;
+        &lt;span class="align-text-top"&gt;text-top&lt;/span&gt;
+        &lt;span class="align-baseline"&gt;baseline&lt;/span&gt;
+        &lt;span class="align-text-bottom"&gt;text-bottom&lt;/span&gt;
+      </code></pre>
+    </div>
+    <div>
+      <span class="align-baseline">baseline</span>
+      <span class="align-top">top</span>
+      <span class="align-middle">middle</span>
+      <span class="align-bottom">bottom</span>
+      <span class="align-text-top">text-top</span>
+      <span class="align-text-bottom">text-bottom</span>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Shadows</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Use the
+        <span class="text-danger">shadow-</span> classes to add shadows to an
+        element:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div class="shadow-none p-4 mb-4 bg-light"&gt;No shadow&lt;/div&gt;
+        &lt;div class="shadow-sm p-4 mb-4 bg-light"&gt;Small shadow&lt;/div&gt;
+        &lt;div class="shadow p-4 mb-4 bg-light"&gt;Default shadow&lt;/div&gt;
+        &lt;div class="shadow-lg p-4 mb-4 bg-light"&gt;Large shadow&lt;/div&gt;
+      </code></pre>
+    </div>
+    <div class="container-fluid bg-white py-3">
+      <div class="shadow-none p-4 mb-4 bg-light text-dark">No shadow</div>
+      <div class="shadow-sm p-4 mb-4 bg-white text-dark">Small shadow</div>
+      <div class="shadow p-4 mb-4 bg-white text-dark">Default shadow</div>
+      <div class="shadow-lg p-4 mb-4 bg-white text-dark">Large shadow</div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Aspect Ratio</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Create responsive video or slideshows based on the width of the parent.
+      </p>
+      <p>
+        Add the
+        <span class="text-danger">.ratio</span> class together with an aspect
+        ratio of your choice <span class="text-danger">.ratio-*</span> to a
+        parent element, and add the embed (video or iframe) inside of it:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;!-- Aspect ratio 1:1 --&gt;
+        &lt;div class="ratio ratio-1x1"&gt;
+          &lt;iframe src="https://www.youtube.com"&gt;&lt;/iframe&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Aspect ratio 4:3 --&gt;
+        &lt;div class="ratio ratio-4x3"&gt;
+          &lt;iframe src="https://www.youtube.com"&gt;&lt;/iframe&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Aspect ratio 16:9 --&gt;
+        &lt;div class="ratio ratio-16x9"&gt;
+          &lt;iframe src="https://www.youtube.com"&gt;&lt;/iframe&gt;
+        &lt;/div&gt;
+      </code></pre>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Visibility
+      </h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Use the <span class="text-danger">.visible</span> or
+        <span class="text-danger">.invisible</span> classes to control the
+        visibility of elements.
+      </p>
+      <p>
+        <strong>Note:</strong> These classes do not change the CSS display
+        value.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-html">
+        &lt;div&gt;I am &lt;span class="visible"&gt;visible&lt;/span&gt; text
+        & I am &lt;span class="invisible"&gt;invisible&lt;/span&gt; text.&lt;/div&gt;
+      </code></pre>
+    </div>
+    <div>I am 
+      <span class="visible">visible</span> text & I am 
+      <span class="invisible">invisible</span> text.
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+
+    <script>
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    </script>
+  </body>
+</html>

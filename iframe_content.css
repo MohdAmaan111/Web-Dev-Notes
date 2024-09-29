@@ -8,6 +8,7 @@
 body {
   width: 80%;
   height: auto;
+  padding: 2rem 0;
   border-right: 1px solid rgba(255, 0, 0, 0.4);
   background-color: #393e46;
   margin-left: 10px;
