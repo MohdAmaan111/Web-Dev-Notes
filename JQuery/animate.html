@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Effects</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery Effects - Animation</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>With jQuery, you can create custom animations.</p>
+      <p>Syntax:</p>
+      <div class="note">$(selector).animate({params},speed,callback);</div>
+      <p>
+        The required params parameter defines the CSS properties to be animated.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example demonstrates a simple use of the
+        <span class="c-r">animate()</span> method; it moves a &lt;div&gt;
+        element to the right, until it has reached a left property of 250px:
+      </p>
+      <pre><code class="language-js">
+        $("div").click(function(){
+          $(this).animate({left: '250px'});
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox" style="margin-bottom: 10rem">
+      <p class="c-r">Example:</p>
+      <p>
+        By default, all HTML elements have a static position, and cannot be
+        moved. To manipulate the position, remember to first set the CSS
+        position property of the element to relative, fixed, or absolute!
+      </p>
+      <div
+        class="div1"
+        style="
+          background: #98bf21;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+        "
+      ></div>
+    </div>
+
+    <hr />
+
+    <!-- Manipulate Multiple Properties -->
+    <div>
+      <h1>Manipulate Multiple Properties</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        It is possible to manipulate ALL CSS properties with the
+        <span class="c-r">animate()</span> method.
+      </p>
+      <p>
+        There is one important thing to remember: all property names must be
+        camel-cased when used with the animate() method: You will need to write
+        <span class="c-r">paddingLeft</span> instead of padding-left,
+        <span class="c-r">marginRight</span> instead of margin-right, and so on.
+      </p>
+      <p>
+        Also, color animation is not included in the core jQuery library. If you
+        want to animate color, you need to download the Color Animations plugin
+        from jQuery.com.
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("div").click(function(){
+          $(this).animate({
+            left: '250px',
+            opacity: '0.5',
+            height: '150px',
+            width: '150px'
+          });
+        }); 
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox" style="margin-bottom: 12rem">
+      <p class="c-r">Example:</p>
+      <div
+        class="div2"
+        style="
+          background: #98bf21;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+        "
+      ></div>
+    </div>
+
+    <hr />
+
+    <!-- Using Relative Values -->
+    <div>
+      <h1>Using Relative Values</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        It is also possible to define relative values (the value is then
+        relative to the element's current value).
+      </p>
+      <p>
+        This is done by putting <span class="c-r">+=</span> or
+        <span class="c-r">-=</span> in front of the value:
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("div").click(function(){
+          $(this).animate({
+            left: '250px',
+            height: '+=150px',
+            width: '+=150px'
+          });
+        }); 
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox" style="margin-bottom: 18rem">
+      <p class="c-r">Example:</p>
+
+      <div
+        class="div3"
+        style="
+          background: #98bf21;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+        "
+      ></div>
+    </div>
+
+    <hr />
+
+    <!-- Using Pre-defined Values -->
+    <div>
+      <h1>Using Pre-defined Values</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        You can even specify a property's animation value as "<span class="c-r"
+          >show</span
+        >", "<span class="c-r">hide</span>", or "<span class="c-r">toggle</span
+        >":
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("div").animate({
+            height: 'toggle'
+          });
+        }); 
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox" style="margin-bottom: 8rem">
+      <p class="c-r">Example:</p>
+
+      <button class="div4btn">Start Animation</button>
+      <div
+        class="div4"
+        style="
+          background: #98bf21;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+        "
+      ></div>
+    </div>
+
+    <hr />
+
+    <!-- Uses Queue Functionality -->
+    <div>
+      <h1>Uses Queue Functionality</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>By default, jQuery comes with queue functionality for animations.</p>
+      <p>
+        If you write multiple <span class="c-r">animate()</span> calls after
+        each other, jQuery creates an "internal" queue with these method calls.
+        Then it runs the animate calls ONE by ONE.
+      </p>
+      <p>
+        So, if you want to perform different animations after each other, we
+        take advantage of the queue functionality:
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          var div = $("div");
+          div.animate({height: '300px', opacity: '0.4'}, "slow");
+          div.animate({width: '300px', opacity: '0.8'}, "slow");
+          div.animate({height: '100px', opacity: '0.4'}, "slow");
+          div.animate({width: '100px', opacity: '0.8'}, "slow");
+        }); 
+      </code></pre>
+    </div>
+    <div class="paragraphBox" style="margin-bottom: 22rem">
+      <p class="c-r">Example:</p>
+
+      <button class="div5btn">Start Animation</button>
+      <div
+        class="div5"
+        style="
+          background: #98bf21;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+        "
+      ></div>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The example below first moves the
+        <span class="c-r">&lt;div&gt;</span> element to the right, and then
+        increases the font size of the text:
+      </p>
+      <pre><code class="language-js">
+        $("button").click(function(){
+          var div = $("div");
+          div.animate({left: '100px'}, "slow");
+          div.animate({fontSize: '3em'}, "slow");
+        }); 
+      </code></pre>
+    </div>
+    <div class="paragraphBox" style="margin-bottom: 8rem">
+      <p class="c-r">Example:</p>
+
+      <button class="div6btn">Start Animation</button>
+      <div
+        class="div6"
+        style="
+          background: #98bf21;
+          height: 100px;
+          width: 200px;
+          position: absolute;
+        "
+      >
+        Hello!
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Stop Animations -->
+    <div>
+      <h1>Stop Animations</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">stop()</span> method is used to stop an
+        animation or effect before it is finished.
+      </p>
+      <p>
+        The <span class="c-r">stop()</span> method works for all jQuery effect
+        functions, including sliding, fading and custom animations.
+      </p>
+      <p>Syntax:</p>
+      <div class="note">$(selector).stop(stopAll,goToEnd);</div>
+      <p>
+        The optional stopAll parameter specifies whether also the animation
+        queue should be cleared or not. Default is false, which means that only
+        the active animation will be stopped, allowing any queued animations to
+        be performed afterwards.
+      </p>
+      <p>
+        The optional goToEnd parameter specifies whether or not to complete the
+        current animation immediately. Default is false.
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("div").toggle(5000);
+        }); 
+        $("#stopbtn").click(function(){
+          $("div").stop();
+        });
+      </code></pre>
+    </div>
+    <div class="paragraphBox" style="margin-bottom: 8rem">
+      <p class="c-r">Example:</p>
+
+      <button class="div7btn">Start Animation</button>
+      <button class="stopbtn">Stop sliding</button>
+
+      <div
+        class="div7"
+        style="
+          background: #98bf21;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+        "
+      ></div>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".div1").click(function () {
+          $(this).animate({ left: "250px" });
+        });
+        $(".div2").click(function () {
+          $(this).animate({
+            left: "250px",
+            opacity: "0.5",
+            height: "150px",
+            width: "150px",
+          });
+        });
+        $(".div3").click(function () {
+          $(this).animate({
+            left: "250px",
+            height: "+=150px",
+            width: "+=150px",
+          });
+        });
+        $(".div4btn").click(function () {
+          $(".div4").animate({
+            height: "toggle",
+          });
+        });
+        $(".div5btn").click(function () {
+          var div = $(".div5");
+          div.animate({ height: "300px", opacity: "0.4" }, "slow");
+          div.animate({ width: "300px", opacity: "0.8" }, "slow");
+          div.animate({ height: "100px", opacity: "0.4" }, "slow");
+          div.animate({ width: "100px", opacity: "0.8" }, "slow");
+        });
+        $(".div6btn").click(function () {
+          var div = $(".div6");
+          div.animate({ left: "100px" }, "slow");
+          div.animate({ fontSize: "3em" }, "slow");
+        });
+        $(".div7btn").click(function () {
+          $(".div7").toggle(5000);
+        });
+        $(".stopbtn").click(function () {
+          $(".div7").stop();
+        });
+      });
+    </script>
+  </body>
+</html>

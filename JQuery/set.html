@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set Content</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery - Set Content</h1>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Set Content - text(), html(), and val()</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>We will use the same three methods to set content:</p>
+      <ul>
+        <li>
+          <span class="c-r">text()</span> - Sets or returns the text content of
+          selected elements
+        </li>
+        <li>
+          <span class="c-r">html()</span> - Sets or returns the content of
+          selected elements (including HTML markup)
+        </li>
+        <li>
+          <span class="c-r">val()</span> - Sets or returns the value of form
+          fields
+        </li>
+      </ul>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example demonstrates how to set content with the jQuery
+        <span class="c-r">text()</span>, <span class="c-r">html()</span> and
+        <span class="c-r">val()</span> methods:
+      </p>
+      <pre><code class="language-js">
+        $("#btn1").click(function(){
+          $("#test1").text("Hello world!");
+        });
+        $("#btn2").click(function(){
+          $("#test2").html("&lt;b&gt;Hello world!&lt;/b&gt;");
+        });
+        $("#btn3").click(function(){
+          $("#test3").val("Dolly Duck");
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <p id="test1">This is a paragraph.</p>
+      <p id="test2">This is another paragraph.</p>
+
+      <p>Input field: <input type="text" id="test3" value="Mickey Mouse" /></p>
+
+      <button id="btn1">Set Text</button>
+      <button id="btn2">Set HTML</button>
+      <button id="btn3">Set Value</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Set Attributes - attr()</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">attr()</span> method is also used to
+        set/change attribute values.
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example demonstrates how to change (set) the value of the
+        href attribute in a link:
+      </p>
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("#link").text("HTML.com");
+          $("#link").attr("href", "Html/introduction.html");
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <p>
+        <a
+          href="../JavaScript/introduction.html"
+          style="color: blue"
+          id="linkchange"
+          >JavaScript.com</a
+        >
+      </p>
+      <button id="btn4">Change href Value</button>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">attr()</span> method also allows you to set
+        multiple attributes at the same time.
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("#link").text("HTML.com");
+          $("#link").attr({
+            "href" : "Html/introduction.html",
+            "title" : "HTML Notes"
+          });
+        });
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <p>
+        <a
+          href="../JavaScript/introduction.html"
+          style="color: blue"
+          title="JavaScript Notes"
+          id="linkandtitlechange"
+          >JavaScript.com</a
+        >
+      </p>
+      <button id="btn5">Change href Value</button>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btn1").click(function () {
+          $("#test1").text("Hello world!");
+        });
+        $("#btn2").click(function () {
+          $("#test2").html("<b>Hello world!</b>");
+        });
+        $("#btn3").click(function () {
+          $("#test3").val("Dolly Duck");
+        });
+
+        $("#btn4").click(function () {
+          $("#linkchange").text("HTML.com");
+          $("#linkchange").attr("href", "../Html/introduction.html");
+        });
+        $("#btn5").click(function () {
+          $("#linkandtitlechange").text("HTML.com");
+          $("#linkandtitlechange").attr({
+            href: "../Html/introduction.html",
+            title: "HTML Notes"
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

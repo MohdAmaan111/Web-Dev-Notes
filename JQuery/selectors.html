@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selectors</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+    <!-- Prism.js CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>JQuery Selectors</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        jQuery selectors allow you to select and manipulate HTML element(s).
+      </p>
+      <p>
+        jQuery selectors are used to "find" (or select) HTML elements based on
+        their name, id, classes, types, attributes, values of attributes and
+        much more. It's based on the existing CSS Selectors, and in addition, it
+        has some own custom selectors.
+      </p>
+      <p>
+        All selectors in jQuery start with the dollar sign and parentheses: $().
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>The element Selector</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery element selector selects elements based on the element name.
+      </p>
+      <p>
+        You can select all <span class="c-r">&lt;p&gt;</span> elements on a page
+        like this:
+      </p>
+      <div class="note">$("p")</div>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          When a user clicks on a button, all
+          <span class="c-r">&lt;p&gt;</span> elements will be hidden:
+        </p>
+        <pre><code class="language-js">
+          $(document).ready(function(){
+            $("button").click(function(){
+              $("p").hide();
+            });
+          });
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>The #id Selector</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">#id</span> selector uses the id attribute
+        of an HTML tag to find the specific element.
+      </p>
+      <p>
+        An id should be unique within a page, so you should use the
+        <span class="c-r">#id</span> selector when you want to find a single,
+        unique element.
+      </p>
+      <p>
+        To find an element with a specific id, write a hash character, followed
+        by the id of the HTML element:
+      </p>
+      <div class="note">$("#test")</div>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          When a user clicks on a button, the element with
+          <span class="c-r">id="test</span> will be hidden:
+        </p>
+        <pre><code class="language-js">
+          $(document).ready(function(){
+            $("button").click(function(){
+              $("#test").hide();
+            });
+          });
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>The .class Selector</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">.class</span> selector finds elements with
+        a specific class.
+      </p>
+      <p>
+        To find elements with a specific class, write a period character,
+        followed by the name of the class:
+      </p>
+      <div class="note">$(".test")</div>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          When a user clicks on a button, the elements with
+          <span class="c-r">class="test"</span> will be hidden:
+        </p>
+        <pre><code class="language-js">
+          $(document).ready(function(){
+            $("button").click(function(){
+              $(".test").hide();
+            });
+          });
+        </code></pre>
+      </div>
+    </div>
+
+
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  </body>
+</html>

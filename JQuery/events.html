@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery Event Methods</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        All the different visitors' actions that a web page can respond to are
+        called events.
+      </p>
+      <p>An event represents the precise moment when something happens.</p>
+      <p>Examples:</p>
+      <ul>
+        <li>moving a mouse over an element</li>
+        <li>selecting a radio button</li>
+        <li>clicking on an element</li>
+      </ul>
+      <p>
+        The term "fires/fired" is often used with events. Example: "The keypress
+        event is fired, the moment you press a key".
+      </p>
+      <p>Here are some common DOM events:</p>
+      <table>
+        <tr>
+          <th>Mouse Events</th>
+          <th>Keyboard Events</th>
+          <th>Form Events</th>
+          <th>Document/Window Events</th>
+        </tr>
+        <tr>
+          <td>click</td>
+          <td>keypress</td>
+          <td>submit</td>
+          <td>load</td>
+        </tr>
+        <tr>
+          <td>dblclick</td>
+          <td>keydown</td>
+          <td>change</td>
+          <td>resize</td>
+        </tr>
+        <tr>
+          <td>mouseenter</td>
+          <td>keyup</td>
+          <td>focus</td>
+          <td>scroll</td>
+        </tr>
+        <tr>
+          <td>mouseleave</td>
+          <td></td>
+          <td>blur</td>
+          <td>unload</td>
+        </tr>
+      </table>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>jQuery Syntax For Event Methods</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>In jQuery, most DOM events have an equivalent jQuery method.</p>
+      <p>
+        To assign a click event to all paragraphs on a page, you can do this:
+      </p>
+      <div class="note">$("p").click();</div>
+      <p>
+        The next step is to define what should happen when the event fires. You
+        must pass a function to the event:
+      </p>
+      <div class="note">$("p").click(function(){ // action goes here!! });</div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Commonly Used jQuery Event Methods</h1>
+    </div>
+
+    <!-- JQuery event method ready() -->
+    <div class="paragraphBox">
+      <p><span class="c-r">$(document).ready()</span></p>
+      <p>
+        This method allows us to execute a function when the document is fully
+        loaded.
+      </p>
+    </div>
+
+    <!-- JQuery event method click() -->
+    <div class="paragraphBox">
+      <p><span class="c-r">click()</span></p>
+      <p>This method attaches an event handler function to an HTML element.</p>
+      <p>The function is executed when the user clicks on the HTML element.</p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example says: When a click event fires on a
+        <span class="c-r">&lt;p&gt;</span> element; hide the current
+        <span class="c-r">&lt;p&gt;</span> element:
+      </p>
+      <pre><code class="language-js">
+        $("p").click(function(){
+          $(this).hide();
+        });
+      </code></pre>
+    </div>
+
+    <div>
+      <p class="c-r">Example:</p>
+
+      <p id="clickpara1">If you click on me, I will disappear.</p>
+      <p id="clickpara2">Click me away!</p>
+      <p id="clickpara3">Click me too!</p>
+    </div>
+
+    <!-- JQuery event method dblclick() -->
+    <div class="paragraphBox">
+      <p><span class="c-r">dblclick()</span></p>
+      <p>This method attaches an event handler function to an HTML element.</p>
+      <p>
+        The function is executed when the user double-clicks on the HTML
+        element:
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("p").dblclick(function(){
+          $(this).hide();
+        });        
+      </code></pre>
+    </div>
+
+    <div>
+      <p class="c-r">Example:</p>
+
+      <p id="dblpara1">If you double-click on me, I will disappear.</p>
+      <p id="dblpara2">Click me away!</p>
+      <p id="dblpara3">Click me too!</p>
+    </div>
+
+    <!-- JQuery event method mouseenter() -->
+    <div class="paragraphBox">
+      <p><span class="c-r">mouseenter()</span></p>
+      <p>This method attaches an event handler function to an HTML element.</p>
+      <p>
+        The function is executed when the mouse pointer enters the HTML element:
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#p1").mouseenter(function(){
+          $(this).css("border", "2px solid greenyellow");
+        });
+      </code></pre>
+    </div>
+
+    <div>
+      <p class="c-r">Example:</p>
+
+      <p id="mepara" style="border: 2px solid blue">Enter this paragraph.</p>
+    </div>
+
+    <!-- JQuery event method mouseleave() -->
+    <div class="paragraphBox">
+      <p><span class="c-r">mouseleave()</span></p>
+      <p>This method attaches an event handler function to an HTML element.</p>
+      <p>
+        The function is executed when the mouse pointer leaves the HTML element:
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#p1").mouseleave(function(){
+          $(this).css("border", "2px solid greenyellow");
+        });    
+      </code></pre>
+    </div>
+
+    <div>
+      <p class="c-r">Example:</p>
+
+      <p id="mlpara" style="border: 2px solid blue">Enter this paragraph.</p>
+    </div>
+
+    <!-- JQuery event method mousedown() -->
+    <div class="paragraphBox">
+      <p><span class="c-r">mousedown()</span></p>
+      <p>This method attaches an event handler function to an HTML element.</p>
+      <p>
+        The function is executed, when the left, middle or right mouse button is
+        pressed down, while the mouse is over the HTML element:
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#p1").mousedown(function(){
+          $(this).css("border", "2px solid greenyellow");
+        });   
+      </code></pre>
+    </div>
+
+    <div>
+      <p class="c-r">Example:</p>
+
+      <p id="mdpara" style="border: 2px solid blue">Enter this paragraph.</p>
+    </div>
+
+    <!-- JQuery event method mouseup() -->
+    <div class="paragraphBox">
+      <p><span class="c-r">mouseup()</span></p>
+      <p>This method attaches an event handler function to an HTML element.</p>
+      <p>
+        The function is executed, when the left, middle or right mouse button is
+        released, while the mouse is over the HTML element:
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#p1").mouseup(function(){
+          $(this).css("border", "2px solid greenyellow");
+        });  
+      </code></pre>
+    </div>
+
+    <div>
+      <p class="c-r">Example:</p>
+
+      <p id="mupara" style="border: 2px solid blue">Enter this paragraph.</p>
+    </div>
+
+    <!-- JQuery event method hover() -->
+    <div class="paragraphBox">
+      <p><span class="c-r">hover()</span></p>
+      <p>
+        This method takes two functions and is a combination of the
+        <span class="c-r">mouseenter()</span> and
+        <span class="c-r">mouseleave()</span> methods.
+      </p>
+      <p>
+        The first function is executed when the mouse enters the HTML element,
+        and the second function is executed when the mouse leaves the HTML
+        element:
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#p1").hover(function(){
+          $(this).css("border", "2px solid greenyellow");
+        },
+        function(){
+          $(this).css("border", "2px solid blue");
+        });
+      </code></pre>
+    </div>
+
+    <div>
+      <p class="c-r">Example:</p>
+
+      <p id="hoverpara" style="border: 2px solid blue">Enter this paragraph.</p>
+    </div>
+
+    <!-- JQuery event method focus() -->
+    <div class="paragraphBox">
+      <p><span class="c-r">focus()</span></p>
+      <p>
+        This method attaches an event handler function to an HTML form field.
+      </p>
+      <p>The function is executed when the form field gets focus:</p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("input").focus(function(){
+          $(this).css("background-color", "yellow");
+        });
+      </code></pre>
+    </div>
+
+    <div>
+      <p class="c-r">Example:</p>
+
+      Name: <input class="focusinput" type="text" name="fullname" /><br />
+      Email: <input class="focusinput" type="text" name="email" />
+    </div>
+
+    <!-- JQuery event method blur() -->
+    <div class="paragraphBox">
+      <p><span class="c-r">blur()</span></p>
+      <p>
+        This method attaches an event handler function to an HTML form field.
+      </p>
+      <p>The function is executed when the form field loses focus:</p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("input").blur(function(){
+          $(this).css("background-color", "green");
+        });
+      </code></pre>
+    </div>
+
+    <div>
+      <p class="c-r">Example:</p>
+
+      Name: <input class="blurinput" type="text" name="fullname" /><br />
+      Email: <input class="blurinput" type="text" name="email" />
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>The on() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">on()</span> method attaches one or more event
+        handlers for the selected elements.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Attach a click event to a
+          <span class="c-r">&lt;p&gt;</span> element:
+        </p>
+        <pre><code class="language-js">
+          $(document).ready(function(){
+            $("button").click(function(){
+              $(".test").hide();
+            });
+          });
+        </code></pre>
+      </div>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Attach multiple event handlers to a
+          <span class="c-r">&lt;p&gt;</span> element:
+        </p>
+        <pre><code class="language-js">
+          $("p").on({
+            mouseenter: function(){
+              $(this).css("background-color", "lightgray");
+            },
+            mouseleave: function(){
+              $(this).css("background-color", "lightblue");
+            },
+            click: function(){
+              $(this).css("background-color", "yellow");
+            }
+          });
+        </code></pre>
+      </div>
+    </div>
+
+    <div>
+      <p class="c-r">Example:</p>
+
+      <p id="onpara" style="border: 2px solid blue">
+        Click or move the mouse pointer over this paragraph.
+      </p>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#clickpara1").click(function () {
+          $(this).hide();
+        });
+        $("#clickpara2").click(function () {
+          $(this).hide();
+        });
+        $("#clickpara3").click(function () {
+          $(this).hide();
+        });
+
+        $("#dblpara1").dblclick(function () {
+          $(this).hide();
+        });
+        $("#dblpara2").dblclick(function () {
+          $(this).hide();
+        });
+        $("#dblpara3").dblclick(function () {
+          $(this).hide();
+        });
+
+        $("#mepara").mouseenter(function () {
+          $(this).css("border", "2px solid greenyellow");
+        });
+
+        $("#mlpara").mouseleave(function () {
+          $(this).css("border", "2px solid greenyellow");
+        });
+
+        $("#mdpara").mousedown(function () {
+          $(this).css("border", "2px solid greenyellow");
+        });
+
+        $("#mupara").mouseup(function () {
+          $(this).css("border", "2px solid greenyellow");
+        });
+
+        $("#hoverpara").hover(
+          function () {
+            $(this).css("border", "2px solid greenyellow");
+          },
+          function () {
+            $(this).css("border", "2px solid blue");
+          }
+        );
+
+        $(".focusinput").focus(function () {
+          $(this).css("background-color", "yellow");
+        });
+
+        $(".blurinput").blur(function () {
+          $(this).css("background-color", "green");
+        });
+
+        $("#onpara").on({
+          mouseenter: function () {
+            $(this).css("background-color", "red");
+          },
+          mouseleave: function () {
+            $(this).css("background-color", "green");
+          },
+          click: function () {
+            $(this).css("background-color", "black");
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

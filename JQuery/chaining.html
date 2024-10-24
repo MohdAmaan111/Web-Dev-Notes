@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chaining</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery Effects - Chaining</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Chaining allows us to run multiple jQuery methods (on the same element)
+        within a single statement.
+      </p>
+      <p>
+        Tip: This way, browsers do not have to find the same element(s) more
+        than once.
+      </p>
+      <p>
+        The following example chains together the
+        <span class="c-r">css()</span>, <span class="c-r">slideUp()</span>, and
+        <span class="c-r">slideDown()</span> methods. The "p1" element first
+        changes to red, then it slides up, and then it slides down:
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#p1").css("backgroundColor", "red").slideUp(2000).slideDown(2000);
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+      <div
+        class="div1"
+        style="background: #98bf21; padding: 5px; width: 10rem; margin: 0"
+      >
+        jQuery is fun!!
+      </div>
+      <button class="btn1">Click me</button>
+    </div>
+
+    <div class="paragraphBox">
+      Tip: When chaining, the line of code could become quite long. However,
+      jQuery is not very strict on the syntax; you can format it like you want,
+      including line breaks and indentations.
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#p1").css("backgroundColor", "red")
+        .slideUp(2000)
+        .slideDown(2000);
+      </code></pre>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".btn1").click(function () {
+          $(".div1")
+            .css("backgroundColor", "red")
+            .slideUp(2000)
+            .slideDown(2000);
+        });
+        $(".div2").click(function () {
+          $(this).animate({
+            left: "250px",
+            opacity: "0.5",
+            height: "150px",
+            width: "150px",
+          });
+        });
+        $(".div3").click(function () {
+          $(this).animate({
+            left: "250px",
+            height: "+=150px",
+            width: "+=150px",
+          });
+        });
+        $(".div4btn").click(function () {
+          $(".div4").animate({
+            height: "toggle",
+          });
+        });
+        $(".div5btn").click(function () {
+          var div = $(".div5");
+          div.animate({ height: "300px", opacity: "0.4" }, "slow");
+          div.animate({ width: "300px", opacity: "0.8" }, "slow");
+          div.animate({ height: "100px", opacity: "0.4" }, "slow");
+          div.animate({ width: "100px", opacity: "0.8" }, "slow");
+        });
+        $(".div6btn").click(function () {
+          var div = $(".div6");
+          div.animate({ left: "100px" }, "slow");
+          div.animate({ fontSize: "3em" }, "slow");
+        });
+        $(".div7btn").click(function () {
+          $(".div7").toggle(5000);
+        });
+        $(".stopbtn").click(function () {
+          $(".div7").stop();
+        });
+      });
+    </script>
+  </body>
+</html>

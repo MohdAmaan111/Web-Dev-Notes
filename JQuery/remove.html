@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Elements</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery - Remove Elements</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>With jQuery, it is easy to remove existing HTML elements.</p>
+      <p>
+        To remove elements and content, there are mainly two jQuery methods:
+      </p>
+      <ul>
+        <li>
+          <span class="c-r">remove()</span> - Removes the selected element (and
+          its child elements)
+        </li>
+        <li>
+          <span class="c-r">empty()</span> - Removes the child elements from the
+          selected element
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>remove() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">remove()</span> method removes the selected
+        element(s) and its child elements.
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("#div1").remove();
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <div
+        id="div1"
+        style="
+          height: 100px;
+          width: 300px;
+          border: 3px solid black;
+          background-color: red;
+        "
+      >
+        This is some text in the div.
+        <p>This is a paragraph in the div.</p>
+        <p>This is another paragraph in the div.</p>
+      </div>
+      <br />
+
+      <button id="btn1">Remove div element</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>empty() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">empty()</span> method removes the child
+        elements of the selected element(s).
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("#div1").empty();
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <div
+        id="div2"
+        style="
+          height: 100px;
+          width: 300px;
+          border: 3px solid black;
+          background-color: red;
+        "
+      >
+        This is some text in the div.
+        <p>This is a paragraph in the div.</p>
+        <p>This is another paragraph in the div.</p>
+      </div>
+      <br />
+
+      <button id="btn2">Empty the div element</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Filter the Elements to be Removed</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">remove()</span> method also accepts one
+        parameter, which allows you to filter the elements to be removed.
+      </p>
+      <p>The parameter can be any of the jQuery selector syntaxes.</p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example removes all
+        <span class="c-r">&lt;p&gt;</span> elements with
+        <span class="c-r">class="test"</span>:
+      </p>
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("p").remove(".test");
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <p>This is a paragraph.</p>
+      <p class="test" style="color: red">This is another paragraph.</p>
+      <p class="test" style="color: red">This is another paragraph.</p>
+
+      <button id="btn3">Remove all p elements with class="test"</button>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example removes all
+        <span class="c-r">&lt;p&gt;</span> elements with
+        <span class="c-r">class="test"</span> and
+        <span class="c-r">class="demo"</span>:
+      </p>
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("p").remove(".test, .demo");
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <p>This is a paragraph.</p>
+      <p class="test2" style="color: red">This is another paragraph.</p>
+      <p class="test2" style="color: red">This is another paragraph.</p>
+      <p class="demo2" style="color: blue;">This is p element with class="demo".</p>
+
+      <button id="btn4">Remove all p elements with class="test" and class="demo"</button>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btn1").click(function () {
+          $("#div1").remove();
+        });
+
+        $("#btn2").click(function () {
+          $("#div2").empty();
+        });
+
+        $("#btn3").click(function () {
+          $("p").remove(".test");
+        });
+
+        $("#btn4").click(function () {
+          $("p").remove(".test2, .demo2");
+        });
+      });
+    </script>
+  </body>
+</html>

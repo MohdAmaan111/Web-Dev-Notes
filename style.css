@@ -4,6 +4,7 @@
   box-sizing: border-box;
   text-decoration: none;
   color: white;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 body {
   background-color: rgba(0, 0, 0, 0.5);
@@ -27,7 +28,7 @@ header {
 nav {
   width: 100%;
   height: 35%;
-  background-color: #222831;
+  background-color: #282A35;
 }
 nav ul {
   font-size: 1.4em;
@@ -38,7 +39,7 @@ nav ul {
 nav li {
   width: 10%;
   height: 100%;
-  padding: 0.4rem;
+  /* padding: 0.4rem; */
   text-align: center;
 }
 nav li:hover {
@@ -53,14 +54,13 @@ nav li:hover {
 /* Left Side Scrollbar */
 .leftsidecontent {
   width: 16%;
-  /* height: 90%; */
-  background-color: #26292e;
+  background-color: rgb(21, 32, 43);
   color: rgba(255, 255, 255, 0.6);
   overflow: auto;
   margin-top: 6rem;
 }
 .leftsidecontent ul {
-  font-size: 1.6em;
+  font-size: 1.3em;
   list-style-type: none;
 }
 .leftsidecontent li {
@@ -78,7 +78,7 @@ main {
   width: 85%;
   height: 100vh;
   overflow-x: hidden;
-  background-color: #393e46;
+  background-color: #1d2a35;
 }
 main iframe {
   width: 100%;

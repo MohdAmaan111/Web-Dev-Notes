@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Effects</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery Effects - Hide and Show</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        With jQuery, you can hide and show HTML elements with the
+        <span class="c-r">hide()</span> and
+        <span class="c-r">show()</span> methods:
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#hide").click(function(){
+          $("p").hide();
+        });
+
+        $("#show").click(function(){
+          $("p").show();
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p>Syntax:</p>
+      <div class="note">
+        $(selector).hide(speed,callback);
+        <br />
+        <br />
+        $(selector).show(speed,callback);
+      </div>
+      <p>
+        The optional <span class="c-r">speed</span> parameter specifies the
+        speed of the hiding/showing, and can take the following values:
+        <span class="c-r">"slow"</span>, <span class="c-r">"fast"</span>, or
+        <span class="c-r">milliseconds</span>.
+      </p>
+      <p>
+        The optional <span class="c-r">callback</span> parameter is a function
+        to be executed after the <span class="c-r">hide()</span> or
+        <span class="c-r">show()</span> method completes.
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example demonstrates the speed parameter with
+        <span class="c-r">hide()</span>:
+      </p>
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("p").hide(1000);
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+      <p id="para1">If you click on the "Hide" button, I will disappear.</p>
+
+      <button id="hide">Hide</button>
+      <button id="show">Show</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>toggle()</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        You can also toggle between hiding and showing an element with the
+        <span class="c-r">toggle()</span> method.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Shown elements are hidden and hidden elements are shown:</p>
+        <pre><code class="language-js">
+          $("button").click(function(){
+            $("p").toggle();
+          });          
+        </code></pre>
+      </div>
+
+      <p>Syntax:</p>
+      <div class="note">$(selector).toggle(speed,callback);</div>
+      <p>
+        The optional speed parameter can take the following values: "slow",
+        "fast", or milliseconds.
+      </p>
+      <p>
+        The optional callback parameter is a function to be executed after
+        <span class="c-r">toggle()</span> completes.
+      </p>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <button id="toggle1">
+        Toggle between hiding and showing the paragraphs
+      </button>
+
+      <p id="para2">This is a paragraph with little content.</p>
+      <p id="para3">This is another small paragraph.</p>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#hide").click(function () {
+          $("#para1").hide();
+        });
+        $("#show").click(function () {
+          $("#para1").show();
+        });
+
+        $("#toggle1").click(function () {
+          $("#para2").toggle();
+          $("#para3").toggle();
+        });
+      });
+    </script>
+  </body>
+</html>

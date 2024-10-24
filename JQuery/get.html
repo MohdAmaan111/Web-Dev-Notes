@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Content</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery - Get Content</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        One very important part of jQuery is the possibility to manipulate the
+        DOM.
+      </p>
+      <p>
+        jQuery comes with a bunch of DOM related methods that make it easy to
+        access and manipulate elements and attributes.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Get Content - text(), html(), and val()</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>Three simple, but useful, jQuery methods for DOM manipulation are:</p>
+      <ul>
+        <li>
+          <span class="c-r">text()</span> - Sets or returns the text content of
+          selected elements
+        </li>
+        <li>
+          <span class="c-r">html()</span> - Sets or returns the content of
+          selected elements (including HTML markup)
+        </li>
+        <li>
+          <span class="c-r">val()</span> - Sets or returns the value of form
+          fields
+        </li>
+      </ul>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example demonstrates how to get content with the jQuery
+        <span class="c-r">text()</span> and
+        <span class="c-r">html()</span> methods:
+      </p>
+      <pre><code class="language-html">
+        &lt;p id="test"&gt;This is some &lt;b&gt;bold&lt;/b&gt; text in a paragraph.&lt;/p&gt;
+
+        &lt;button id="btn1"&gt;Show Text&lt;/button&gt;
+        &lt;button id="btn2"&gt;Show HTML&lt;/button&gt;
+
+        &lt;script&gt;
+          $(document).ready(function(){
+            $("#btn1").click(function(){
+              alert("Text: " + $("#test").text());
+            });
+            $("#btn2").click(function(){
+              alert("HTML: " + $("#test").html());
+            });
+          });
+        &lt;/script&gt;
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <p id="para1">This is some <b>bold</b> text in a paragraph.</p>
+
+      <button id="btn1">Show Text</button>
+      <button id="btn2">Show HTML</button>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example demonstrates how to get the value of an input
+        field with the jQuery <span class="c-r">val()</span> method:
+      </p>
+      <pre><code class="language-html">
+        &lt;p&gt;&lt;input type="text" id="test" value="Mickey Mouse"&gt;&lt;/p&gt;
+
+        &lt;button id="btn1"&gt;Show Value&lt;/button&gt;
+
+        &lt;script&gt;
+          $(document).ready(function(){
+            $("#btn1").click(function(){
+              alert("Value: " + $("#test").val());
+            });
+          });
+        &lt;/script&gt;
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <p>Name: <input type="text" id="test" value="Mickey Mouse" /></p>
+
+      <button id="btn3">Show Value</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Get Attributes - attr()</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">attr()</span> method is used to get
+        attribute values.
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example demonstrates how to get the value of the href
+        attribute in a link:
+      </p>
+      <pre><code class="language-html">
+        &lt;p&gt;&lt;a href="https://www.w3schools.com" id="w3s""&gt;W3Schools.com&lt;/a&gt;&lt;/p&gt;
+
+        &lt;button id="btn1"&gt;Show href Value&lt;/button&gt;
+
+        &lt;script&gt;
+          $(document).ready(function(){
+            $("button").click(function(){
+              alert($("#w3s").attr("href"));
+            });
+          });
+        &lt;/script&gt;
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <p><a href="https://www.w3schools.com" id="w3s" style="color: blue;">W3Schools.com</a></p>
+
+      <button id="btn4">Show href Value</button>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btn1").click(function () {
+          alert("Text: " + $("#para1").text());
+        });
+        $("#btn2").click(function () {
+          alert("HTML: " + $("#para1").html());
+        });
+
+        $("#btn3").click(function () {
+          alert("Value: " + $("#test").val());
+        });
+
+        $("#btn4").click(function () {
+          alert($("#w3s").attr("href"));
+        });
+      });
+    </script>
+  </body>
+</html>

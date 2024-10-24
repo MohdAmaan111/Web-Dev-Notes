@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Effects</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery Effects - Sliding</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>The jQuery slide methods slide elements up and down.</p>
+      <p>JQuery has the following slide methods:</p>
+      <ul>
+        <li><span class="c-r">slideDown()</span></li>
+        <li><span class="c-r">slideUp()</span></li>
+        <li><span class="c-r">slideToggle()</span></li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <!-- Slide Down Method -->
+    <div>
+      <h1>slideDown() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">slideDown()</span> method is used to slide
+        down an element.
+      </p>
+
+      <p>Syntax:</p>
+      <div class="note">$(selector).slideDown(speed,callback);</div>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("#panel").slideDown();
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <button
+        class="slidedownbtn"
+        style="
+          width: 100%;
+          background-color: #e5eecc;
+          margin: 0;
+          border: solid 1px #c3c3c3;
+        "
+      >
+        Click to slide down panel
+      </button>
+      <div
+        class="slidedownPanel"
+        style="
+          width: 100%;
+          padding: 50px;
+          display: none;
+          background-color: #e5eecc;
+          margin: 0;
+          border: solid 1px #c3c3c3;
+          color: black;
+          text-align: center;
+        "
+      >
+        Hello world!
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Slide Up Method -->
+    <div>
+      <h1>slideUp() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">slideUp()</span> method is used to slide up
+        an element.
+      </p>
+
+      <p>Syntax:</p>
+      <div class="note">$(selector).slideUp(speed,callback);</div>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("#panel").slideUp();
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <button
+        class="slideupbtn"
+        style="
+          width: 100%;
+          background-color: #e5eecc;
+          margin: 0;
+          border: solid 1px #c3c3c3;
+        "
+      >
+        Click to slide up panel
+      </button>
+      <div
+        class="slideupPanel"
+        style="
+          width: 100%;
+          padding: 50px;
+          background-color: #e5eecc;
+          margin: 0;
+          border: solid 1px #c3c3c3;
+          color: black;
+          text-align: center;
+        "
+      >
+        Hello world!
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Slide Toggle Method -->
+    <div>
+      <h1>slideToggle() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">slideToggle()</span> method toggles between
+        the <span class="c-r">slideDown()</span> and
+        <span class="c-r">slideUp()</span> methods.
+      </p>
+      <p>
+        If the elements have been slid down,
+        <span class="c-r">slideToggle()</span> will slide them up.
+      </p>
+      <p>
+        If the elements have been slid up,
+        <span class="c-r">slideToggle()</span> will slide them down.
+      </p>
+
+      <p>Syntax:</p>
+      <div class="note">$(selector).slideToggle(speed,callback);</div>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("#panel").slideToggle();
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <button
+        class="slidetogglebtn"
+        style="
+          width: 100%;
+          background-color: #e5eecc;
+          margin: 0;
+          border: solid 1px #c3c3c3;
+        "
+      >
+        Click to slide the panel down or up
+      </button>
+      <div
+        class="slidetogglePanel"
+        style="
+          width: 100%;
+          padding: 50px;
+          background-color: #e5eecc;
+          display: none;
+          margin: 0;
+          border: solid 1px #c3c3c3;
+          color: black;
+          text-align: center;
+        "
+      >
+        Hello world!
+      </div>
+    </div>
+
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".slidedownbtn").click(function () {
+          $(".slidedownPanel").slideDown("slow");
+        });
+        $(".slideupbtn").click(function () {
+          $(".slideupPanel").slideUp("slow");
+        });
+        $(".slidetogglebtn").click(function () {
+          $(".slidetogglePanel").slideToggle("slow");
+        });
+      });
+    </script>
+  </body>
+</html>

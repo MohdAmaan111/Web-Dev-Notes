@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Elements</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery - Add Elements</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>With jQuery, it is easy to add new elements/content.</p>
+      <p>
+        We will look at four jQuery methods that are used to add new content:
+      </p>
+      <ul>
+        <li>
+          <span class="c-r">append()</span> - Inserts content at the end of the
+          selected elements
+        </li>
+        <li>
+          <span class="c-r">prepend()</span> - Inserts content at the beginning
+          of the selected elements
+        </li>
+        <li>
+          <span class="c-r">after()</span> - Inserts content after the selected
+          elements
+        </li>
+        <li>
+          <span class="c-r">before()</span> - Inserts content before the
+          selected elements
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>append() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">append()</span> method inserts content AT
+        THE END of the selected HTML elements.
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#btn1").click(function(){
+          $("p").append(" &lt;b&gt;Appended text&lt;/b&gt;.");
+        });
+        $("#btn2").click(function(){
+          $("ol").append("&lt;li&gt;Appended item&lt;/li&gt;");
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <p id="para1">This is a paragraph.</p>
+      <ol id="list1">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ol>
+
+      <button id="btn1">Append text</button>
+      <button id="btn2">Append list items</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>prepend() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">prepend()</span> method inserts content AT
+        THE BEGINNING of the selected HTML elements.
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#btn1").click(function(){
+          $("p").prepend("&lt;b&gt;Prepended text&lt;/b&gt;. ");
+        });
+        $("#btn2").click(function(){
+          $("ol").prepend("&lt;li&gt;Prepended item&lt;/li&gt;");
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <p id="para2">This is a paragraph.</p>
+      <ol id="list2">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ol>
+
+      <button id="btn3">Prepend text</button>
+      <button id="btn4">Prepend list items</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>after() and before() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The jQuery <span class="c-r">after()</span> method inserts content AFTER
+        the selected HTML elements.
+      </p>
+      <p>
+        The jQuery <span class="c-r">before()</span> method inserts content
+        BEFORE the selected HTML elements.
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("#btn1").click(function(){
+          $("p").prepend("&lt;b&gt;Prepended text&lt;/b&gt;. ");
+        });
+        $("#btn2").click(function(){
+          $("ol").prepend("&lt;li&gt;Prepended item&lt;/li&gt;");
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <img
+        id="img1"
+        src="../Images/JavaScript.png"
+        alt="JavaScript"
+        style="border-radius: 1rem"
+        width="140"
+        height="140"
+      /><br /><br />
+
+      <button id="btn5">Insert before</button>
+      <button id="btn6">Insert after</button>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btn1").click(function () {
+          $("#para1").append(" <b>Appended text</b>.");
+        });
+
+        $("#btn2").click(function () {
+          $("#list1").append("<li>Appended item</li>");
+        });
+
+        $("#btn3").click(function () {
+          $("#para2").prepend("<b>Prepended text</b>. ");
+        });
+
+        $("#btn4").click(function () {
+          $("#list2").prepend("<li>Prepended item</li>");
+        });
+
+        $("#btn5").click(function () {
+          $("#img1").before("<b>Before</b>");
+        });
+
+        $("#btn6").click(function () {
+          $("#img1").after("<i>After</i>");
+        });
+      });
+    </script>
+  </body>
+</html>
