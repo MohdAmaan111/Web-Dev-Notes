@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dimensions</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery - Dimensions</h1>
+    </div>
+    <div class="paragraphBox">
+      <p class="ta-c">
+        <img src="../Images/jquery_dimensions.png" alt="JQuery Dimensions" />
+      </p>
+      <p class="c-r">Example Stylesheet</p>
+      <p>The following stylesheet will be used for all the div examples:</p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-css">
+          #div1 {
+            height: 100px;
+            width: 300px;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid blue;
+            background-color: lightblue;
+          }
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>width() and height() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">width()</span> method sets or returns the width of
+        an element (excludes padding, border and margin).
+      </p>
+      <p>
+        The <span class="c-r">height()</span> method sets or returns the height
+        of an element (excludes padding, border and margin).
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example returns the width and height of a specified
+        <span class="c-r">&lt;div&gt;</span> element:
+      </p>
+      <pre><code class="language-js">
+        $("button").click(function(){
+          var txt = "";
+          txt += "Width of div: " + $("#div1").width() + "&lt;/br&gt;";
+          txt += "Height of div: " + $("#div1").height();
+          $("#div1").html(txt);
+        });
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <div
+        id="div1"
+        style="
+          height: 100px;
+          width: 300px;
+          padding: 10px;
+          margin: 3px;
+          color: black;
+          border: 1px solid blue;
+          background-color: lightblue;
+        "
+      ></div>
+      <br />
+
+      <button id="btn1">Display dimensions of div</button>
+
+      <p>width() - returns the width of an element.</p>
+      <p>height() - returns the height of an element.</p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>innerWidth() and innerHeight() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">innerWidth()</span> method returns the width of an
+        element (includes padding).
+      </p>
+      <p>
+        The <span class="c-r">innerHeight()</span> method returns the height of
+        an element (includes padding).
+      </p>
+    </div>
+
+    <div class="scriptBox" id="roundbox">
+      <p>
+        The following example returns the inner-width/height of a specified
+        <span class="c-r">&lt;div&gt;</span> element:
+      </p>
+      <pre><code class="language-js">
+        $("button").click(function(){
+          var txt = "";
+          txt += "Inner width: " + $("#div1").innerWidth() + "&lt;/br&gt;";
+          txt += "Inner height: " + $("#div1").innerHeight();
+          $("#div1").html(txt);
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <div
+        id="div2"
+        style="
+          height: 100px;
+          width: 300px;
+          padding: 10px;
+          margin: 3px;
+          color: black;
+          border: 1px solid blue;
+          background-color: lightblue;
+        "
+      ></div>
+      <br />
+
+      <button id="btn2">Display dimensions of div</button>
+
+      <p>innerWidth() - returns the width of an element (includes padding).</p>
+      <p>
+        innerHeight() - returns the height of an element (includes padding).
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>outerWidth() and outerHeight() Method</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">outerWidth()</span> method returns the width of an
+        element (includes padding and border).
+      </p>
+      <p>
+        The <span class="c-r">outerHeight()</span> method returns the height of
+        an element (includes padding and border).
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          var txt = "";
+          txt += "Outer width: " + $("#div1").outerWidth() + "&lt;/br&gt;";
+          txt += "Outer height: " + $("#div1").outerHeight();
+          $("#div1").html(txt);
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <div
+        id="div3"
+        style="
+          height: 100px;
+          width: 300px;
+          padding: 10px;
+          margin: 3px;
+          color: black;
+          border: 1px solid blue;
+          background-color: lightblue;
+        "
+      ></div>
+      <br />
+
+      <button id="btn3">Display dimensions of div</button>
+
+      <p>
+        outerWidth() - returns the width of an element (includes padding and
+        border).
+      </p>
+      <p>
+        outerHeight() - returns the height of an element (includes padding and
+        border).
+      </p>
+    </div>
+
+    <hr />
+
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">outerWidth(true)</span> method returns the width
+        of an element (includes padding, border, and margin).
+      </p>
+      <p>
+        The <span class="c-r">outerHeight(true)</span> method returns the height
+        of an element (includes padding, border, and margin).
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          var txt = "";
+          txt += "Outer width (+margin): " + $("#div1").outerWidth(true) + "&lt;/br&gt;";
+          txt += "Outer height (+margin): " + $("#div1").outerHeight(true);
+          $("#div1").html(txt);
+        });
+      </code></pre>
+    </div>
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <div
+        id="div4"
+        style="
+          height: 100px;
+          width: 300px;
+          padding: 10px;
+          margin: 3px;
+          color: black;
+          border: 1px solid blue;
+          background-color: lightblue;
+        "
+      ></div>
+      <br />
+
+      <button id="btn4">Display dimensions of div</button>
+
+      <p>
+        outerWidth(true) - returns the width of an element (includes padding,
+        border, and margin).
+      </p>
+      <p>
+        outerHeight(true) - returns the height of an element (includes padding,
+        border, and margin).
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>More width() and height()</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The following example sets the width and height of a specified
+        <span class="c-r">&lt;div&gt;</span> element:
+      </p>
+    </div>
+    <div class="scriptBox" id="roundbox">
+      <pre><code class="language-js">
+        $("button").click(function(){
+          $("#div1").width(500).height(500);
+        });
+      </code></pre>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <div
+        id="div5"
+        style="
+          height: 100px;
+          width: 300px;
+          padding: 10px;
+          margin: 3px;
+          color: black;
+          border: 1px solid blue;
+          background-color: lightblue;
+        "
+      ></div>
+      <br />
+
+      <button id="btn5">Resize</button>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btn1").click(function () {
+          var txt = "";
+          txt += "Width of div: " + $("#div1").width() + "</br>";
+          txt += "Height of div: " + $("#div1").height();
+          $("#div1").html(txt);
+        });
+
+        $("#btn2").click(function () {
+          var txt = "";
+          txt += "Width of div: " + $("#div2").width() + "</br>";
+          txt += "Height of div: " + $("#div2").height() + "</br>";
+          txt += "Inner width of div: " + $("#div2").innerWidth() + "</br>";
+          txt += "Inner height of div: " + $("#div2").innerHeight();
+          $("#div2").html(txt);
+        });
+
+        $("#btn3").click(function () {
+          var txt = "";
+          txt += "Width of div: " + $("#div3").width() + "</br>";
+          txt += "Height of div: " + $("#div3").height() + "</br>";
+          txt += "Outer width of div: " + $("#div3").outerWidth() + "</br>";
+          txt += "Outer height of div: " + $("#div3").outerHeight();
+          $("#div3").html(txt);
+        });
+
+        $("#btn4").click(function () {
+          var txt = "";
+          txt += "Width of div: " + $("#div4").width() + "</br>";
+          txt += "Height of div: " + $("#div4").height() + "</br>";
+          txt += "Outer width of div: " + $("#div4").outerWidth(true) + "</br>";
+          txt += "Outer height of div: " + $("#div4").outerHeight(true);
+          $("#div4").html(txt);
+        });
+
+        $("#btn5").click(function () {
+          $("#div5").width(500).height(500);
+        });
+      });
+    </script>
+  </body>
+</html>

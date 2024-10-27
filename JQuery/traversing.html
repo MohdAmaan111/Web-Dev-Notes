@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traversing</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>JQuery - Traversing</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        JQuery traversing, which means "move through", are used to "find" (or
+        select) HTML elements based on their relation to other elements.
+      </p>
+      <p>
+        The image below illustrates an HTML page as a tree (DOM tree). With
+        jQuery traversing, you can easily move up (ancestors), down
+        (descendants) and sideways (siblings) in the tree, starting from the
+        selected (current) element. This movement is called traversing - or
+        moving through - the DOM tree.
+      </p>
+      <p class="ta-c">
+        <img src="../Images/jquery_traversing.jpg" alt="JQuery Dimensions" />
+      </p>
+
+      <p>
+        An <span class="c-r">ancestor</span> is a parent, grandparent,
+        great-grandparent, and so on.
+      </p>
+      <p>
+        A <span class="c-r">descendant</span> is a child, grandchild,
+        great-grandchild, and so on.
+      </p>
+      <p><span class="c-r">Siblings</span> share the same parent.</p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Traversing - Ancestors</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>An ancestor is a parent, grandparent, great-grandparent, and so on.</p>
+      <p>
+        With jQuery you can traverse up the DOM tree to find ancestors of an
+        element.
+      </p>
+      <p>Three useful jQuery methods for traversing up the DOM tree are:</p>
+      <ul>
+        <li><span class="c-r">parent() Method</span></li>
+        <p>
+          The <span class="c-r">parent()</span> method returns the direct parent
+          element of the selected element.
+        </p>
+        <p>This method only traverse a single level up the DOM tree.</p>
+        <div class="scriptBox" id="roundbox">
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("span").parent().css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">parents()</span></li>
+        <p>
+          The <span class="c-r">parents()</span> method returns all ancestor
+          elements of the selected element, all the way up to the document's
+          root element (<span class="c-r">&lt;html&gt;</span>).
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("span").parents().css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+        <p>
+          You can also use an optional parameter to filter the search for
+          ancestors.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all ancestors of all
+            <span class="c-r">&lt;span&gt;</span> elements that are
+            <span class="c-r">&lt;ul&gt;</span> elements:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("span").parents("ul").css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">parentsUntil()</span></li>
+        <p>
+          The <span class="c-r">parentsUntil()</span> method returns all
+          ancestor elements between two given arguments.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all ancestor elements between a
+            <span class="c-r">&lt;span&gt;</span> and a
+            <span class="c-r">&lt;div&gt;</span> element:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("span").parentsUntil("div").css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+      </ul>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <div
+        class="ancestors"
+        style="
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        "
+      >
+        body (great-great-grandparent)
+        <div
+          style="
+            width: 600px;
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+          "
+        >
+          div (great-grandparent)
+          <ul
+            style="
+              display: block;
+              border: 2px solid lightgrey;
+              color: lightgrey;
+              padding: 5px;
+              margin: 15px;
+            "
+          >
+            ul (grandparent)
+            <li
+              style="
+                display: block;
+                border: 2px solid lightgrey;
+                color: lightgrey;
+                padding: 5px;
+                margin: 15px;
+              "
+            >
+              li (direct parent)
+              <span
+                id="ancspan"
+                style="
+                  display: block;
+                  border: 2px solid lightgrey;
+                  color: lightgrey;
+                  padding: 5px;
+                  margin: 15px;
+                "
+                >span</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <br />
+
+      <button id="undo1" class="undoBtn">Undo Button</button>
+      <button id="ancbtn1">parent()</button>
+      <button id="ancbtn2">parents()</button>
+      <button id="ancbtn3">parents("ul")</button>
+      <button id="ancbtn4">parentsUntil("div")</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Traversing - Descendants</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        With jQuery you can traverse down the DOM tree to find descendants of an
+        element.
+      </p>
+      <p>A descendant is a child, grandchild, great-grandchild, and so on.</p>
+      <p>Two useful jQuery methods for traversing down the DOM tree are:</p>
+
+      <ul>
+        <li><span class="c-r">children() Method</span></li>
+        <p>
+          The <span class="c-r">children()</span> method returns all direct
+          children of the selected element.
+        </p>
+        <p>This method only traverses a single level down the DOM tree.</p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all elements that are direct children
+            of each <span class="c-r">&lt;div&gt;</span> elements:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("div").children().css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+        <p>
+          You can also use an optional parameter to filter the search for
+          children.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all
+            <span class="c-r">&lt;p&gt;</span> elements with the class name
+            "first", that are direct children of
+            <span class="c-r">&lt;div&gt;</span>:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("div").children("p.first").css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">find() Method</span></li>
+        <p>
+          The <span class="c-r">find()</span> method returns descendant elements
+          of the selected element, all the way down to the last descendant.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all
+            <span class="c-r">&lt;p&gt;</span> elements that are descendants of
+            <span class="c-r">&lt;div&gt;</span>:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("div").find("span").css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all descendants of
+            <span class="c-r">&lt;div&gt;</span>:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("div").find("*").css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+      </ul>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <div class="descendants" style="width: 500px">
+        div (current element)
+        <p
+          class="first"
+          style="
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+          "
+        >
+          p (child)
+          <span
+            style="
+              display: block;
+              border: 2px solid lightgrey;
+              color: lightgrey;
+              padding: 5px;
+              margin: 15px;
+            "
+            >span (grandchild)</span
+          >
+        </p>
+        <p
+          class="second"
+          style="
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+          "
+        >
+          p (child)
+          <span
+            style="
+              display: block;
+              border: 2px solid lightgrey;
+              color: lightgrey;
+              padding: 5px;
+              margin: 15px;
+            "
+            >span (grandchild)</span
+          >
+        </p>
+      </div>
+      <br />
+
+      <button id="undo2" class="undoBtn">Undo Button</button>
+      <button id="desbtn1">children()</button>
+      <button id="desbtn2">children("p.first")</button>
+      <button id="desbtn3">find("span")</button>
+      <button id="desbtn4">find("*")</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Traversing - Siblings</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        With jQuery you can traverse sideways in the DOM tree to find siblings
+        of an element.
+      </p>
+      <p>Siblings share the same parent.</p>
+      <p>
+        There are many useful jQuery methods for traversing sideways in the DOM
+        tree:
+      </p>
+
+      <ul>
+        <li><span class="c-r">siblings() Method</span></li>
+        <p>
+          The <span class="c-r">siblings()</span> method returns all sibling
+          elements of the selected element.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all sibling elements of
+            <span class="c-r">&lt;h2&gt;</span> :
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("h2").siblings().css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+        <p>
+          You can also use an optional parameter to filter the search for
+          siblings.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all sibling elements of
+            <span class="c-r">&lt;h2&gt;</span> that are
+            <span class="c-r">&lt;p&gt;</span> elements:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("h2").siblings("p").css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">next() Method</span></li>
+        <p>
+          The <span class="c-r">next()</span> method returns the next sibling
+          element of the selected element.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns the next sibling of
+            <span class="c-r">&lt;h2&gt;</span>:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("h2").next().css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">nextAll() Method</span></li>
+        <p>
+          The <span class="c-r">nextAll()</span> method returns all next sibling
+          elements of the selected element.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all next sibling elements of
+            <span class="c-r">&lt;h2&gt;</span>:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("h2").nextAll().css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">nextAll() Method</span></li>
+        <p>
+          The <span class="c-r">nextUntil()</span> method returns all next
+          sibling elements between two given arguments.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            he following example returns all sibling elements between a
+            <span class="c-r">&lt;h2&gt;</span> and a
+            <span class="c-r">&lt;h6&gt;</span> element:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("h2").nextUntil("h6").css({ color: "red", border: "2px solid red" });
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">prev(), prevAll() & prevUntil() Method</span></li>
+        <p>
+          The <span class="c-r">prev()</span>,
+          <span class="c-r">prevAll()</span> and
+          <span class="c-r">prevUntil()</span> methods work just like the
+          methods above but with reverse functionality.
+        </p>
+        <p>
+          They return previous sibling elements (traverse backwards along
+          sibling elements in the DOM tree, instead of forward).
+        </p>
+      </ul>
+    </div>
+
+    <div class="paragraphBox">
+      <p class="c-r">Example:</p>
+
+      <div
+        class="sibling"
+        style="
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        "
+      >
+        div (parent)
+        <p
+          class="siblingp"
+          style="
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+          "
+        >
+          p
+        </p>
+        <span
+          style="
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+          "
+          >span</span
+        >
+        <h2
+          class="siblingh2"
+          style="
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+          "
+        >
+          h2
+        </h2>
+        <h3
+          style="
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+          "
+        >
+          h3
+        </h3>
+        <p
+          class="siblingp"
+          style="
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+          "
+        >
+          p
+        </p>
+      </div>
+      <br />
+
+      <button id="undo3" class="undoBtn">Undo Button</button>
+      <button id="sibbtn1">siblings()</button>
+      <button id="sibbtn2">siblings("p")</button>
+      <button id="sibbtn3">next()</button>
+      <button id="sibbtn4">nextAll()</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Traversing - Filtering</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Filter method allow you to select a specific element based on its
+        position in a group of elements.
+      </p>
+
+      <ul>
+        <li><span class="c-r">first() Method</span></li>
+        <p>
+          The <span class="c-r">first()</span> method returns the first element
+          of the specified elements.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example selects the first
+            <span class="c-r">&lt;div&gt;</span> element:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("div").first().css("background-color", "red");
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">last() Method</span></li>
+        <p>
+          The <span class="c-r">last()</span> method returns the last element of
+          the specified elements.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example selects the last
+            <span class="c-r">&lt;div&gt;</span> elements:
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("div").last().css("background-color", "red");
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">eq() Method</span></li>
+        <p>
+          The <span class="c-r">eq()</span> method returns an element with a
+          specific index number of the selected elements.
+        </p>
+        <p>
+          The index numbers start at 0, so the first element will have the index
+          number 0 and not 1.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example selects the second
+            <span class="c-r">&lt;p&gt;</span> element (index number 1):
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("p").eq(1).css("background-color", "red");
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">filter() Method</span></li>
+        <p>
+          The <span class="c-r">filter()</span> method lets you specify a
+          criteria.
+        </p>
+        <p>
+          Elements that do not match the criteria are removed from the
+          selection, and those that match will be returned.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all
+            <span class="c-r">&lt;p&gt;</span> elements with class name "intro":
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("p").filter("#div3").css("background-color", "red");
+            });
+          </code></pre>
+        </div>
+
+        <li><span class="c-r">not() Method</span></li>
+        <p>
+          The <span class="c-r">not()</span> method returns all elements that do
+          not match the criteria.
+        </p>
+        <p>
+          Tip: The <span class="c-r">not()</span> method is the opposite of
+          <span class="c-r">filter()</span>.
+        </p>
+        <div class="scriptBox" id="roundbox">
+          <p>
+            The following example returns all
+            <span class="c-r">&lt;p&gt;</span> elements that do not have class
+            name "intro":
+          </p>
+          <pre><code class="language-js">
+            $(document).ready(function(){
+              $("p").not(".intro").css("background-color", "red");
+            });
+          </code></pre>
+        </div>
+      </ul>
+
+      <div class="paragraphBox filteringDiv">
+        <p class="c-r">Example:</p>
+
+        <div
+          class="filtering"
+          id="fildiv1"
+          style="border: 1px solid white; padding: 5px"
+        >
+          <p>A paragraph in a #div1.</p>
+        </div>
+        <div
+          class="filtering"
+          id="fildiv2"
+          style="border: 1px solid white; padding: 5px"
+        >
+          <p>A paragraph in a #div2.</p>
+        </div>
+        <div
+          class="filtering"
+          id="fildiv3"
+          style="border: 1px solid white; padding: 5px"
+        >
+          <p>A paragraph in a #div3.</p>
+        </div>
+        <div
+          class="filtering"
+          id="fildiv4"
+          style="border: 1px solid white; padding: 5px"
+        >
+          <p>A paragraph in a #div4.</p>
+        </div>
+        <br />
+
+        <button id="undo4" class="undoBtn">Undo Button</button>
+        <button id="filbtn1">first()</button>
+        <button id="filbtn2">last()</button>
+        <button id="filbtn3">eq(1)</button>
+        <button id="filbtn4">filter("#div")</button>
+        <button id="filbtn5">not("#div2")</button>
+      </div>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#undo1").click(function () {
+          $("#ancspan")
+            .parentsUntil(".paragraphBox")
+            .css({ color: "lightgrey", border: "2px solid lightgrey" });
+        });
+
+        $("#undo2").click(function () {
+          $(".descendants")
+            .find("*")
+            .css({ color: "lightgrey", border: "2px solid lightgrey" });
+        });
+
+        $("#undo3").click(function () {
+          $(".sibling")
+            .find("*")
+            .css({ color: "lightgrey", border: "2px solid lightgrey" });
+        });
+
+        $("#undo4").click(function () {
+          $(".filteringDiv")
+            .find(".filtering")
+            .css("background-color", "transparent");
+        });
+
+        $("#ancbtn1").click(function () {
+          $("#ancspan").parent().css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#ancbtn2").click(function () {
+          $("#ancspan")
+            .parentsUntil(".paragraphBox")
+            .css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#ancbtn3").click(function () {
+          $("#ancspan")
+            .parents("ul")
+            .css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#ancbtn4").click(function () {
+          $("#ancspan")
+            .parentsUntil("div")
+            .css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#desbtn1").click(function () {
+          $(".descendants")
+            .children()
+            .css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#desbtn2").click(function () {
+          $(".descendants")
+            .children("p.first")
+            .css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#desbtn3").click(function () {
+          $(".descendants")
+            .find("span")
+            .css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#desbtn4").click(function () {
+          $(".descendants")
+            .find("*")
+            .css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#sibbtn1").click(function () {
+          $(".siblingh2")
+            .siblings()
+            .css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#sibbtn2").click(function () {
+          $(".siblingh2")
+            .siblings(".siblingp")
+            .css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#sibbtn3").click(function () {
+          $(".siblingh2").next().css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#sibbtn4").click(function () {
+          $(".siblingh2")
+            .nextAll()
+            .css({ color: "red", border: "2px solid red" });
+        });
+
+        $("#filbtn1").click(function () {
+          $(".filtering").first().css("background-color", "red");
+        });
+
+        $("#filbtn2").click(function () {
+          $(".filtering").last().css("background-color", "red");
+        });
+
+        $("#filbtn3").click(function () {
+          $(".filtering").eq(1).css("background-color", "red");
+        });
+
+        $("#filbtn4").click(function () {
+          $(".filtering").filter("#fildiv3").css("background-color", "red");
+        });
+
+        $("#filbtn5").click(function () {
+          $(".filtering").not("#fildiv2").css("background-color", "red");
+        });
+      });
+    </script>
+  </body>
+</html>

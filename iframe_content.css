@@ -155,3 +155,7 @@ td {
   border-left: 6px solid #fc5252;
   padding: 0.5rem;
 }
+/* Button to undo the css */
+.undoBtn {
+  background-color: red;
+}
