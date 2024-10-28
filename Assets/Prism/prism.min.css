@@ -47,7 +47,7 @@ pre[class*="language-"] {
 }
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: rgb(21,32,43);
+  background: rgb(21, 32, 43);
 }
 :not(pre) > code[class*="language-"] {
   padding: 0.1em;
@@ -56,12 +56,14 @@ pre[class*="language-"] {
 }
 .token.cdata,
 .token.comment,
-.token.doctype,
-.token.prolog {
+.token.doctype {
   color: #708090;
 }
+.token.prolog {
+  /* color: #708090; */
+}
 .token.punctuation {
-  color: #88ccbb/*green2*/;
+  color: #88ccbb /*green2*/;
 }
 .token.namespace {
   opacity: 0.7;
@@ -81,7 +83,7 @@ pre[class*="language-"] {
 .token.inserted,
 .token.selector,
 .token.string {
-  color: #83ffa4/*green*/;
+  color: #83ffa4 /*green*/;
 }
 .language-css .token.string,
 .style .token.string,

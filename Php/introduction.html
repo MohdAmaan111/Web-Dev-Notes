@@ -102,7 +102,7 @@
         <span class="c-r">?&gt;</span>:
       </p>
       <div class="scriptBox" id="roundbox">
-        <pre><code class="language-html">
+        <pre><code class="language-php">
           &lt;?php
             // PHP code goes here
           ?&gt;
@@ -118,7 +118,7 @@
         the text "Hello World!" on a web page:
       </p>
       <div class="scriptBox" id="roundbox">
-        <pre><code class="language-html">
+        <pre><code class="language-php">
           &lt;!DOCTYPE html&gt;
             &lt;html&gt;
               &lt;body&gt;
@@ -132,7 +132,97 @@
       </div>
     </div>
 
+    <hr />
+
+    <div>
+      <h1>Case Sensitivity</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        In PHP, keywords (e.g. <span class="c-r">if</span>,
+        <span class="c-r">else</span>, <span class="c-r">while</span>,
+        <span class="c-r">echo</span>, etc.), classes, functions, and
+        user-defined functions are not case-sensitive.
+      </p>
+      <p>
+        In the example below, all three echo statements below are equal and
+        legal:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          &lt;?php
+            ECHO "Hello World!<br>";
+            echo "Hello World!<br>";
+            EcHo "Hello World!<br>";
+          ?&gt;
+        </code></pre>
+      </div>
+      <p>However; all variable names are case-sensitive!</p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Only the first statement will display the value of the $color
+          variable! This is because <span class="c-r">$color</span>,
+          <span class="c-r">$COLOR</span>, and
+          <span class="c-r">$coLOR</span> are treated as three different
+          variables:
+        </p>
+        <pre><code class="language-php">
+          &lt;?php
+            $color = "red";
+            echo "My car is " . $color . "<br>";
+            echo "My house is " . $COLOR . "<br>";
+            echo "My boat is " . $coLOR . "<br>";
+          ?&gt;
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Comments</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        A comment in PHP code is a line that is not executed as a part of the
+        program. Its only purpose is to be read by someone who is looking at the
+        code.
+      </p>
+      <h2><span class="c-r">Single Line Comments</span></h2>
+      <p>
+        Any text between <span class="c-r">//</span> and the end of the line
+        will be ignored (will not be executed).
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          &lt;?php
+            // Outputs a welcome message:
+            echo "Welcome Home!";  // Outputs a welcome message
+          ?&gt;
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">Multi-line Comments</span></h2>
+      <p>
+        Multi-line comments start with <span class="c-r">/*</span> and end with
+        <span class="c-r">*/</span>.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          &lt;?php
+            /*
+            echo "Welcome to my home!";
+            echo "Mi casa su casa!";
+            */
+            $x = 5 /* + 15 */ + 5;
+            echo $x;
+          ?&gt;
+        </code></pre>
+      </div>
+    </div>
+
     <!-- Prism.js JavaScript -->
     <script src="../Assets/Prism/prism.min.js"></script>
+    <script src="../Assets/Prism/prism-php.min.js"></script>
   </body>
 </html>
