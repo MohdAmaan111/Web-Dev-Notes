@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strings</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Strings</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>A string is a sequence of characters, like "Hello world!".</p>
+      <p>
+        Strings in PHP are surrounded by either double quotation marks, or
+        single quotation marks.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          echo "Hello";
+          echo 'Hello';
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Double or Single Quotes?</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Note: There is a big difference between double quotes and single quotes
+        in PHP.
+      </p>
+      <p>Double quotes process special characters, single quotes does not.</p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          When there is a variable in the string, it returns the value of the
+          variable:
+        </p>
+        <pre><code class="language-php">
+          $x = "John";
+          echo "Hello $x";    //Hello John
+        </code></pre>
+      </div>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Single quoted strings does not perform such actions, it returns the
+          string like it was written, with the variable name:
+        </p>
+        <pre><code class="language-php">
+          $x = "John";
+          echo 'Hello $x';    //Hello John
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>String Length</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The PHP <span class="c-r">strlen()</span> function returns the length of
+        a string.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          echo strlen("Hello world!");    //12
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Word Count</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The PHP <span class="c-r">str_word_count()</span> function counts the
+        number of words in a string.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          echo str_word_count("Hello world!");    //2
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Search For Text Within a String</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The PHP <span class="c-r">strpos()</span> function searches for a
+        specific text within a string.
+      </p>
+      <p>
+        If a match is found, the function returns the character position of the
+        first match. If no match is found, it will return FALSE.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Search for the text "world" in the string "Hello world!":</p>
+        <pre><code class="language-php">
+          echo strpos("Hello world!", "world");    //6
+        </code></pre>
+      </div>
+      <p class="note">
+        <b>Tip</b>: The first character position in a string is 0 (not 1).
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Modify Strings</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        PHP has a set of built-in functions that you can use to modify strings.
+      </p>
+
+      <h2><span class="c-r">Upper Case</span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          The <span class="c-r">strtoupper()</span> function returns the string
+          in upper case:
+        </p>
+        <pre><code class="language-php">
+          $x = "Hello World!";
+          echo strtoupper($x);    //HELLO WORLD!
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">Lower Case</span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          The <span class="c-r">strtolower()</span> function returns the string
+          in lower case:
+        </p>
+        <pre><code class="language-php">
+          $x = "Hello World!";
+          echo strtolower($x);    //hello world!
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">Replace String</span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          The <span class="c-r">str_replace()</span> function replaces some
+          characters with some other characters in a string.
+        </p>
+        <pre><code class="language-php">
+          $x = "Hello World!";
+          echo str_replace("World", "Dolly", $x);    //Hello Dolly!
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">Reverse a String</span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>The <span class="c-r">strrev()</span> function reverses a string.</p>
+        <pre><code class="language-php">
+          $x = "Hello World!";
+          echo strrev($x);    //!dlroW olleH
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">Remove Whitespace</span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          The <span class="c-r">trim()</span> removes any whitespace from the
+          beginning or the end:
+        </p>
+        <pre><code class="language-php">
+          $x = "   Hello World!   ";
+          echo trim($x);    //Hello World!
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">Convert String into Array </span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          The <span class="c-r">explode()</span> function splits a string into
+          an array.
+        </p>
+        <p>
+          The first parameter of the function represents the "separator". The
+          "separator" specifies where to split the string.
+        </p>
+        <pre><code class="language-php">
+          $x = "Hello World!";
+          $y = explode(" ", $x);
+
+          //Use the print_r() function to display the result:
+          print_r($y);     //Array ( [0] => Hello [1] => World! )
+
+          $x = "Hello,World,!";
+          $y = explode(",", $x);
+
+          print_r($y);    //Array ( [0] => Hello [1] => World [2] => ! )
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Concatenate Strings</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>To concatenate, or combine, two strings you can use the . operator:</p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $x = "Hello";
+          $y = "World";
+          $z = $x . $y;
+          echo $z;       //HelloWorld
+        </code></pre>
+      </div>
+
+      <p>
+        The result of the example above is <span class="c-r">HelloWorld</span>,
+        without a space between the two words.
+      </p>
+      <p>We can add a space character like this:</p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $x = "Hello";
+          $y = "World";
+          $z = $x . " " . $y;
+          echo $z;       //Hello World
+        </code></pre>
+      </div>
+
+      <p>An easier and better way is by using the power of double quotes.</p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $x = "Hello";
+          $y = "World";
+          $z = "$x $y";
+          echo $z;       //Hello World
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Slicing Strings</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        You can return a range of characters by using the substr() function.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Start the slice at index 6 and end the slice 5 positions later:</p>
+        <pre><code class="language-php">
+          $x = "Hello world!";
+          echo substr($x, 6, 5);   //World
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">Slice to the End </span></h2>
+      <p>Start the slice at index 6 and go all the way to the end:</p>
+      <div class="scriptBox" id="roundbox">
+        <p>Start the slice at index 6 and end the slice 5 positions later:</p>
+        <pre><code class="language-php">
+          $x = "Hello world!";
+          echo substr($x, 6);   //World!
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">Slice From the End</span></h2>
+      <p>Use negative indexes to start the slice from the end of the string:</p>
+      <div class="scriptBox" id="roundbox">
+        <p>Get the 3 characters, starting from the "o" in world (index -5):</p>
+        <pre><code class="language-php">
+          $x = "Hello world!";
+          echo substr($x, -5, 3);   //orl
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">Negative Length</span></h2>
+      <p>
+        Use negative length to specify how many characters to omit, starting
+        from the end of the string:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Get the characters starting from index 5, and continue until you reach
+          the 3. character from the end (index -3).
+        </p>
+        <pre><code class="language-php">
+          $x = "Hi, how are you?";
+          echo substr($x, 5, -3);    //ow are y
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Escape Characters</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To insert characters that are illegal in a string, use an escape
+        character.
+      </p>
+      <p>
+        An escape character is a backslash \ followed by the character you want
+        to insert.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          An example of an illegal character is a double quote inside a string
+          that is surrounded by double quotes:
+        </p>
+        <pre><code class="language-php">
+          $x = "We are the so-called "Vikings" from the north.";
+        </code></pre>
+      </div>
+      <div class="scriptBox" id="roundbox">
+        <p>To fix this problem, use the escape character \":</p>
+        <pre><code class="language-php">
+          $x = "We are the so-called \"Vikings\" from the north.";
+        </code></pre>
+      </div>
+      <p>Other escape characters used in PHP:</p>
+      <table>
+        <tr>
+          <th>Code</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td>\'</td>
+          <td>Single Quote</td>
+        </tr>
+        <tr>
+          <td>\"</td>
+          <td>Double Quote</td>
+        </tr>
+        <tr>
+          <td>\$</td>
+          <td>PHP variables</td>
+        </tr>
+        <tr>
+          <td>\n</td>
+          <td>New Line</td>
+        </tr>
+        <tr>
+          <td>\r</td>
+          <td>Carriage Return</td>
+        </tr>
+        <tr>
+          <td>\t</td>
+          <td>Tab</td>
+        </tr>
+        <tr>
+          <td>\f</td>
+          <td>Form Feed</td>
+        </tr>
+        <tr>
+          <td>\ooo</td>
+          <td>Octal value</td>
+        </tr>
+        <tr>
+          <td>\xhh</td>
+          <td>Hex value</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script src="../Assets/Prism/prism-php.min.js"></script>
+  </body>
+</html>
