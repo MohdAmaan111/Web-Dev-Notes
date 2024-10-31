@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constants</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Constants</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Constants are like variables, except that once they are defined they
+        cannot be changed or undefined.
+      </p>
+      <p>
+        A valid constant name starts with a letter or underscore (no $ sign
+        before the constant name).
+      </p>
+      <p>
+        <b>Note:</b> Unlike variables, constants are automatically global across
+        the entire script.
+      </p>
+      <p>
+        To create a constant, use the
+        <span class="c-r">define()</span> function.
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <p>Syntax:</p>
+        <pre><code class="language-php">
+          define(name, value);
+        </code></pre>
+      </div>
+      <p>Parameters:</p>
+      <ul>
+        <li>name: Specifies the name of the constant</li>
+        <li>value: Specifies the value of the constant</li>
+      </ul>
+
+      <div class="scriptBox" id="roundbox">
+        <p>Create a constant with a case-sensitive name:</p>
+        <pre><code class="language-php">
+          define("GREETING", "Welcome to W3Schools.com!");
+          echo GREETING;     //Welcome to W3Schools.com!
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>const Keyword</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        You can also create a constant by using the
+        <span class="c-r">const</span> keyword.
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <p>Create a case-sensitive constant:</p>
+        <pre><code class="language-php">
+          const MYCAR = "Volvo";
+          echo MYCAR;     //Volvo
+        </code></pre>
+      </div>
+
+      <div class="note">
+        <h2>
+          <span class="c-r">const</span> vs. <span class="c-r">define()</span>
+        </h2>
+        <ul>
+          <li>
+            <span class="c-r">const</span> cannot be created inside another
+            block scope, like inside a function or inside an if statement.
+          </li>
+          <li>
+            <span class="c-r">define</span> can be created inside another block
+            scope.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Constant Arrays</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        We can create an Array constant using the
+        <span class="c-r">define()</span> function.
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          define("cars", [
+            "Alfa Romeo",
+            "BMW",
+            "Toyota"
+          ]);
+          echo cars[0];
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Constants are Global</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Constants are automatically global and can be used across the entire
+        script.
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          This example uses a constant inside a function, even if it is defined
+          outside the function:
+        </p>
+        <pre><code class="language-php">
+          define("GREETING", "Welcome to W3Schools.com!");
+
+          function myTest() {
+            echo GREETING;     //Welcome to W3Schools.com!
+          }
+          
+          myTest();
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Magic Constants</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        PHP has many predefined constants that change value depending on where
+        they are used, and therefor they are called "magic constants".
+      </p>
+      <p>
+        These magic constants are written with a double underscore at the start
+        and the end, except for the ClassName::class constant.
+      </p>
+
+      <h2><span class="c-r">__CLASS__ </span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>If used inside a class, the class name is returned.</p>
+        <pre><code class="language-php">
+          class Fruits {
+            public function myValue(){
+              return __CLASS__;
+            }
+          }
+          $kiwi = new Fruits();
+          echo $kiwi->myValue();     //Fruits
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">__DIR__ </span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>The directory of the file.</p>
+        <pre><code class="language-php">
+          echo __DIR__;      //C:\awesomesites\w3schools\php
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">__FILE__ </span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>The file name including the full path.</p>
+        <pre><code class="language-php">
+          echo __FILE__;      //C:\awesomesites\w3schools\php\magic_const_file.php
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">__FUNCTION__ </span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>If inside a function, the function name is returned.</p>
+        <pre><code class="language-php">
+          function myValue(){
+            return __FUNCTION__;
+          }
+          echo myValue();    //myValue
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">__LINE__ </span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>The current line number.</p>
+        <pre><code class="language-php">
+          echo __LINE__;
+        </code></pre>
+      </div>
+
+      <h2><span class="c-r">__METHOD__ </span></h2>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          If used inside a function that belongs to a class, both class and
+          function name is returned.
+        </p>
+        <pre><code class="language-php">
+          class Fruits {
+            public function myValue(){
+              return __METHOD__;
+            }
+          }
+          $kiwi = new Fruits();
+          echo $kiwi->myValue();     //Fruits::myValue
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script src="../Assets/Prism/prism-php.min.js"></script>
+  </body>
+</html>
