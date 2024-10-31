@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casting</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Casting</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Sometimes you need to change a variable from one data type into another,
+        and sometimes you want a variable to have a specific data type. This can
+        be done with casting.
+      </p>
+      <p>Casting in PHP is done with these statements:</p>
+      <ul>
+        <li>
+          <span class="c-r">(string)</span> - Converts to data type String
+        </li>
+        <li><span class="c-r">(int)</span> - Converts to data type Integer</li>
+        <li><span class="c-r">(float)</span> - Converts to data type Float</li>
+        <li><span class="c-r">(bool)</span> - Converts to data type Boolean</li>
+        <li><span class="c-r">(array)</span> - Converts to data type Array</li>
+        <li>
+          <span class="c-r">(object)</span> - Converts to data type Object
+        </li>
+        <li><span class="c-r">(unset)</span> - Converts to data type NULL</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Cast to String</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To cast to string, use the <span class="c-r">(string)</span> statement:
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          When casting a Boolean into string it gets the value "1", and when
+          casting NULL into string it is converted into an empty string "".
+        </p>
+        <pre><code class="language-php">
+          $a = 5;       // Integer
+          $b = 5.34;    // Float
+          $c = "hello"; // String
+          $d = true;    // Boolean
+          $e = NULL;    // NULL
+
+          $a = (string) $a;   //string(1) "5"
+          $b = (string) $b;   //string(4) "5.34"
+          $c = (string) $c;   //string(5) "hello"
+          $d = (string) $d;   //string(1) "1"
+          $e = (string) $e;   //string(0) ""
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Cast to Integer</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To cast to integer, use the <span class="c-r">(int)</span> statement:
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          When casting a string that starts with a number, the (int) function
+          uses that number. If it does not start with a number, the (int)
+          function convert strings into the number 0.
+        </p>
+        <pre><code class="language-php">
+          $a = 5;               // Integer
+          $b = 5.34;            // Float
+          $c = "25 kilometers"; // String
+          $d = "kilometers 25"; // String
+          $e = "hello";         // String
+          $f = true;            // Boolean
+          $g = NULL;            // NULL
+
+          $a = (int) $a;   //int(5)
+          $b = (int) $b;   //int(5)
+          $c = (int) $c;   //int(25)
+          $d = (int) $d;   //int(0)
+          $e = (int) $e;   //int(0)
+          $f = (int) $f;   //int(1)
+          $g = (int) $g;   //int(0)
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Cast to Float</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To cast to float, use the <span class="c-r">(float)</span> statement:
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          When casting a string that starts with a number, the (float) function
+          uses that number. If it does not start with a number, the (float)
+          function convert strings into the number 0.
+        </p>
+        <pre><code class="language-php">
+          $a = 5;               // Integer
+          $b = 5.34;            // Float
+          $c = "25 kilometers"; // String
+          $d = "kilometers 25"; // String
+          $e = "hello";         // String
+          $f = true;            // Boolean
+          $g = NULL;            // NULL
+
+          $a = (float) $a;   //float(5)
+          $b = (float) $b;   //float(5)
+          $c = (float) $c;   //float(25)
+          $d = (float) $d;   //float(0)
+          $e = (float) $e;   //float(0)
+          $f = (float) $f;   //float(1)
+          $g = (float) $g;   //float(0)
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Cast to Boolean</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To cast to boolean, use the <span class="c-r">(bool)</span> statement:
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          If a value is 0, NULL, false, or empty, the (bool) converts it into
+          false, otherwise true. Even -1 converts to true.
+        </p>
+        <pre><code class="language-php">
+          $a = 5;              // Integer
+          $b = 5.34;           // Float
+          $c = 0;              // Integer
+          $d = -1;             // Integer
+          $e = 0.1;            // Float
+          $f = "hello";        // String
+          $g = "";             // String
+          $h = true;           // Boolean
+          $i = NULL;           // NULL
+
+          $a = (bool) $a;   //bool(true)
+          $b = (bool) $b;   //bool(true)
+          $c = (bool) $c;   //bool(false)
+          $d = (bool) $d;   //bool(true)
+          $e = (bool) $e;   //bool(true)
+          $f = (bool) $f;   //bool(true)
+          $g = (bool) $g;   //bool(false)
+          $h = (bool) $h;   //bool(true)
+          $i = (bool) $i;   //bool(false)
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Cast to Array</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To cast to array, use the <span class="c-r">(array)</span> statement:
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          When converting into arrays, most data types converts into an indexed
+          array with one element. NULL values converts to an empty array object.
+        </p>
+        <pre><code class="language-php">
+          $a = 5;       // Integer
+          $b = 5.34;    // Float
+          $c = "hello"; // String
+          $d = true;    // Boolean
+          $e = NULL;    // NULL
+
+          $a = (array) $a;   //array(1) { [0]=> int(5) }
+          $b = (array) $b;   //array(4) { [0]=> float(5.34) }
+          $c = (array) $c;   //array(5) { [0]=> string(5) "hello" }
+          $d = (array) $d;   //array(1) { [0]=> bool(true) }
+          $e = (array) $e;   //array(0) { }
+        </code></pre>
+      </div>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Objects converts into associative arrays where the property names
+          becomes the keys and the property values becomes the values:
+        </p>
+        <pre><code class="language-php">
+          $myCar = new Car("red", "Volvo");
+
+          $myCar = (array) $myCar;
+          var_dump($myCar);       /* array(2) { ["color"]=> string(3) "red"
+                                                ["model"]=> string(5) "Volvo" } */
+        </code></pre>
+      </div>
+    </div>
+    
+    <hr />
+
+    <div>
+      <h1>Cast to NULL</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To cast to NULL, use the <span class="c-r">(unset)</span> statement:
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $a = 5;       // Integer
+          $b = 5.34;    // Float
+          $c = "hello"; // String
+          $d = true;    // Boolean
+          $e = NULL;    // NULL
+
+          $a = (unset) $a;   //NULL
+          $b = (unset) $b;   //NULL
+          $c = (unset) $c;   //NULL
+          $d = (unset) $d;   //NULL
+          $e = (unset) $e;   //NULL
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script src="../Assets/Prism/prism-php.min.js"></script>
+  </body>
+</html>

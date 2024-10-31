@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Numbers</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Variables of numeric types are created when you assign a value to them:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $a = 5;
+          $b = 5.34;
+          $c = "25";
+
+          var_dump($a);    //int(5)
+          var_dump($b);    //float(5.34)
+          var_dump($c);    //string(2) "25"
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Integers</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>An integer is a number without any decimal part.</p>
+      <p>An integer can be either positive or negative</p>
+
+      <p>PHP has the following predefined constants for integers:</p>
+      <ul>
+        <li>
+          <span class="c-r">PHP_INT_MAX</span> - The largest integer supported
+        </li>
+        <li>
+          <span class="c-r">PHP_INT_MIN</span> - The smallest integer supported
+        </li>
+        <li>
+          <span class="c-r">PHP_INT_SIZE</span> - The size of an integer in
+          bytes
+        </li>
+      </ul>
+
+      <p>
+        PHP has the following functions to check if the type of a variable is
+        integer:
+      </p>
+      <ul>
+        <li>
+          <span class="c-r">is_int()</span>
+        </li>
+        <li>
+          <span class="c-r">is_integer()</span> - alias of
+          <span class="c-r">is_int()</span>
+        </li>
+        <li>
+          <span class="c-r">is_long()</span> - alias of
+          <span class="c-r">is_int()</span>
+        </li>
+      </ul>
+      <div class="scriptBox" id="roundbox">
+        <p>Check if the type of a variable is integer:</p>
+        <pre><code class="language-php">
+          $x = 5985;
+          var_dump(is_int($x));   //bool(true)
+
+          $x = 59.85;
+          var_dump(is_int($x));   //bool(false)
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Floats</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        A float is a number with a decimal point or a number in exponential
+        form.
+      </p>
+      <p>PHP has the following predefined constants for floats:</p>
+      <ul>
+        <li>
+          <span class="c-r">PHP_FLOAT_MAX</span> - The largest representable
+          floating point number
+        </li>
+        <li>
+          <span class="c-r">PHP_FLOAT_MIN</span> - The smallest representable
+          positive floating point number
+        </li>
+        <li>
+          <span class="c-r">PHP_FLOAT_DIG</span> - The number of decimal digits
+          that can be rounded into a float and back without precision loss
+        </li>
+        <li>
+          <span class="c-r">PHP_FLOAT_EPSILON</span> - The smallest
+          representable positive number x, so that x + 1.0 != 1.0
+        </li>
+      </ul>
+
+      <p>
+        PHP has the following functions to check if the type of a variable is
+        float:
+      </p>
+      <ul>
+        <li>
+          <span class="c-r">is_float()</span>
+        </li>
+        <li>
+          <span class="c-r">is_double()</span> - alias of
+          <span class="c-r">is_float()</span>
+        </li>
+      </ul>
+      <div class="scriptBox" id="roundbox">
+        <p>Check if the type of a variable is float:</p>
+        <pre><code class="language-php">
+          $x = 10.365;
+          var_dump(is_float($x));    //bool(true)
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Infinity</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        A numeric value that is larger than
+        <span class="c-r">PHP_FLOAT_MAX</span> is considered infinite.
+      </p>
+      <p>
+        PHP has the following functions to check if a numeric value is finite or
+        infinite:
+      </p>
+      <ul>
+        <li>
+          <span class="c-r">is_finite()</span>
+        </li>
+        <li>
+          <span class="c-r">is_infinite()</span>
+        </li>
+      </ul>
+      <div class="scriptBox" id="roundbox">
+        <p>Check if a numeric value is finite or infinite:</p>
+        <pre><code class="language-php">
+          $x = 1.9e411;
+          var_dump($x);    //float(INF)
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>NaN</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>NaN stands for Not a Number.</p>
+      <p>NaN is used for impossible mathematical operations.</p>
+      <p>
+        PHP has the following functions to check if a value is not a number:
+      </p>
+      <ul>
+        <li>
+          <span class="c-r">is_nan()</span>
+        </li>
+      </ul>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Invalid calculation will return a <span class="c-r">NaN</span> value:
+        </p>
+        <pre><code class="language-php">
+          $x = acos(8);
+          var_dump($x);   //float(NAN)
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Numerical Strings</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The PHP <span class="c-r">is_numeric()</span> function can be used to
+        find whether a variable is numeric.
+      </p>
+      <p>
+        The function returns true if the variable is a number or a numeric
+        string, false otherwise.
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <p>Check if the variable is numeric:</p>
+        <pre><code class="language-php">
+          $x = 5985;
+          var_dump(is_numeric($x));    //bool(true)
+
+          $x = "5985";
+          var_dump(is_numeric($x));    //bool(true)
+
+          $x = "59.85" + 100;
+          var_dump(is_numeric($x));    //bool(true)
+
+          $x = "Hello";
+          var_dump(is_numeric($x));    //bool(false)
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Casting Strings and Floats to Integers</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Sometimes you need to cast a numerical value into another data type.
+      </p>
+      <p>
+        The <span class="c-r">(int)</span>, <span class="c-r">(integer)</span>,
+        and <span class="c-r">intval()</span> functions are often used to
+        convert a value to an integer.
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <p>Cast float and string to integer:</p>
+        <pre><code class="language-php">
+          // Cast float to int
+          $x = 23465.768;
+          $int_cast = (int)$x;
+          echo $int_cast;     //23465
+
+          // Cast string to int
+          $x = "23465.768";
+          $int_cast = (int)$x;
+          echo $int_cast;     //23465
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script src="../Assets/Prism/prism-php.min.js"></script>
+  </body>
+</html>
