@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if...else</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>if...else Statements</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Conditional statements are used to perform different actions based on
+        different conditions.
+      </p>
+      <p>In PHP we have the following conditional statements:</p>
+      <ul>
+        <li>
+          <span class="c-r">if</span> - executes some code if one condition is
+          true
+        </li>
+        <li>
+          <span class="c-r">if...else</span> - executes some code if a condition
+          is true and another code if that condition is false
+        </li>
+        <li>
+          <span class="c-r">if...elseif...else</span> - executes different codes
+          for more than two conditions
+        </li>
+        <li>
+          <span class="c-r">switch</span> - selects one of many blocks of code
+          to be executed
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>if Statement</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>The if statement executes some code if one condition is true.</p>
+      <div class="scriptBox" id="roundbox">
+        <p>Syntax:</p>
+        <pre><code class="language-php">
+          if (condition) {
+            // code to be executed if condition is true;
+          }
+        </code></pre>
+      </div>
+
+      <div class="scriptBox" id="roundbox">
+        <p>Output "Have a good day!" if 5 is larger than 3:</p>
+        <pre><code class="language-php">
+          $x = 5;
+          if ($x > 3) {
+            echo "Have a good day!";
+          }
+        </code></pre>
+      </div>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Check if <span class="c-r">$a</span> is greater than
+          <span class="c-r">$b</span>, AND if <span class="c-r">$a</span> is
+          less than <span class="c-r">$c</span>:
+        </p>
+        <pre><code class="language-php">
+          $a = 200;
+          $b = 33;
+          $c = 500;
+
+          if ($a &gt; $b && $a &lt; $c ) {
+            echo "Both conditions are true";
+          }
+        </code></pre>
+      </div>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          We can compare as many conditions as we like in one
+          <span class="c-r">if</span> statement:
+        </p>
+        <pre><code class="language-php">
+          $a = 5;
+
+          if ($a == 2 || $a == 3 || $a == 4 || $a == 5 || $a == 6 || $a == 7) {
+            echo "$a is a number between 2 and 7";
+          }
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>if...else Statement</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">if...else</span> statement executes some code if a
+        condition is true and another code if that condition is false.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Syntax:</p>
+        <pre><code class="language-php">
+          if (condition) {
+            // code to be executed if condition is true;
+          } else {
+            // code to be executed if condition is false;
+          }
+        </code></pre>
+      </div>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Output "Have a good day!" if the current time is less than 20, and
+          "Have a good night!" otherwise:
+        </p>
+        <pre><code class="language-php">
+          $t = date("H");
+
+          if ($t &lt; "20") {
+            echo "Have a good day!";
+          } else {
+            echo "Have a good night!";
+          }
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>if...elseif...else Statement</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">if...elseif...else</span> statement executes
+        different codes for more than two conditions.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Syntax:</p>
+        <pre><code class="language-php">
+          if (condition) {
+            code to be executed if this condition is true;
+          } elseif (condition) {
+            // code to be executed if first condition is false and this condition is true;
+          } else {
+            // code to be executed if all conditions are false;
+          }
+        </code></pre>
+      </div>
+
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Output "Have a good morning!" if the current time is less than 10, and
+          "Have a good day!" if the current time is less than 20. Otherwise it
+          will output "Have a good night!":
+        </p>
+        <pre><code class="language-php">
+          $t = date("H");
+
+          if ($t &lt; "10") {
+            echo "Have a good morning!";
+          } elseif ($t &lt; "20") {
+            echo "Have a good day!";
+          } else {
+            echo "Have a good night!";
+          }
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Shorthand if Statements</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To write shorter code, you can write
+        <span class="c-r">if</span> statements on one line.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $a = 5;
+          if ($a &lt; 10) $b = "Hello";
+
+          echo $b;    //Hello
+        </code></pre>
+      </div>
+      <p>
+        <span class="c-r">if...else</span> statements can also be written in one
+        line, but the syntax is a bit different.
+      </p>
+      <p>
+        This technique is known as <span class="c-r">Ternary Operators</span>,
+        or <span class="c-r">Conditional Expressions</span>.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $a = 13;
+          $b = $a &lt; 10 ? "Hello" : "Good Bye";
+
+          echo $b;    //Good Bye
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Nested if Statement</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        You can have <span class="c-r">if</span> statements inside
+        <span class="c-r">if</span> statements, this is called nested
+        <span class="c-r">if</span> statements.
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $a = 13;
+          if ($a > 10) {
+            echo "Above 10";
+            if ($a > 20) {
+              echo " and also above 20";
+            } else {
+              echo " but not above 20";
+            }
+          }    //Above 10 but not above 20
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script src="../Assets/Prism/prism-php.min.js"></script>
+  </body>
+</html>
