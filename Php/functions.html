@@ -18,59 +18,53 @@
     </div>
     <div class="paragraphBox">
       <p>
-        The <span class="c-r">switch</span> statement is used to perform
-        different actions based on different conditions.
+        A function is a block of statements that can be used repeatedly in a
+        program.
       </p>
-      <p>
-        Use the <span class="c-r">switch</span> statement to select one of many
-        blocks of code to be executed.
-      </p>
-      <p>This is how it works:</p>
-      <ul>
-        <li>The expression is evaluated once</li>
-        <li>
-          The value of the expression is compared with the values of each case
-        </li>
-        <li>If there is a match, the associated block of code is executed</li>
-      </ul>
+      <p>A function will not execute automatically when a page loads.</p>
+      <p>A function will be executed by a call to the function.</p>
+    </div>
 
+    <hr />
+
+    <div>
+      <h1>Create a Function</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        A user-defined function declaration starts with the keyword
+        <span class="c-r">function</span>, followed by the name of the function:
+      </p>
       <div class="scriptBox" id="roundbox">
-        <p>Syntax:</p>
         <pre><code class="language-php">
-          switch (expression) {
-            case label1:
-              //code block
-              break;
-            case label2:
-              //code block;
-              break;
-            case label3:
-              //code block
-              break;
-            default:
-              //code block
+          function myMessage() {
+            echo "Hello world!";
           }
         </code></pre>
       </div>
+      <p class="note">
+        <b>Note:</b> A function name must start with a letter or an underscore.
+        Function names are NOT case-sensitive.
+      </p>
+    </div>
 
+    <hr />
+
+    <div>
+      <h1>Call a Function</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        To call the function, just write its name followed by parentheses
+        <span class="c-r">()</span>:
+      </p>
       <div class="scriptBox" id="roundbox">
-        <p>Example:</p>
         <pre><code class="language-php">
-          $favcolor = "red";
+          function myMessage() {
+            echo "Hello world!";     //Hello world!
+          }
 
-          switch ($favcolor) {
-            case "red":
-              echo "Your favorite color is red!";
-              break;
-            case "blue":
-              echo "Your favorite color is blue!";
-              break;
-            case "green":
-              echo "Your favorite color is green!";
-              break;
-            default:
-              echo "Your favorite color is neither red, blue, nor green!";
-          }     //Your favorite color is red!
+          myMessage();
         </code></pre>
       </div>
     </div>
@@ -78,40 +72,55 @@
     <hr />
 
     <div>
-      <h1>break Keyword</h1>
+      <h1>Function Arguments</h1>
     </div>
     <div class="paragraphBox">
       <p>
-        When PHP reaches a <span class="c-r">break</span> keyword, it breaks out
-        of the switch block.
+        Information can be passed to functions through arguments. An argument is
+        just like a variable.
       </p>
       <p>
-        This will stop the execution of more code, and no more cases are tested.
-      </p>
-      <p>
-        The last block does not need a break, the block breaks (ends) there
-        anyway.
+        Arguments are specified after the function name, inside the parentheses.
+        You can add as many arguments as you want, just separate them with a
+        comma.
       </p>
       <div class="scriptBox" id="roundbox">
         <p>
-          If we remove the <span class="c-r">break</span> statement from case
-          "red"?
+          The following example has a function with one argument
+          <span class="c-r">($fname)</span>. When the
+          <span class="c-r">familyName()</span> function is called, we also pass
+          along a name, e.g. <span class="c-r">("Jani")</span>, and the name is
+          used inside the function, which outputs several different first names,
+          but an equal last name:
         </p>
         <pre><code class="language-php">
-          $favcolor = "red";
+          function familyName($fname) {
+            echo "$fname, ";   //Jani, Hege, Stale, Kai Jim, Borge,
+          }
 
-          switch ($favcolor) {
-            case "red":
-              echo "Your favorite color is red!";
-            case "blue":
-              "Your favorite color is blue!";
-              break;
-            case "green":
-              echo "Your favorite color is green!";
-              break;
-            default:
-              echo "Your favorite color is neither red, blue, nor green!";
-          }       //Your favorite color is red!Your favorite color is blue!
+          familyName("Jani");
+          familyName("Hege");
+          familyName("Stale");
+          familyName("Kai Jim");
+          familyName("Borge");
+
+        </code></pre>
+      </div>
+
+      <p>
+        The following example has a function with two arguments (<span
+          class="c-r"
+          >$fname</span
+        >, <span class="c-r">$year</span>):
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          function familyName($fname, $year) {
+            echo "$fname born in $year, ";    //Hege born in 1975, Kai Jim born in 1985,
+          }
+
+          familyName("Hege", "1975");
+          familyName("Jim", "1985");
         </code></pre>
       </div>
     </div>
@@ -119,31 +128,21 @@
     <hr />
 
     <div>
-      <h1>default Keyword</h1>
+      <h1>Default Argument Value</h1>
     </div>
     <div class="paragraphBox">
       <p>
-        The <span class="c-r">default</span> keyword specifies the code to run
-        if there is no case match:
+        If we call the function <span class="c-r">setHeight()</span> without
+        arguments it takes the default value as argument:
       </p>
       <div class="scriptBox" id="roundbox">
-        <p>
-          If no cases get a match, the <span class="c-r">default</span> block is
-          executed:
-        </p>
         <pre><code class="language-php">
-          $d = 4;
+          function setHeight($minheight = 50) {
+            echo "The height is : $minheight, ";     //Height : 350, Height : 50,
+          }
 
-          switch ($d) {
-            case 6:
-              echo "Today is Saturday";
-              break;
-            case 0:
-              echo "Today is Sunday";
-              break;
-            default:
-              echo "Looking forward to the Weekend";
-          }       //Looking forward to the Weekend
+          setHeight(350);
+          setHeight(); // will use the default value of 50
         </code></pre>
       </div>
     </div>
@@ -151,35 +150,109 @@
     <hr />
 
     <div>
-      <h1>Common Code Blocks</h1>
+      <h1>Returning values</h1>
     </div>
     <div class="paragraphBox">
       <p>
-        If you want multiple cases to use the same code block, you can specify
-        the cases like this:
+        To let a function return a value, use the
+        <span class="c-r">return</span> statement:
       </p>
       <div class="scriptBox" id="roundbox">
-        <p>More than one case for each code block:</p>
         <pre><code class="language-php">
-          $d = 3;
+          function sum($x, $y) {
+            $z = $x + $y;
+            return $z;
+          }
 
-          switch ($d) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:  
-              echo "The weeks feels so long!";
-              break;
-            case 6:
-            case 0:
-              echo "Weekends are the best!";
-              break;
-            default:
-              echo "Something went wrong";
-          }    //The week feels so long!
+          echo "5 + 10 = " . sum(5,10);    //5 + 10 = 15
         </code></pre>
       </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Passing Arguments by Reference</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        In PHP, arguments are usually passed by value, which means that a copy
+        of the value is used in the function and the variable that was passed
+        into the function cannot be changed.
+      </p>
+      <p>
+        When a function argument is passed by reference, changes to the argument
+        also change the variable that was passed in. To turn a function argument
+        into a reference, the <span class="c-r">&</span> operator is used:
+      </p>
+      <div class="paragraphBox">
+        <p>Use a pass-by-reference argument to update a variable:</p>
+        <div class="scriptBox" id="roundbox">
+          <pre><code class="language-php">
+            function add_five(&$value) {
+              $value += 5;
+            }
+  
+            $num = 2;
+            add_five($num);
+            echo $num;     //7
+          </code></pre>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Variable Number of Arguments</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        By using the <span class="c-r">...</span> operator in front of the
+        function parameter, the function accepts an unknown number of arguments.
+        This is also called a variadic function.
+      </p>
+      <div class="paragraphBox">
+        <p>A function that do not know how many arguments it will get:</p>
+        <div class="scriptBox" id="roundbox">
+          <pre><code class="language-php">
+            function sumMyNumbers(...$x) {
+              $n = 0;
+              $len = count($x);
+              for($i = 0; $i &lt; $len; $i++) {
+                $n += $x[$i];
+              }
+              return $n;
+            }
+
+            $a = sumMyNumbers(5, 2, 6, 2, 7, 7);
+            echo $a;    //29
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="paragraphBox">
+        <p>The variadic argument must be the last argument:</p>
+        <div class="scriptBox" id="roundbox">
+          <pre><code class="language-php">
+            function myFamily($lastname, ...$firstname) {
+              txt = "";
+              $len = count($firstname);
+              for($i = 0; $i &lt; $len; $i++) {
+                $txt = $txt."$firstname[$i] $lastname, ";
+              }
+              return $txt;
+            }
+
+            $a = myFamily("Doe", "Jane", "John", "Joey");
+            echo $a;    //Jane Doe, John Doe, Joey Doe,
+          </code></pre>
+        </div>
+      </div>
+      <p class="note">
+        If the variadic argument is not the last argument, you will get an
+        error.
+      </p>
     </div>
 
     <!-- Prism.js JavaScript -->
