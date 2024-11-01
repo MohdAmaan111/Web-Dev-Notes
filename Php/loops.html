@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Loops</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Loops are used to execute the same block of code again and again, as
+        long as a certain condition is true.
+      </p>
+      <p>In PHP, we have the following loop types:</p>
+      <ul>
+        <li>
+          <span class="c-r">while</span> - loops through a block of code as long
+          as the specified condition is true
+        </li>
+        <li>
+          <span class="c-r">do...while</span> - loops through a block of code
+          once, and then repeats the loop as long as the specified condition is
+          true
+        </li>
+        <li>
+          <span class="c-r">for</span> - loops through a block of code a
+          specified number of times
+        </li>
+        <li>
+          <span class="c-r">foreach</span> - loops through a block of code for
+          each element in an array
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>while Loop</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">while</span> loop executes a block of code as long
+        as the specified condition is true.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Print <span class="c-r">$i</span> as long as
+          <span class="c-r">$i</span> is less than 6:
+        </p>
+        <pre><code class="language-php">
+          $i = 1;
+          while ($i &lt; 6) {
+          echo $i;
+            $i++;
+          }    //12345
+        </code></pre>
+      </div>
+      <p class="note">
+        <b>Note:</b> remember to increment <span class="c-r">$i</span>, or else
+        the loop will continue forever.
+      </p>
+      <p>
+        The <span class="c-r">while</span> loop does not run a specific number
+        of times, but checks after each iteration if the condition is still
+        true.
+      </p>
+
+      <p>
+        With the <span class="c-r">break</span> statement we can stop the loop
+        even if the condition is still true:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Stop the loop when <span class="c-r">$i</span> is 3:</p>
+        <pre><code class="language-php">
+          $i = 1;
+          while ($i &lt; 6) {
+            if ($i == 3) break;
+            echo $i;
+            $i++;
+          }      //12
+        </code></pre>
+      </div>
+
+      <p>
+        With the <span class="c-r">continue</span> statement we can stop the
+        current iteration, and continue with the next:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Stop, and jump to the next iteration if <span class="c-r">$i</span> is
+          3:
+        </p>
+        <pre><code class="language-php">
+          $i = 1;
+          while ($i &lt; 6) {
+            $i++;
+            if ($i == 3) continue;
+            echo $i;
+          }      //12456
+        </code></pre>
+      </div>
+
+      <p>
+        The <span class="c-r">while</span> loop syntax can also be written with
+        the <span class="c-r">endwhile</span> statement like this
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $i = 1;
+          while ($i &lt; 6) :
+            echo $i;
+            $i++;
+          endwhile;
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>do while Loop</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">do...while</span> loop will always execute the
+        block of code at least once, it will then check the condition, and
+        repeat the loop while the specified condition is true.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Print <span class="c-r">$i</span> as long as
+          <span class="c-r">$i</span> is less than 6:
+        </p>
+        <pre><code class="language-php">
+          $i = 1;
+
+          do {
+            echo $i;
+            $i++;
+          } while ($i &lt; 6);   //12345
+        </code></pre>
+      </div>
+      <p class="note">
+        <b>Note:</b> In a do...while loop the condition is tested AFTER
+        executing the statements within the loop. This means that the do...while
+        loop will execute its statements at least once, even if the condition is
+        false.
+      </p>
+
+      <p>
+        If we set the <span class="c-r">$i</span> variable to 8 instead of 1,
+        before execute the same <span class="c-r">do...while</span> loop again:
+      </p>
+      <p>
+        The code will be executed once, even if the condition is never true.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Print <span class="c-r">$i = 8</span>, then print
+          <span class="c-r">$i</span> as long as <span class="c-r">$i</span> is
+          less than 6:
+        </p>
+        <pre><code class="language-php">
+          $i = 8;
+
+          do {
+            echo $i;
+            $i++;
+          } while ($i &lt; 6);   //8
+        </code></pre>
+      </div>
+
+      <p>
+        With the <span class="c-r">break</span> statement we can stop the loop
+        even if the condition is still true:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Stop the loop when <span class="c-r">$i</span> is 3:</p>
+        <pre><code class="language-php">
+          $i = 1;
+
+          do {
+            if ($i == 3) break;
+            echo $i;
+            $i++;
+          } while ($i &lt; 6);   //12
+        </code></pre>
+      </div>
+
+      <p>
+        With the <span class="c-r">continue</span> statement we can stop the
+        current iteration, and continue with the next:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Stop, and jump to the next iteration if <span class="c-r">$i</span> is
+          3:
+        </p>
+        <pre><code class="language-php">
+          $i = 0;
+
+          do {
+            $i++;
+            if ($i == 3) continue;
+            echo $i;
+          } while ($i &lt; 6);   //12456
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>for Loop</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span class="c-r">for</span> loop is used when you know how many
+        times the script should run.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Syntax:</p>
+        <pre><code class="language-php">
+          for (initialize, condition, update) {
+            // code block
+          }
+        </code></pre>
+      </div>
+
+      <div class="scriptBox" id="roundbox">
+        <p>Print the numbers from 0 to 10:</p>
+        <pre><code class="language-php">
+          for ($x = 0; $x &lt;= 10; $x++) {
+            echo "$x, ";
+          }      //0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+        </code></pre>
+      </div>
+
+      <p>
+        With the <span class="c-r">break</span> statement we can stop the loop
+        even if the condition is still true:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Stop the loop when <span class="c-r">$x</span> is 3:</p>
+        <pre><code class="language-php">
+          for ($x = 0; $x &lt;= 10; $x++) {
+            if ($x == 3) break;
+            echo "$x, ";
+          }      //0, 1, 2,
+        </code></pre>
+      </div>
+
+      <p>
+        With the <span class="c-r">continue</span> statement we can stop the
+        current iteration, and continue with the next:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Stop, and jump to the next iteration if <span class="c-r">$x</span> is
+          3:
+        </p>
+        <pre><code class="language-php">
+          for ($x = 0; $x &lt;= 10; $x++) {
+            if ($x == 3) continue;
+            echo "$x, ";
+          }      //0, 1, 2, 4, 5, 6, 7, 8, 9, 10,
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>foreach Loop</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The most common use of the <span class="c-r">foreach</span> loop, is to
+        loop through the items of an array.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Loop through the items of an indexed array:</p>
+        <pre><code class="language-php">
+          $colors = array("red", "green", "blue", "yellow");
+
+          foreach ($colors as $x) {
+            echo "$x, ";
+          }        //red, green, blue, yellow,
+        </code></pre>
+      </div>
+
+      <p>
+        The array above is an <span class="c-r">indexed</span> array, where the
+        first item has the key 0, the second has the key 1, and so on.
+      </p>
+      <p>
+        Associative arrays are different, associative arrays use named keys that
+        you assign to them, and when looping through associative arrays, you
+        might want to keep the key as well as the value.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Print both the key and the value from the
+          <span class="c-r">$members</span> array:
+        </p>
+        <pre><code class="language-php">
+          $members = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+          foreach ($members as $x => $y) {
+            echo "$x : $y, ";
+          }       //Peter : 35, Ben : 37, Joe : 43,
+        </code></pre>
+      </div>
+
+      <p>
+        The <span class="c-r">foreach</span> loop can also be used to loop
+        through properties of an object:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          Print the property names and values of the
+          <span class="c-r">$myCar</span> object:
+        </p>
+        <pre><code class="language-php">
+          class Car {
+            public $color;
+            public $model;
+            public function __construct($color, $model) {
+              $this->color = $color;
+              $this->model = $model;
+            }
+          }
+
+          $myCar = new Car("red", "Volvo");
+
+          foreach ($myCar as $x => $y) {
+            echo "$x: $y, ";
+          }      //color: red, model: Volvo,
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Foreach Byref</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        When looping through the array items, any changes done to the array item
+        will, by default, NOT affect the original array:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          By default, changing an array item will not affect the original array:
+        </p>
+        <pre><code class="language-php">
+          $colors = array("red", "green", "blue", "yellow");
+
+          foreach ($colors as $x) {
+            if ($x == "blue") $x = "pink";
+          }
+
+          var_dump($colors);       /*array(4) { [0]=> string(3) "red"
+                                                [1]=> string(5) "green"
+                                                [2]=> string(4) "blue"
+                                                [3]=> string(6) "yellow" }*/
+        </code></pre>
+      </div>
+
+      <p>
+        BUT, by using the <span class="c-r">&</span> character in the
+        <span class="c-r">foreach</span>
+        declaration, the array item is assigned by reference, which results in
+        any changes done to the array item will also be done to the original
+        array:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>
+          By assigning the array items by reference, changes will affect the
+          original array:
+        </p>
+        <pre><code class="language-php">
+          $colors = array("red", "green", "blue", "yellow");
+
+          foreach ($colors as &$x) {
+            if ($x == "blue") $x = "pink";
+          }
+
+          var_dump($colors);       /*array(4) { [0]=> string(3) "red"
+                                                [1]=> string(5) "green"
+                                                [2]=> string(4) "pink"
+                                                [3]=> string(6) "yellow" }*/
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script src="../Assets/Prism/prism-php.min.js"></script>
+  </body>
+</html>
