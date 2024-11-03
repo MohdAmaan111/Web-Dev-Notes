@@ -85,3 +85,9 @@ main iframe {
   height: 99.2%;
   padding-top: 6rem;
 }
+
+/* pending work styling */
+.pending {
+  border-left: 4px solid red;
+  padding-left: 5px;
+}
