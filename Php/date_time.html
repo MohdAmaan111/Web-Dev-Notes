@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date and Time</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Date and Time</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        With PHP, there are two basic ways to get output:
+        <span class="c-r">echo</span> and <span class="c-">print</span>.
+      </p>
+      <p>
+        <span class="c-r">echo</span> and <span class="c-">print</span> are more
+        or less the same. They are both used to output data to the screen.
+      </p>
+      <p>
+        <span class="c-r">echo</span> has no return value while
+        <span class="c-">print</span> has a return value of 1 so it can be used
+        in expressions.
+      </p>
+      <p>
+        <span class="c-r">echo</span> can take multiple parameters while
+        <span class="c-r">print</span> can take one argument.
+      </p>
+      <p>
+        <span class="c-r">echo</span> is marginally faster than
+        <span class="c-r">print</span>.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>PHP echo Statement</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The echo statement can be used with or without parentheses:
+        <span class="c-r">echo</span> or <span class="c-r">echo()</span>.
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          echo "Hello";
+          //same as:
+          echo("Hello");
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Display Text</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The following example shows how to output text with the
+        <span class="c-r">print</span> command (notice that the text can contain
+        HTML markup):
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          print "&lt;h2&gt;PHP is Fun!&lt;/h2&gt;";
+          print "Hello world!&lt;br&gt;";
+          print "I'm about to learn PHP!";
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Display Variables</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The following example shows how to output text and variables with the
+        <span class="c-r">print</span> statement:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $txt1 = "Learn PHP";
+          $txt2 = "W3Schools.com";
+
+          print "&lt;h2&gt;$txt1&lt;/h2&gt;";
+          print "&lt;p&gt;Study PHP at $txt2&lt;/p&gt;";
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Using Single Quotes</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Strings are surrounded by quotes, but there is a difference between
+        single and double quotes in PHP.
+      </p>
+      <p>
+        When using double quotes, variables can be inserted to the string as in
+        the example above.
+      </p>
+      <p>
+        When using single quotes, variables have to be inserted using the
+        <span class="c-r">.</span>
+        operator, like this:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          $txt1 = "Learn PHP";
+          $txt2 = "W3Schools.com";
+
+          print '&lt;h2&gt;' . $txt1 . '&lt;/h2&gt;';
+          print '&lt;p&gt;Study PHP at ' . $txt2 . '&lt;/p&gt;';
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script src="../Assets/Prism/prism-php.min.js"></script>
+  </body>
+</html>
