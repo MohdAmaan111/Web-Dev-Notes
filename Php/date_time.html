@@ -18,43 +18,68 @@
     </div>
     <div class="paragraphBox">
       <p>
-        With PHP, there are two basic ways to get output:
-        <span class="c-r">echo</span> and <span class="c-">print</span>.
+        The PHP <span>date()</span> function is used to format a date or a time.
       </p>
+
+      <h2>Syntax</h2>
+      <pre><code class="language-php">
+        date(format,timestamp)
+      </code></pre>
+
+      <table>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>format</td>
+          <td>Required. Specifies the format of the timestamp</td>
+        </tr>
+        <tr>
+          <td>timestamp</td>
+          <td>
+            Optional. Specifies a timestamp. Default is the current date and
+            time
+          </td>
+        </tr>
+      </table>
+
       <p>
-        <span class="c-r">echo</span> and <span class="c-">print</span> are more
-        or less the same. They are both used to output data to the screen.
-      </p>
-      <p>
-        <span class="c-r">echo</span> has no return value while
-        <span class="c-">print</span> has a return value of 1 so it can be used
-        in expressions.
-      </p>
-      <p>
-        <span class="c-r">echo</span> can take multiple parameters while
-        <span class="c-r">print</span> can take one argument.
-      </p>
-      <p>
-        <span class="c-r">echo</span> is marginally faster than
-        <span class="c-r">print</span>.
+        A timestamp is a sequence of characters, denoting the date and/or time
+        at which a certain event occurred.
       </p>
     </div>
 
     <hr />
 
     <div>
-      <h1>PHP echo Statement</h1>
+      <h1>Get a Date</h1>
     </div>
     <div class="paragraphBox">
       <p>
-        The echo statement can be used with or without parentheses:
-        <span class="c-r">echo</span> or <span class="c-r">echo()</span>.
+        The required format parameter of the date() function specifies how to
+        format the date (or time).
       </p>
+      <p>Here are some characters that are commonly used for dates:</p>
+      <ul>
+        <li>d - Represents the day of the month (01 to 31)</li>
+        <li>m - Represents a month (01 to 12)</li>
+        <li>Y - Represents a year (in four digits)</li>
+        <li>l (lowercase 'L') - Represents the day of the week</li>
+      </ul>
+      <p>
+        Other characters, like"/", ".", or "-" can also be inserted between the
+        characters to add additional formatting.
+      </p>
+
       <div class="scriptBox" id="roundbox">
         <pre><code class="language-php">
-          echo "Hello";
-          //same as:
-          echo("Hello");
+          &lt;?php
+          echo "Today is " . date("Y/m/d") . "&lt;br&gt;";  // Today is 29/11/2024
+          echo "Today is " . date("Y.m.d") . "&lt;br&gt;";  // Today is 2024.11.29
+          echo "Today is " . date("Y-m-d") . "&lt;br&gt;";  // Today is 2024-11-29
+          echo "Today is " . date("l");  // Today is Friday
+          ?&gt;
         </code></pre>
       </div>
     </div>
@@ -62,19 +87,61 @@
     <hr />
 
     <div>
-      <h1>Display Text</h1>
+      <h1>Get a Time</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>Here are some characters that are commonly used for times:</p>
+      <ul>
+        <li>H - 24-hour format of an hour (00 to 23)</li>
+        <li>h - 12-hour format of an hour with leading zeros (01 to 12)</li>
+        <li>i - Minutes with leading zeros (00 to 59)</li>
+        <li>s - Seconds with leading zeros (00 to 59)</li>
+        <li>a - Lowercase Ante meridiem and Post meridiem (am or pm)</li>
+      </ul>
+      <p>The example below outputs the current time in the specified format:</p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          &lt;?php
+            echo "The time is " . date("H:i:s") . "&lt;br&gt;";  // The time is 19:01:56
+            echo "The time is " . date("h:i:s") . "&lt;br&gt;";  // The time is 07:01:56
+            echo "The time is " . date("h:i:sa") . "&lt;br&gt;"; // The time is 07:01:56pm
+            echo "The time is " . date("h:i:sA") . "&lt;br&gt;"; // The time is 07:01:56PM
+          ?&gt;
+        </code></pre>
+      </div>
+      <p class="note">
+        Note that the PHP <span>date()</span> function will return the current
+        date/time of the server!
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Get Your Time Zone</h1>
     </div>
     <div class="paragraphBox">
       <p>
-        The following example shows how to output text with the
-        <span class="c-r">print</span> command (notice that the text can contain
-        HTML markup):
+        If the time you got back from the code is not correct, it's probably
+        because your server is in another country or set up for a different
+        timezone.
       </p>
+      <p>
+        So, if you need the time to be correct according to a specific location,
+        you can set the timezone you want to use.
+      </p>
+      <p>
+        The example below sets the timezone to "Asia/Kolkata", then outputs the
+        current time in the specified format:
+      </p>
+
       <div class="scriptBox" id="roundbox">
         <pre><code class="language-php">
-          print "&lt;h2&gt;PHP is Fun!&lt;/h2&gt;";
-          print "Hello world!&lt;br&gt;";
-          print "I'm about to learn PHP!";
+          &lt;?php
+            date_default_timezone_set("Asia/Kolkata");
+            echo "The time is " . date("h:i:sa");
+          ?&gt;
         </code></pre>
       </div>
     </div>
@@ -82,20 +149,24 @@
     <hr />
 
     <div>
-      <h1>Display Variables</h1>
+      <h1>Create a Date With mktime()</h1>
     </div>
     <div class="paragraphBox">
+      <pre><code class="language-php">
+        mktime(hour, minute, second, month, day, year)
+      </code></pre>
       <p>
-        The following example shows how to output text and variables with the
-        <span class="c-r">print</span> statement:
+        The example below creates a date and time with the
+        <span>date()</span> function from a number of parameters in the
+        <span>mktime()</span> function:
       </p>
+
       <div class="scriptBox" id="roundbox">
         <pre><code class="language-php">
-          $txt1 = "Learn PHP";
-          $txt2 = "W3Schools.com";
-
-          print "&lt;h2&gt;$txt1&lt;/h2&gt;";
-          print "&lt;p&gt;Study PHP at $txt2&lt;/p&gt;";
+          &lt;?php
+            $d=mktime(11, 14, 54, 8, 12, 2014);
+            echo "Created date is " . date("Y-m-d h:i:sa", $d);  // Created date is 2014-08-12 11:14:54am
+          ?&gt;
         </code></pre>
       </div>
     </div>
@@ -103,29 +174,45 @@
     <hr />
 
     <div>
-      <h1>Using Single Quotes</h1>
+      <h1>Create a Date From a String</h1>
     </div>
     <div class="paragraphBox">
       <p>
-        Strings are surrounded by quotes, but there is a difference between
-        single and double quotes in PHP.
+        The PHP <span>strtotime()</span> function is used to convert a human
+        readable date string into a Unix timestamp (the number of seconds since
+        January 1 1970 00:00:00 GMT).
       </p>
+
+      <h2>Syntax</h2>
+      <pre><code class="language-php">
+        strtotime(time, now)
+      </code></pre>
       <p>
-        When using double quotes, variables can be inserted to the string as in
-        the example above.
+        The example below creates a date and time from the
+        <span>strtotime()</span> function:
       </p>
-      <p>
-        When using single quotes, variables have to be inserted using the
-        <span class="c-r">.</span>
-        operator, like this:
-      </p>
+
       <div class="scriptBox" id="roundbox">
         <pre><code class="language-php">
-          $txt1 = "Learn PHP";
-          $txt2 = "W3Schools.com";
+          &lt;?php
+            $d=strtotime("10:30pm April 15 2014");
+            echo "Created date is " . date("Y-m-d h:i:sa", $d);  // Created date is 2014-04-15 10:30:00pm
+          ?&gt;
+        </code></pre>
+      </div>
 
-          print '&lt;h2&gt;' . $txt1 . '&lt;/h2&gt;';
-          print '&lt;p&gt;Study PHP at ' . $txt2 . '&lt;/p&gt;';
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          &lt;?php
+            $d=strtotime("tomorrow");
+            echo date("Y-m-d h:i:sa", $d) . "&lt;br&gt;";  // 2024-11-30 12:00:00am
+
+            $d=strtotime("next Saturday");
+            echo date("Y-m-d h:i:sa", $d) . "&lt;br&gt;";  // 2024-11-30 12:00:00am
+
+            $d=strtotime("+3 Months");
+            echo date("Y-m-d h:i:sa", $d) . "&lt;br&gt;";  // 2025-03-01 07:22:16pm
+          ?&gt;
         </code></pre>
       </div>
     </div>

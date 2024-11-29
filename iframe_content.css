@@ -38,7 +38,7 @@ hr {
 }
 p {
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-family: Verdana, sans-serif !important;
 }
 button {
@@ -48,7 +48,8 @@ button {
 }
 li {
   line-height: 2;
-  margin-left: 20px;
+  margin-bottom: 16px;
+  margin-left: 16px;
   font-family: Verdana, sans-serif !important;
 }
 /* Display Div Box in flex */

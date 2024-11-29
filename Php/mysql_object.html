@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MySQLi Object-Oriented</title>
+    <link rel="stylesheet" href="../iframe_content.css" />
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="../Assets/Prism/prism.min.css" />
+
+    <!-- JQuery Script -->
+    <script src="../Assets/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>MySQLi Object-Oriented</h1>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Open a Connection to MySQL</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        Before we can access data in the MySQL database, we need to be able to
+        connect to the server:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Example (MySQLi Object-Oriented)</p>
+        <pre><code class="language-php">
+          &lt;?php
+          // Storing MySQL details in variables
+          $servername = "localhost";
+          $username = "username";
+          $password = "password";
+
+          // Create connection
+          $conn = new mysqli($servername, $username, $password);
+
+          // Check connection
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
+          echo "Connected successfully";
+          ?&gt;
+        </code></pre>
+      </div>
+    </div>
+    <div class="note">
+      <p>
+        On the object-oriented <span>$connect_error</span> was broken until PHP
+        5.2.9 and 5.3.0. If you need to ensure compatibility with PHP versions
+        prior to 5.2.9 and 5.3.0, use the following code instead:
+      </p>
+    </div>
+    <pre><code class="language-php">
+      // Check connection
+      if (mysqli_connect_error()) {
+        die("Database connection failed: " . mysqli_connect_error());
+      }
+    </code></pre>
+
+    <hr />
+
+    <div>
+      <h1>Close the Connection</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The connection will be closed automatically when the script ends. To
+        close the connection before, use the following:
+      </p>
+      <pre><code class="language-php">
+        $conn->close();
+      </code></pre>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Create a MySQL Database</h1>
+    </div>
+    <p>
+      You will need special <span>CREATE</span> privileges to create or to
+      delete a MySQL database.
+    </p>
+    <p>
+      The <span>CREATE DATABASE</span> statement is used to create a database in
+      MySQL.
+    </p>
+    <p>The following examples create a database named "myDB":</p>
+    <div class="paragraphBox">
+      <div class="scriptBox" id="roundbox">
+        <p>Example (MySQLi Object-Oriented)</p>
+        <pre><code class="language-php">
+          &lt;?php
+          // Create connection
+          $conn = new mysqli($servername, $username, $password);
+
+          // Check connection
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
+          
+          // Create database
+          $sql = "CREATE DATABASE myDB";
+          if ($conn->query($sql) === TRUE) {
+            echo "Database created successfully";
+          } else {
+            echo "Error creating database: " . $conn->error;
+          }
+
+          $conn->close();
+          ?&gt;
+        </code></pre>
+      </div>
+      <p class="note">
+        <b>Note:</b> When you create a new database, you must only specify the
+        first three arguments to the mysqli object (servername, username and
+        password).
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Create a MySQL Table</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        A database table has its own unique name and consists of columns and
+        rows.
+      </p>
+      <p>
+        The <span>CREATE TABLE</span> statement is used to create a table in
+        MySQL.
+      </p>
+      <p>
+        We will create a table named "MyGuests", with five columns: "id",
+        "firstname", "lastname", "email" and "reg_date":
+      </p>
+      <p>The following examples shows how to create the table in PHP:</p>
+      <div class="scriptBox" id="roundbox">
+        <p>Example (MySQLi Object-Oriented)</p>
+        <pre><code class="language-php">
+          &lt;?php
+          // Create connection
+          $conn = new mysqli($servername, $username, $password, $dbname);
+  
+          // Check connection
+          
+          // Create table
+          $sql = "CREATE TABLE MyGuests (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            firstname VARCHAR(30) NOT NULL,
+            lastname VARCHAR(30) NOT NULL,
+            email VARCHAR(50),
+            reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+          )";
+  
+          if ($conn->query($sql) === TRUE) {
+            echo "Table MyGuests created successfully";
+          } else {
+            echo "Error creating database: " . $conn->error;
+          }
+          ?&gt;
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Insert Data</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        After a database and a table have been created, we can start adding data
+        in them.
+      </p>
+      <p>Here are some syntax rules to follow:</p>
+      <ul>
+        <li>The SQL query must be quoted in PHP</li>
+        <li>String values inside the SQL query must be quoted</li>
+        <li>Numeric values must not be quoted</li>
+        <li>The word NULL must not be quoted</li>
+      </ul>
+      <p>
+        The INSERT INTO statement is used to add new records to a MySQL table:
+      </p>
+      <pre><code class="language-php">
+        INSERT INTO table_name (column1, column2, column3,...)
+        VALUES (value1, value2, value3,...)
+      </code></pre>
+      <p>The following examples add a new record to the "MyGuests" table:</p>
+      <div class="scriptBox" id="roundbox">
+        <p>Example (MySQLi Object-Oriented)</p>
+        <pre><code class="language-php">
+          &lt;?php
+          // Create connection
+          $conn = new mysqli($servername, $username, $password, $dbname);
+  
+          // Check connection
+          
+          // Create table
+          $sql = "INSERT INTO MyGuests (firstname, lastname, email) 
+          VALUES ('John', 'Doe', 'john@example.com')";
+  
+          if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+          } else {
+            echo "Error: " . $sql . "&lt;br&gt;" . $conn->error;
+          }
+          ?&gt;
+        </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Get Last Inserted ID</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        If we perform an <span>INSERT</span> or <span>UPDATE</span> on a table
+        with an
+        <span>AUTO_INCREMENT</span>
+        field, we can get the <span>ID</span> of the last inserted/updated
+        record immediately.
+      </p>
+      <p>
+        In the table <span>"MyGuests"</span>, the <span>"id"</span> column is an
+        <span>AUTO_INCREMENT</span> field:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <p>Example (MySQLi Object-Oriented)</p>
+        <pre><code class="language-php">
+          &lt;?php
+          // Create connection
+          $conn = new mysqli($servername, $username, $password, $dbname);
+  
+          // Check connection
+          
+          // Create table
+          $sql = "INSERT INTO MyGuests (firstname, lastname, email) 
+          VALUES ('John', 'Doe', 'john@example.com')";
+  
+          if ($conn->query($sql) === TRUE) {
+            $last_id = $conn->insert_id;
+            echo "New record created successfully. Last inserted ID is: " . $last_id;
+          } else {
+            echo "Error: " . $sql . "&lt;br&gt;" . $conn->error;
+          }
+          ?&gt;
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="../Assets/Prism/prism.min.js"></script>
+    <script src="../Assets/Prism/prism-php.min.js"></script>
+  </body>
+</html>
