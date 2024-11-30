@@ -18,149 +18,436 @@
     </div>
     <div class="paragraphBox">
       <p>
-        Including files is very useful when you want to include the same PHP,
-        HTML, or text on multiple pages of a website.
+        PHP has several functions for creating, reading, uploading, and editing
+        files.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>readfile() Function</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        The <span>readfile()</span> function reads a file and writes it to the
+        output buffer.
       </p>
       <p>
-        It is possible to insert the content of one PHP file into another PHP
-        file (before the server executes it), with the include or require
-        statement.
+        Assume we have a text file called "webdictionary.txt", stored on the
+        server, that looks like this:
       </p>
-      <p>
-        The <span>include</span> (or <span>require</span>) statement takes all
-        the text/code/markup that exists in the specified file and copies it
-        into the file that uses the include statement.
-      </p>
-      <p>
-        <b
-          >The include and require statements are identical, except upon
-          failure:
-        </b>
-      </p>
-      <ul>
-        <li>
-          <span>require</span> will produce a fatal error (E_COMPILE_ERROR) and
-          stop the script
-        </li>
-        <li>
-          <span>include</span> will only produce a warning (E_WARNING) and the
-          script will continue
-        </li>
-      </ul>
-      <p>
-        So, if you want the execution to go on and show users the output, even
-        if the include file is missing, use the include statement.
-      </p>
-      <p>
-        Otherwise, in case of FrameWork, CMS, or a complex PHP application
-        coding, always use the require statement to include a key file to the
-        flow of execution.
-      </p>
-      <h2>Syntax:</h2>
+
       <pre><code class="language-php">
-        include 'filename';
-
-        or
-
-        require 'filename';
+        CSS = Cascading Style Sheets
+        HTML = Hyper Text Markup Language
+        PHP = PHP Hypertext Preprocessor
       </code></pre>
 
       <p>
-        Including files saves a lot of work. This means that you can create a
-        standard header, footer, or menu file for all your web pages. Then, when
-        the header needs to be updated, you can only update the header include
+        The PHP code to read the file and write it to the output buffer is as
+        follows:
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          &lt;?php
+            echo readfile("webdictionary.txt");  // CSS = Cascading Style Sheets 
+                                                 // HTML = Hyper Text Markup Language 
+                                                 // PHP = PHP Hypertext Preprocessor
+          ?&gt;
+        </code></pre>
+      </div>
+      <p>
+        The <span>readfile()</span> function is useful if all you want to do is
+        open up a file and read its contents.
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Open File - fopen() Function</h1>
+    </div>
+    <div class="paragraphBox">
+      <p>
+        A better method to open files is with the
+        <span>fopen()</span> function. This function gives you more options than
+        the <span>readfile()</span> function.
+      </p>
+      <p>
+        The first parameter of <span>fopen()</span> contains the name of the
+        file to be opened and the second parameter specifies in which mode the
+        file should be opened.
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+        &lt;?php
+          fopen("webdictionary.txt", "r");
+        ?&gt;
+        </code></pre>
+      </div>
+      <p>The file may be opened in one of the following modes:</p>
+      <table>
+        <tr>
+          <th>Modes</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>r</td>
+          <td>
+            Open a file for read only. File pointer starts at the beginning of
+            the file
+          </td>
+        </tr>
+        <tr>
+          <td>w</td>
+          <td>
+            Open a file for write only. Erases the contents of the file or
+            creates a new file if it doesn't exist. File pointer starts at the
+            beginning of the file
+          </td>
+        </tr>
+        <tr>
+          <td>a</td>
+          <td>
+            Open a file for write only. The existing data in file is preserved.
+            File pointer starts at the end of the file. Creates a new file if
+            the file doesn't exist
+          </td>
+        </tr>
+        <tr>
+          <td>x</td>
+          <td>
+            Creates a new file for write only. Returns FALSE and an error if
+            file already exists
+          </td>
+        </tr>
+        <tr>
+          <td>r+</td>
+          <td>
+            Open a file for read/write. File pointer starts at the beginning of
+            the file
+          </td>
+        </tr>
+        <tr>
+          <td>w+</td>
+          <td>
+            Open a file for read/write. Erases the contents of the file or
+            creates a new file if it doesn't exist. File pointer starts at the
+            beginning of the file
+          </td>
+        </tr>
+        <tr>
+          <td>a+</td>
+          <td>
+            Open a file for read/write. The existing data in file is preserved.
+            File pointer starts at the end of the file. Creates a new file if
+            the file doesn't exist
+          </td>
+        </tr>
+        <tr>
+          <td>x+</td>
+          <td>
+            Creates a new file for read/write. Returns FALSE and an error if
+            file already exists
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Read File - fread() Function</h1>
+    </div>
+
+    <div class="paragraphBox">
+      <p>The <span>fread()</span> function reads from an open file.</p>
+      <p>
+        The first parameter of <span>fread()</span> contains the name of the
+        file to read from and the second parameter specifies the maximum number
+        of bytes to read.
+      </p>
+      <p>
+        The following PHP code reads the "webdictionary.txt" file to the end:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+        &lt;?php
+          $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+          echo fread($myfile,filesize("webdictionary.txt"));
+        ?&gt;
+      </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Close File - fclose() Function</h1>
+    </div>
+
+    <div class="paragraphBox">
+      <p>The <span>fclose()</span> function is used to close an open file.</p>
+      <p class="note">
+        It's a good programming practice to close all files after you have
+        finished with them. You don't want an open file running around on your
+        server taking up resources!
+      </p>
+      <p>
+        The <span>fclose()</span> requires the name of the file (or a variable
+        that holds the filename) we want to close:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+        &lt;?php
+          $myfile = fopen("webdictionary.txt", "r");
+          echo fread($myfile,filesize("webdictionary.txt"));
+          fclose($myfile);
+        ?&gt;
+      </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Read Single Line - fgets() Function</h1>
+    </div>
+
+    <div class="paragraphBox">
+      <p>
+        The <span>fgets()</span> function is used to read a single line from a
         file.
       </p>
+      <p>
+        The example below outputs the first line of the "webdictionary.txt"
+        file:
+      </p>
 
-      <h2><span>Example:</span></h2>
-      <p>
-        If we have a standard footer file called "footer.php", that looks like
-        this:
-      </p>
-      <pre><code class="language-php">
-        &lt;?php
-        echo "&lt;p&gt;Copyright &copy; 1999-" . date("Y") . " W3Schools.com&lt;/p&gt;;
-        ?&gt;
-      </code></pre>
-      <p>
-        To include the footer file in a page, use the
-        <span>include</span> statement:
-      </p>
       <div class="scriptBox" id="roundbox">
         <pre><code class="language-php">
-          &lt;html&gt;
-          &lt;body&gt;
-
-          &lt;h1&gt;Welcome to my home page!&lt;/h1&gt;
-          &lt;p&gt;Some text.&lt;/p&gt;
-          &lt;p&gt;Some more text.&lt;/p&gt;
-          &lt;?php include 'footer.php';?&gt;    //Copyright © 1999-2024 W3Schools.com
-
-          &lt;/body&gt;
-          &lt;/html&gt;
-        </code></pre>
+        &lt;?php
+          $myfile = fopen("webdictionary.txt", "r");
+          echo fgets($myfile);  // CSS = Cascading Style Sheets
+          fclose($myfile);
+        ?&gt;
+      </code></pre>
       </div>
+      <p class="note">
+        Note: After a call to the fgets() function, the file pointer has moved
+        to the next line.
+      </p>
+    </div>
 
-      <h2><span>Example:</span></h2>
-      <p>If we have a standard menu file called "menu.php":</p>
-      <pre><code class="language-php">
-        &lt;?php
-        echo '&lt;a href="/default.asp"&gt;Home&lt;/a&gt; -
-        &lt;a href="/html/default.asp"&gt;HTML&lt;/a&gt; -
-        &lt;a href="/css/default.asp"&gt;CSS&lt;/a&gt; -
-        &lt;a href="/js/default.asp"&gt;JavaScript&lt;/a&gt; -
-        &lt;a href="default.asp"&gt;PHP&lt;/a&gt;';
-        ?&gt;
-      </code></pre>
+    <hr />
+
+    <div>
+      <h1>Check End-Of-File - feof() Function</h1>
+    </div>
+
+    <div class="paragraphBox">
       <p>
-        All pages in the Web site should use this menu file. Here is how it can
-        be done (we are using a &lt;div&gt; element so that the menu easily can
-        be styled with CSS later):
+        The <span>feof()</span> function checks if the "end-of-file" (EOF) has
+        been reached.
+      </p>
+      <p>
+        The <span>feof()</span> function is useful for looping through data of
+        unknown length.
+      </p>
+      <p>
+        The example below reads the "webdictionary.txt" file line by line, until
+        end-of-file is reached:
       </p>
       <div class="scriptBox" id="roundbox">
         <pre><code class="language-php">
-          &lt;html&gt;
-          &lt;body&gt;
-
-          &lt;div class="menu"&gt;
-            &lt;?php include 'menu.php';?&gt;   //Home - HTML - CSS - JavaScript - PHP
-          &lt;/div&gt;
-
-          &lt;h1&gt;Welcome to my home page!&lt;/h1&gt;
-          &lt;p&gt;Some text.&lt;/p&gt;
-          &lt;p&gt;Some more text.&lt;/p&gt;
-
-          &lt;/body&gt;
-          &lt;/html&gt;
-        </code></pre>
+        &lt;?php
+          $myfile = fopen("webdictionary.txt", "r");
+          // Output one line until end-of-file
+          while(!feof($myfile)) {
+            echo fgets($myfile) . "<br>"; // CSS = Cascading Style Sheets
+                                          // HTML = Hyper Text Markup Language
+                                          // PHP = PHP Hypertext Preprocessor
+          }
+          fclose($myfile);
+        ?&gt;
+      </code></pre>
       </div>
+    </div>
 
-      <h2><span>Example:</span></h2>
-      <p>If we have a file called "vars.php", with some variables defined:</p>
-      <pre><code class="language-php">
-        &lt;?php
-        $color='red';
-        $car='BMW';
-        ?&gt;
-      </code></pre>
+    <hr />
+
+    <div>
+      <h1>Read Single Character - fgetc() Function</h1>
+    </div>
+
+    <div class="paragraphBox">
       <p>
-        Then, if we include the "vars.php" file, the variables can be used in
-        the calling file:
+        The <span>fgetc()</span> function is used to read a single character
+        from a file.
+      </p>
+      <p>
+        The example below reads the "webdictionary.txt" file character by
+        character, until end-of-file is reached:
       </p>
       <div class="scriptBox" id="roundbox">
         <pre><code class="language-php">
-          &lt;html&gt;
-          &lt;body&gt;
+        &lt;?php
+          $myfile = fopen("webdictionary.txt", "r");
+          // Output one character until end-of-file
+          while(!feof($myfile)) {
+            echo fgetc($myfile) . "<br>"; // CSS = Cascading Style Sheets
+                                          // HTML = Hyper Text Markup Language
+                                          // PHP = PHP Hypertext Preprocessor
+          }
+          fclose($myfile);
+        ?&gt;
+      </code></pre>
+      </div>
+      <p class="note">
+        Note: After a call to the fgetc() function, the file pointer moves to
+        the next character.
+      </p>
+    </div>
 
-          &lt;h1&gt;Welcome to my home page!&lt;/h1&gt;
-          &lt;?php include 'vars.php';
-          echo "I have a $color $car.";   //I have a red BMW.
+    <hr />
+
+    <div>
+      <h1>Create File - fopen() Function</h1>
+    </div>
+
+    <div class="paragraphBox">
+      <p>The <span>fopen()</span> function is also used to create a file.</p>
+      <p>
+        If you use <span>fopen()</span> on a file that does not exist, it will
+        create it, given that the file is opened for writing (w) or appending
+        (a).
+      </p>
+      <p>
+        The example below creates a new file called "testfile.txt". The file
+        will be created in the same directory where the PHP code resides:
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+        &lt;?php
+          $myfile = fopen("testfile.txt", "w")
+        ?&gt;
+      </code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Write to File - fwrite() Function</h1>
+    </div>
+
+    <div class="paragraphBox">
+      <p>The <span>fwrite()</span> function is used to write to a file.</p>
+      <p>
+        The first parameter of <span>fwrite()</span> contains the name of the
+        file to write to and the second parameter is the string to be written.
+      </p>
+      <p>
+        The example below writes a couple of names into a new file called
+        "newfile.txt":
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+        &lt;?php
+          $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+          fwrite($myfile, "John Doe\n");
+          $txt = "Jane Doe\n";
+          fwrite($myfile, $txt);
+          fclose($myfile);
+        ?&gt;
+      </code></pre>
+      </div>
+      <p>
+        Notice that we wrote to the file "newfile.txt" twice. Each time we wrote
+        to the file we sent the string $txt that first contained "John Doe" and
+        second contained "Jane Doe". After we finished writing, we closed the
+        file using the <span>fclose()</span> function.
+      </p>
+      <p>If we open the "newfile.txt" file it would look like this:</p>
+      <pre><code class="language-html">
+        John Doe
+        Jane Doe
+      </code></pre>
+      <p>
+        Now that "newfile.txt" contains some data we can show what happens when
+        we open an existing file for writing. All the existing data will be
+        ERASED and we start with an empty file.
+      </p>
+      <p>
+        In the example below we open our existing file "newfile.txt", and write
+        some new data into it:
+      </p>
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          &lt;?php
+            $myfile = fopen("newfile.txt", "a") or die("Unable to open file!");
+            $txt = "Donald Duck\n";
+            fwrite($myfile, $txt);
+            $txt = "Goofy Goof\n";
+            fwrite($myfile, $txt);
+            fclose($myfile);
           ?&gt;
-
-          &lt;/body&gt;
-          &lt;/html&gt;
         </code></pre>
       </div>
+      <p>
+        If we now open the "newfile.txt" file, both John and Jane have vanished,
+        and only the data we just wrote is present:
+      </p>
+      <pre><code class="language-html">
+        Mickey Mouse
+        Minnie Mouse
+      </code></pre>
+    </div>
+
+    <hr />
+
+    <div>
+      <h1>Append Text</h1>
+    </div>
+
+    <div class="paragraphBox">
+      <p>
+        You can append data to a file by using the "a" mode. The "a" mode
+        appends text to the end of the file, while the "w" mode overrides (and
+        erases) the old content of the file.
+      </p>
+      <p>
+        In the example below we open our existing file "newfile.txt", and append
+        some text to it:
+      </p>
+
+      <div class="scriptBox" id="roundbox">
+        <pre><code class="language-php">
+          &lt;?php
+            $myfile = fopen("newfile.txt", "a") or die("Unable to open file!");
+            $txt = "Donald Duck\n";
+            fwrite($myfile, $txt);
+            $txt = "Goofy Goof\n";
+            fwrite($myfile, $txt);
+            fclose($myfile);
+          ?&gt;
+        </code></pre>
+      </div>
+      <p>
+        If we now open the "newfile.txt" file, we will see that Donald Duck and
+        Goofy Goof is appended to the end of the file:
+      </p>
+      <pre><code class="language-html">
+        Mickey Mouse
+        Minnie Mouse
+        Donald Duck
+        Goofy Goof
+      </code></pre>
     </div>
 
     <!-- Prism.js JavaScript -->
